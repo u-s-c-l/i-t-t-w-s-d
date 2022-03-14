@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 
 const Footer = () => {
   return (
     <>
       <div id="footer">
-      <h3> ©cutipihub </h3>
+         <h3> ©cutipihub </h3>
       </div>
 
     </>
