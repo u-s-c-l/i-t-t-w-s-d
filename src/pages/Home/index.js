@@ -5,9 +5,9 @@ function Home() {
 
   return (
     <>
-    <div id="welcome_div">
-      <h1> Hello there stranger! </h1>
-        </div>
+      <div id="welcome_div">
+        <h1> Hello there stranger! </h1>
+      </div>
     </>
   );
 }
