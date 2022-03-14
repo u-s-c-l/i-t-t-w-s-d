@@ -27,10 +27,10 @@ const CreateGame = () => {
     <section id="createGame">
       <form onSubmit={handleSubmit}>
         <h3 className="capitalize">Select a category:</h3>
-        {categories.map((cat) => {
+        {categories.map((cat, index) => {
           const consistentName = cat.replaceAll(" ", "").toLowerCase();
           return (
-            <div key={consistentName}>
+            <div key={`cat_${index}`}>
               <label htmlFor={consistentName} className="capitalize">
                 {cat}
               </label>
@@ -44,9 +44,9 @@ const CreateGame = () => {
           );
         })}
         <h3 className="capitalize">Select a difficulty:</h3>
-        {difficulties.map((diff) => {
+        {difficulties.map((diff, index) => {
           return (
-            <div key={diff}>
+            <div key={`diff_${index}`}>
               <label htmlFor={diff} className="capitalize">
                 {diff}
               </label>
