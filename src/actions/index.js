@@ -9,11 +9,11 @@ const loadQuestions = (questions) => ({
 
 const getQuestions = ({ category, difficulty }) => {
   const categoryMap = {
-    9: "generalknowlage",
-    27: "animals",
-    11: "film",
-    30: "gadgets",
-    12: "music"
+    generalknowledge: 9,
+    animals: 27,
+    film: 11,
+    gadgets: 30,
+    music: 12
   };
   const catId = categoryMap[category];
   return async (dispatch) => {
