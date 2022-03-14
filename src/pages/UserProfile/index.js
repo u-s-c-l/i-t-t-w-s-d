@@ -6,9 +6,9 @@ const UserProfile = () => {
     <>
       <div id="profile">
         <div id="profile_buttons">
+          
         </div>
       </div>
-
     </>
   );
 };
