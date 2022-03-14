@@ -8,9 +8,10 @@ const CreateGame = () => {
     "gadgets",
     "music"
   ];
+  const difficulties = ["easy", "medium", "hard"];
   return (
     <form>
-      <h3>Select a category:</h3>
+      <h3 className="capitalize">Select a category:</h3>
       {categories.map((cat) => {
         const consistentName = cat.replaceAll(" ", "").toLowerCase();
         return (
@@ -24,6 +25,17 @@ const CreateGame = () => {
               name="category"
               value={consistentName}
             />
+          </div>
+        );
+      })}
+      <h3 className="capitalize">Select a difficulty:</h3>
+      {difficulties.map((diff) => {
+        return (
+          <div key={diff}>
+            <label htmlFor={diff} className="capitalize">
+              {diff}
+            </label>
+            <input type={"radio"} id={diff} name="difficulty" value={diff} />
           </div>
         );
       })}
