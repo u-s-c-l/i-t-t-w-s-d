@@ -10,36 +10,39 @@ const CreateGame = () => {
   ];
   const difficulties = ["easy", "medium", "hard"];
   return (
-    <form>
-      <h3 className="capitalize">Select a category:</h3>
-      {categories.map((cat) => {
-        const consistentName = cat.replaceAll(" ", "").toLowerCase();
-        return (
-          <div key={consistentName}>
-            <label htmlFor={consistentName} className="capitalize">
-              {cat}
-            </label>
-            <input
-              type={"radio"}
-              id={consistentName}
-              name="category"
-              value={consistentName}
-            />
-          </div>
-        );
-      })}
-      <h3 className="capitalize">Select a difficulty:</h3>
-      {difficulties.map((diff) => {
-        return (
-          <div key={diff}>
-            <label htmlFor={diff} className="capitalize">
-              {diff}
-            </label>
-            <input type={"radio"} id={diff} name="difficulty" value={diff} />
-          </div>
-        );
-      })}
-    </form>
+    <section id="createGame">
+      <form>
+        <h3 className="capitalize">Select a category:</h3>
+        {categories.map((cat) => {
+          const consistentName = cat.replaceAll(" ", "").toLowerCase();
+          return (
+            <div key={consistentName}>
+              <label htmlFor={consistentName} className="capitalize">
+                {cat}
+              </label>
+              <input
+                type={"radio"}
+                id={consistentName}
+                name="category"
+                value={consistentName}
+              />
+            </div>
+          );
+        })}
+        <h3 className="capitalize">Select a difficulty:</h3>
+        {difficulties.map((diff) => {
+          return (
+            <div key={diff}>
+              <label htmlFor={diff} className="capitalize">
+                {diff}
+              </label>
+              <input type={"radio"} id={diff} name="difficulty" value={diff} />
+            </div>
+          );
+        })}
+      </form>
+      <button>Create Game!</button>
+    </section>
   );
 };
 
