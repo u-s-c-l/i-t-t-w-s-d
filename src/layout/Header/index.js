@@ -3,7 +3,12 @@ import React from "react";
 const Header = () => {
   return (
     <>
-      <div id="header" className="bg-indigo-500 w-full h-24"></div>
+      <nav>
+        <NavLink exact to="/" activeClassName="active">Home</NavLink>
+        <NavLink to="/about" activeClassName="active">About</NavLink>
+        <NavLink to="/search" activeClassName="active">Search</NavLink>
+      </nav>
+      
     </>
   );
 };
