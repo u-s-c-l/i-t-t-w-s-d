@@ -1,7 +1,7 @@
 import React from "react";
-import getQuestions from "../../actions";
+import PropTypes from "prop-types";
 
-const CreateGame = () => {
+const CreateGame = ({ getQuestions }) => {
   const categories = [
     "animals",
     "general knowledge",
@@ -58,6 +58,10 @@ const CreateGame = () => {
       </form>
     </section>
   );
+};
+
+CreateGame.propTypes = {
+  getQuestions: PropTypes.func
 };
 
 export default CreateGame;
