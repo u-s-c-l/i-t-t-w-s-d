@@ -1,4 +1,5 @@
 import React from "react";
+import getQuestions from "../../actions";
 
 const CreateGame = () => {
   const categories = [
@@ -8,10 +9,23 @@ const CreateGame = () => {
     "gadgets",
     "music"
   ];
+
   const difficulties = ["easy", "medium", "hard"];
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const categories = Array.from(e.target.category);
+    const selectedCat = categories.filter((cat) => cat.checked === true);
+    const catValue = selectedCat[0].value;
+
+    const difficulties = Array.from(e.target.difficulty);
+    const selectDiff = difficulties.filter((diff) => diff.checked === true);
+    const diffValue = selectDiff[0].value;
+    getQuestions({ category: catValue, difficulty: diffValue });
+  };
   return (
     <section id="createGame">
-      <form>
+      <form onSubmit={handleSubmit}>
         <h3 className="capitalize">Select a category:</h3>
         {categories.map((cat) => {
           const consistentName = cat.replaceAll(" ", "").toLowerCase();
@@ -40,7 +54,7 @@ const CreateGame = () => {
             </div>
           );
         })}
-        <input type={"submit"}>Create Game!</input>
+        <input type={"submit"} value="Create Game!"></input>
       </form>
     </section>
   );
