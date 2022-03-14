@@ -40,8 +40,8 @@ const CreateGame = () => {
             </div>
           );
         })}
+        <input type={"submit"}>Create Game!</input>
       </form>
-      <button>Create Game!</button>
     </section>
   );
 };
