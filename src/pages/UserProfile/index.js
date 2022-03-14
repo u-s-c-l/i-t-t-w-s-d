@@ -1,4 +1,5 @@
 import React from "react";
+import { Settings } from "../../components";
 
 
 const UserProfile = () => {
@@ -6,7 +7,7 @@ const UserProfile = () => {
     <>
       <div id="profile">
         <div id="profile_buttons">
-          
+          <Settings/>
         </div>
       </div>
     </>
