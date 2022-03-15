@@ -1,5 +1,5 @@
 import React from "react";
-import { Settings, Edit, Chat, Login, Register } from "../../components";
+import { Settings, Edit, Chat  } from "../../components";
 
 const UserProfile = () => {
   return (
@@ -8,12 +8,14 @@ const UserProfile = () => {
         {/* profile picture */}
         {/* profile bio */}
         <div id="profile_buttons">
-          <Login/>
-          <Register/>
-
+  
           <Settings />
           <Edit />
           <Chat />
+          {/* Scoreboard div */}
+          {/*  scores */}
+          {/* premium button with div that has another button */}
+
         </div>
       </div>
     </>
