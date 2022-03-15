@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const CreateGame = ({ getQuestions }) => {
+const CreateGame = ({ getQuestions, startGame }) => {
   const categories = [
     "animals",
     "general knowledge",
@@ -22,7 +22,9 @@ const CreateGame = ({ getQuestions }) => {
     const selectDiff = difficulties.filter((diff) => diff.checked === true);
     const diffValue = selectDiff[0].value;
     getQuestions({ category: catValue, difficulty: diffValue });
+    startGame();
   };
+
   return (
     <section id="createGame">
       <form onSubmit={handleSubmit}>
@@ -61,7 +63,8 @@ const CreateGame = ({ getQuestions }) => {
 };
 
 CreateGame.propTypes = {
-  getQuestions: PropTypes.func.isRequired
+  getQuestions: PropTypes.func.isRequired,
+  startGame: PropTypes.func.isRequired
 };
 
 export default CreateGame;

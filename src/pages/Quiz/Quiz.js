@@ -11,6 +11,8 @@ const Quiz = () => {
   const error = useSelector((state) => state.error);
   const [currentQ, setCurrentQ] = useState(0);
   const [score, setScore] = useState(0);
+  const [started, setStarted] = useState(0);
+
   const nextQ = (e) => {
     const nextQ = currentQ + 1;
     setCurrentQ(nextQ);
@@ -20,11 +22,15 @@ const Quiz = () => {
     }
   };
 
+  const startGame = () => {
+    setStarted(1);
+  };
+
   const renderResult = () =>
     loading ? (
       <p>Loading . . .</p>
     ) : currentQ === 10 ? (
-      <p>You got {score} points</p>
+      <p>You got {score}/30 points</p>
     ) : questions.length ? (
       <>
         <QACard
@@ -45,11 +51,14 @@ const Quiz = () => {
 
   return (
     <>
-      <CreateGame getQuestions={searchQs} />
-      {error ? (
-        <p role="alert">Oops there has been an error! {error}</p>
+      {started ? (
+        error ? (
+          <p role="alert">Oops there has been an error! {error}</p>
+        ) : (
+          renderResult()
+        )
       ) : (
-        renderResult()
+        <CreateGame getQuestions={searchQs} startGame={startGame} />
       )}
     </>
   );
