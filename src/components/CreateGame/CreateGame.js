@@ -14,6 +14,7 @@ const CreateGame = ({ getQuestions, startGame }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     const categories = Array.from(e.target.category);
     const selectedCat = categories.filter((cat) => cat.checked === true);
     const catValue = selectedCat[0].value;
@@ -26,48 +27,50 @@ const CreateGame = ({ getQuestions, startGame }) => {
   };
 
   return (
-    <section id="createGame">
-      <form onSubmit={handleSubmit}>
-        <h3 className="capitalize">Select a category:</h3>
-        {categories.map((cat, index) => {
-          const consistentName = cat.replaceAll(" ", "").toLowerCase();
-          return (
-            <div key={`cat_${index}`}>
-              <label htmlFor={consistentName} className="capitalize">
-                {cat}
-              </label>
-              <input
-                type={"radio"}
-                id={consistentName}
-                name="category"
-                value={consistentName}
-                required
-              />
-            </div>
-          );
-        })}
+    <form onSubmit={handleSubmit} aria-label="create game form">
+      <h3 className="capitalize">Select a category:</h3>
+      {categories.map((cat, index) => {
+        const consistentName = cat.replaceAll(" ", "").toLowerCase();
+        return (
+          <div key={`cat_${index}`}>
+            <label htmlFor={consistentName} className="capitalize">
+              {cat}
+            </label>
+            <input
+              type={"radio"}
+              id={consistentName}
+              name="category"
+              value={consistentName}
+              required
+            />
+          </div>
+        );
+      })}
 
-        <h3 className="capitalize">Select a difficulty:</h3>
-        {difficulties.map((diff, index) => {
-          return (
-            <div key={`diff_${index}`}>
-              <label htmlFor={diff} className="capitalize">
-                {diff}
-              </label>
-              <input
-                required
-                type={"radio"}
-                id={diff}
-                name="difficulty"
-                value={diff}
-              />
-            </div>
-          );
-        })}
+      <h3 className="capitalize">Select a difficulty:</h3>
+      {difficulties.map((diff, index) => {
+        return (
+          <div key={`diff_${index}`}>
+            <label htmlFor={diff} className="capitalize">
+              {diff}
+            </label>
+            <input
+              required
+              type={"radio"}
+              id={diff}
+              name="difficulty"
+              value={diff}
+            />
+          </div>
+        );
+      })}
 
-        <input type={"submit"} value="Create Game!"></input>
-      </form>
-    </section>
+      <input
+        aria-label="submit btn"
+        type={"submit"}
+        value="Create Game!"
+      ></input>
+    </form>
   );
 };
 
