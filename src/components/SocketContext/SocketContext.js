@@ -14,9 +14,9 @@ const SocketProvider = (props) => {
   const [socket, setSocket] = useState(null)
 
   useEffect(() => {
-    const ENDPOINT = "https://localhost:3003"
-    const newSocket = 
-    setSocket(io(ENDPOINT))
+    const ENDPOINT = "https://localhost:3003" //server
+    const newSocket = io(ENDPOINT);
+    setSocket(newSocket)
     return () => newSocket.close();
   }, [setSocket])
 
