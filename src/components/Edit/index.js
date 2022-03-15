@@ -4,7 +4,7 @@ const Edit = () => {
   return (
     <div>
       <button id="edit_btn">
-        {/* <i className="fa-solid fa-gear fa-2x"> </i>  */}
+      <i className="fa-solid fa-paintbrush-fine"></i>
       </button>
     </div>
   );
