@@ -8,16 +8,20 @@ import matches from "./helpers";
 const Quiz = () => {
   const questions = useSelector((state) => state.questions);
   const loading = useSelector((state) => state.loading);
+  const difficulty = useSelector((state) => state.difficulty);
   const error = useSelector((state) => state.error);
   const [currentQ, setCurrentQ] = useState(0);
   const [score, setScore] = useState(0);
   const [started, setStarted] = useState(0);
 
   const nextQ = (e) => {
+    let points = 1;
+    if (difficulty === "medium") points = 2;
+    if (difficulty === "hard") points = 3;
     const nextQ = currentQ + 1;
     setCurrentQ(nextQ);
     if (e.target.dataset.correct === "true") {
-      const newScore = score + 1;
+      const newScore = score + points;
       setScore(newScore);
     }
   };
