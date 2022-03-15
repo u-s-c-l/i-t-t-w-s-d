@@ -2,11 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 import shuffle from "./helpers";
 
-const Answers = ({ correct_answer, incorrect_answers }) => {
+const Answers = ({ correct_answer, incorrect_answers, handleChange }) => {
   const allAnswers = [...incorrect_answers, correct_answer];
   const shuffledAns = shuffle(allAnswers);
   return (
-    <form>
+    <form onChange={handleChange}>
       {shuffledAns.map((ans, index) => {
         const consistentName = ans.replaceAll(" ", "").toLowerCase();
         return (
@@ -27,7 +27,8 @@ const Answers = ({ correct_answer, incorrect_answers }) => {
 
 Answers.propTypes = {
   correct_answer: PropTypes.string.isRequired,
-  incorrect_answers: PropTypes.array.isRequired
+  incorrect_answers: PropTypes.array.isRequired,
+  handleChange: PropTypes.func.isRequired
 };
 
 export default Answers;
