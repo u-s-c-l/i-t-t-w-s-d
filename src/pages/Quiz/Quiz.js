@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import getQuestions from "../../actions";
 import CreateGame from "../../components/CreateGame";
@@ -9,22 +9,23 @@ const Quiz = () => {
   const questions = useSelector((state) => state.questions);
   const loading = useSelector((state) => state.loading);
   const error = useSelector((state) => state.error);
+  const [currentQ, setCurrentQ] = useState(0);
+
+  const nextQ = () => {
+    const nextQ = currentQ + 1;
+    setCurrentQ(nextQ);
+  };
 
   const renderResult = () =>
     loading ? (
       <p>Loading . . .</p>
     ) : questions.length ? (
-      questions.map((q, index) => {
-        const newQuestion = matches(q.question);
-        return (
-          <QACard
-            key={`q_${index}`}
-            question={newQuestion}
-            correct_answer={q.correct_answer}
-            incorrect_answers={q.incorrect_answers}
-          />
-        );
-      })
+      <QACard
+        question={matches(questions[currentQ].question)}
+        correct_answer={questions[currentQ].correct_answer}
+        incorrect_answers={questions[currentQ].incorrect_answers}
+        handleChange={nextQ}
+      />
     ) : (
       <p>Sorry, we don&apos;t have enough questions on that topic!</p>
     );
