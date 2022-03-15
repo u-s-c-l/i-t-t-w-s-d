@@ -2,9 +2,9 @@ import axios from "axios";
 
 const loading = (category) => ({ type: "LOADING", payload: category });
 
-const loadQuestions = (questions) => ({
+const loadQuestions = (questions, difficulty) => ({
   type: "GET_QUESTIONS",
-  payload: questions
+  payload: { questions, difficulty }
 });
 
 const getQuestions = ({ category, difficulty }) => {
@@ -16,13 +16,15 @@ const getQuestions = ({ category, difficulty }) => {
     music: 12
   };
   const catId = categoryMap[category];
+
   return async (dispatch) => {
     dispatch(loading(category));
+
     try {
       const { data } = await axios.get(
         `https://opentdb.com/api.php?amount=10&category=${catId}&difficulty=${difficulty}`
       );
-      dispatch(loadQuestions(data.results));
+      dispatch(loadQuestions(data.results, difficulty));
     } catch (err) {
       console.warn(err.message);
       dispatch({ type: "SET_ERROR", payload: err.message });

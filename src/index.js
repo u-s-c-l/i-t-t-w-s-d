@@ -5,17 +5,21 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import store from "./store";
 import { Provider } from "react-redux";
+import { BrowserRouter } from "react-router-dom";
 //import SocketProvider from "./components/SocketContext";
 
 // commented SocketProvider out until server deployed because need the server running at the same time for it to work :( 
 
+
 ReactDOM.render(
   <React.StrictMode>
+    <BrowserRouter>
     {/* <SocketProvider> */}
-    <Provider store={store}>
-      <App />
-    </Provider>
+      <Provider store={store}>
+        <App />
+      </Provider>
     {/* </SocketProvider> */}
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
 );
