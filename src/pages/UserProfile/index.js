@@ -1,5 +1,6 @@
 import React from "react";
 import { Settings } from "../../components";
+import Edit from "../../components/Edit";
 
 
 const UserProfile = () => {
@@ -10,6 +11,7 @@ const UserProfile = () => {
         {/* profile bio */}
         <div id="profile_buttons">
           <Settings/>
+          <Edit/>
         </div>
       </div>
     </>
