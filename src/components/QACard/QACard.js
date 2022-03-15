@@ -4,13 +4,14 @@ import Question from "../Question";
 import Answers from "../Answers";
 
 const QACard = (props) => {
-  const { question, correct_answer, incorrect_answers } = props;
+  const { question, correct_answer, incorrect_answers, handleChange } = props;
   return (
     <div>
       <Question question={question} />
       <Answers
         correct_answer={correct_answer}
         incorrect_answers={incorrect_answers}
+        handleChange={handleChange}
       />
     </div>
   );
@@ -19,7 +20,8 @@ const QACard = (props) => {
 QACard.propTypes = {
   question: PropTypes.string.isRequired,
   correct_answer: PropTypes.string.isRequired,
-  incorrect_answers: PropTypes.array.isRequired
+  incorrect_answers: PropTypes.array.isRequired,
+  handleChange: PropTypes.func.isRequired
 };
 
 export default QACard;
