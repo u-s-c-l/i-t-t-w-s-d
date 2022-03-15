@@ -41,6 +41,7 @@ const CreateGame = ({ getQuestions, startGame }) => {
                 id={consistentName}
                 name="category"
                 value={consistentName}
+                required
               />
             </div>
           );
@@ -53,7 +54,13 @@ const CreateGame = ({ getQuestions, startGame }) => {
               <label htmlFor={diff} className="capitalize">
                 {diff}
               </label>
-              <input type={"radio"} id={diff} name="difficulty" value={diff} />
+              <input
+                required
+                type={"radio"}
+                id={diff}
+                name="difficulty"
+                value={diff}
+              />
             </div>
           );
         })}
