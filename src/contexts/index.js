@@ -37,6 +37,31 @@ export const AuthProvider = ({ children }) => {
     });
   };
 
+  // const register = userData => {
+  //   return new Promise((resolve, reject) => {
+  //     try {
+  //       const options = {
+  //         headers: { "Content-Type": "application/json" }
+  //       };
+  //        axios.post(`${process.env.API_URL}/auth/register`, userData, options)
+  //        .then ((response) => { console.log(response.data)
+  //         //   if (data.err){
+  //         // throw Error(data.err);
+  //       })
+  //       .catch()
+  //        login(userData)
+  //       .then ((response) => { console.log(response.data)
+  //         //   if (data.err){
+  //         // throw Error(data.err);
+  //       })
+  //       .catch()
+  //       resolve("Registration successful");
+  //     } catch (err) {
+  //       reject(`Registration Error: ${err}`);
+  //     }
+  //   });
+  // };
+
   const login = userData => {
     return new Promise(async (resolve, reject) => {
       try {

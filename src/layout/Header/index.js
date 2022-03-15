@@ -1,13 +1,12 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { useAuthContext } from "../../contexts";
 
 const Header = () => {
   return (
     <>
       <nav className="bg-indigo-500 w-full h-24  ">
-        <NavLink exact to="/" activeClassName="active">
-          Home
-        </NavLink>
+        <NavLink exact to="/" activeClassName="active"> Home</NavLink>
         <NavLink activeClassName="current" to="/login">
           Login
         </NavLink>
