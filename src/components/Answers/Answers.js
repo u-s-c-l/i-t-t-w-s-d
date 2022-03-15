@@ -7,7 +7,7 @@ const Answers = ({ correct_answer, incorrect_answers, handleChange }) => {
   const allAnswers = [...incorrect_answers, correct_answer];
   const shuffledAns = shuffle(allAnswers);
   return (
-    <form onChange={handleChange}>
+    <form onChange={handleChange} aria-label="Answers Form">
       {shuffledAns.map((ans, index) => {
         const consistentName = ans.replaceAll(" ", "").toLowerCase();
         return (
