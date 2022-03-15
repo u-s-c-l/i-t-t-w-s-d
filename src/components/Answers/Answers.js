@@ -10,7 +10,7 @@ const Answers = ({ correct_answer, incorrect_answers, handleChange }) => {
       {shuffledAns.map((ans, index) => {
         const consistentName = ans.replaceAll(" ", "").toLowerCase();
         return (
-          <div key={{ consistentName }}>
+          <div key={consistentName}>
             <label htmlFor={consistentName}>{ans}</label>
             <input
               type={"radio"}
