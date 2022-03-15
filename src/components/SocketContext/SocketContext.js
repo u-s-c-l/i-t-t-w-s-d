@@ -6,17 +6,18 @@ import PropTypes from "prop-types";
 // this is to use the useSocket hook on required buttons
 const SocketContext = React.createContext();
 
-export const useSocket = useContext(SocketContext);
+export function useSocket() {
+  return useContext(SocketContext);
+}
 
 // this is for the SocketContext Provider 
 
 const SocketProvider = (props) => {
  
-
   const [socket, setSocket] = useState(null);
 
   useEffect(() => {
-    const ENDPOINT = "https://localhost:3003"; //server
+    const ENDPOINT = "https://localhost:3000"; //server
     const newSocket = io(ENDPOINT);
     setSocket(newSocket);
     return () => newSocket.close();
