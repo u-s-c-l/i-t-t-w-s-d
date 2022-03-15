@@ -1,5 +1,6 @@
 const initState = {
-  questions: []
+  questions: [],
+  difficulty: ""
 };
 
 const quizReducer = (state = initState, action) => {
@@ -9,7 +10,8 @@ const quizReducer = (state = initState, action) => {
     case "GET_QUESTIONS":
       return {
         ...state,
-        questions: action.payload,
+        questions: action.payload.questions,
+        difficulty: action.payload.difficulty,
         loading: false,
         error: false
       };
