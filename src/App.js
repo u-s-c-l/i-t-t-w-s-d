@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path={"/"} element={<></>} />
+        <Route path={"/"} element={<>hello world</>} />
         <Route path={"/quiz/*"} element={<QuizLanding />} />
         <Route path={"/quiz/create/*"} element={<Pages.Quiz />} />
       </Routes>
