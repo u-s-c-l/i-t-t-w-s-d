@@ -2,9 +2,8 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import getQuestions from "../../actions";
 import CreateGame from "../../components/CreateGame";
-import Question from "../../components/Question";
 import { decode } from "html-entities";
-import Answers from "../../components/Answers/Answers";
+import QACard from "../../components/QACard";
 
 const Quiz = () => {
   const questions = useSelector((state) => state.questions);
@@ -26,13 +25,12 @@ const Quiz = () => {
           newQuestion = q.question;
         }
         return (
-          <div key={`q_${index}`}>
-            <Question question={newQuestion} />
-            <Answers
-              correct_answer={q.correct_answer}
-              incorrect_answers={q.incorrect_answers}
-            />
-          </div>
+          <QACard
+            key={`q_${index}`}
+            question={newQuestion}
+            correct_answer={q.correct_answer}
+            incorrect_answers={q.incorrect_answers}
+          />
         );
       })
     ) : (
