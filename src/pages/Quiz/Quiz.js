@@ -1,31 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import getQuestions from "../../actions";
 import CreateGame from "../../components/CreateGame";
-import Question from "../../components/Question";
-import { decode } from "html-entities";
+import QACard from "../../components/QACard";
+import matches from "./helpers";
 
 const Quiz = () => {
   const questions = useSelector((state) => state.questions);
   const loading = useSelector((state) => state.loading);
   const error = useSelector((state) => state.error);
+  const [currentQ, setCurrentQ] = useState(0);
+  const [score, setScore] = useState(0);
+  const nextQ = (e) => {
+    const nextQ = currentQ + 1;
+    setCurrentQ(nextQ);
+    if (e.target.dataset.correct === "true") {
+      const newScore = score + 1;
+      setScore(newScore);
+    }
+  };
 
   const renderResult = () =>
     loading ? (
       <p>Loading . . .</p>
+    ) : currentQ === 10 ? (
+      <p>You got {score} points</p>
     ) : questions.length ? (
-      questions.map((q, index) => {
-        const matches = q.question.match(/&.+;/g);
-        let newQuestion;
-        if (matches) {
-          matches.forEach((entity) => {
-            newQuestion = q.question.replaceAll(entity, decode(entity));
-          });
-        } else {
-          newQuestion = q.question;
-        }
-        return <Question key={`q_${index}`} question={newQuestion} />;
-      })
+      <>
+        <QACard
+          question={matches(questions[currentQ].question)}
+          correct_answer={questions[currentQ].correct_answer}
+          incorrect_answers={questions[currentQ].incorrect_answers}
+          handleChange={nextQ}
+        />
+        <p>You have {score} points</p>
+      </>
     ) : (
       <p>Sorry, we don&apos;t have enough questions on that topic!</p>
     );
@@ -33,6 +42,7 @@ const Quiz = () => {
   const dispatch = useDispatch();
   const searchQs = ({ category, difficulty }) =>
     dispatch(getQuestions({ category, difficulty }));
+
   return (
     <>
       <CreateGame getQuestions={searchQs} />
