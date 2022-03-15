@@ -5,11 +5,21 @@ const Header = () => {
   return (
     <>
       <nav className="bg-indigo-500 w-full h-24  ">
-        <NavLink exact to="/" activeClassName="active">Home</NavLink>
-        <NavLink activeClassName='current' to='/login'>Login</NavLink>
-        <NavLink activeClassName='current' to='/register'>Register</NavLink>
-        <NavLink to="/about" activeClassName="active">About</NavLink>
-        <NavLink to="/userprofile" activeClassName="active">Profile</NavLink>
+        <NavLink exact to="/" activeClassName="active">
+          Home
+        </NavLink>
+        <NavLink activeClassName="current" to="/login">
+          Login
+        </NavLink>
+        <NavLink activeClassName="current" to="/register">
+          Register
+        </NavLink>
+        <NavLink to="/about" activeClassName="active">
+          About
+        </NavLink>
+        <NavLink to="/userprofile" activeClassName="active">
+          Profile
+        </NavLink>
       </nav>
     </>
   );

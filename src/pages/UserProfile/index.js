@@ -8,9 +8,9 @@ const UserProfile = () => {
         {/* profile picture */}
         {/* profile bio */}
         <div id="profile_buttons">
-          <Settings/>
-          <Edit/>
-          <Chat/>
+          <Settings />
+          <Edit />
+          <Chat />
         </div>
       </div>
     </>
