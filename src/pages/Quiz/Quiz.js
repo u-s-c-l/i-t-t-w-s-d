@@ -4,6 +4,7 @@ import getQuestions from "../../actions";
 import CreateGame from "../../components/CreateGame";
 import Question from "../../components/Question";
 import { decode } from "html-entities";
+import Answers from "../../components/Answers/Answers";
 
 const Quiz = () => {
   const questions = useSelector((state) => state.questions);
@@ -24,7 +25,15 @@ const Quiz = () => {
         } else {
           newQuestion = q.question;
         }
-        return <Question key={`q_${index}`} question={newQuestion} />;
+        return (
+          <div key={`q_${index}`}>
+            <Question question={newQuestion} />
+            <Answers
+              correct_answer={q.correct_answer}
+              incorrect_answers={q.incorrect_answers}
+            />
+          </div>
+        );
       })
     ) : (
       <p>Sorry, we don&apos;t have enough questions on that topic!</p>
