@@ -14,11 +14,11 @@ import { BrowserRouter } from "react-router-dom";
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-    {/* <SocketProvider> */}
+      {/* <SocketProvider> */}
       <Provider store={store}>
         <App />
       </Provider>
-    {/* </SocketProvider> */}
+      {/* </SocketProvider> */}
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")

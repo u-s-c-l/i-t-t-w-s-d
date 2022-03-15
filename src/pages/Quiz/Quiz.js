@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import getQuestions from "../../actions";
 import CreateGame from "../../components/CreateGame";
 import QACard from "../../components/QACard";
 import matches from "./helpers";
+// import {useSocket} from "../../components/SocketContext"
+
 
 const Quiz = () => {
   const questions = useSelector((state) => state.questions);
@@ -13,6 +15,8 @@ const Quiz = () => {
   const [currentQ, setCurrentQ] = useState(0);
   const [score, setScore] = useState(0);
   const [started, setStarted] = useState(0);
+  
+  // const socket = useSocket();
 
   const nextQ = (e) => {
     let points = 1;
@@ -52,6 +56,14 @@ const Quiz = () => {
   const dispatch = useDispatch();
   const searchQs = ({ category, difficulty }) =>
     dispatch(getQuestions({ category, difficulty }));
+
+  // useEffect(() => {
+  //   socket.on("game-over", (username, score) => {
+  //     dispatch(getResult(username, score))
+  //   })
+  // }, [socket])
+
+  // add getresult to reducer
 
   return (
     <>
