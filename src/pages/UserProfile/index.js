@@ -1,7 +1,5 @@
 import React from "react";
 import { Settings, Edit, Chat } from "../../components";
-import Edit from "../../components/Edit";
-
 
 const UserProfile = () => {
   return (
