@@ -45,6 +45,7 @@ const CreateGame = ({ getQuestions, startGame }) => {
             </div>
           );
         })}
+
         <h3 className="capitalize">Select a difficulty:</h3>
         {difficulties.map((diff, index) => {
           return (
@@ -56,6 +57,7 @@ const CreateGame = ({ getQuestions, startGame }) => {
             </div>
           );
         })}
+
         <input type={"submit"} value="Create Game!"></input>
       </form>
     </section>
