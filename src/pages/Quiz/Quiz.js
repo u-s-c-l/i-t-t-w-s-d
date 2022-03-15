@@ -2,8 +2,8 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import getQuestions from "../../actions";
 import CreateGame from "../../components/CreateGame";
-import { decode } from "html-entities";
 import QACard from "../../components/QACard";
+import matches from "./helpers";
 
 const Quiz = () => {
   const questions = useSelector((state) => state.questions);
@@ -15,15 +15,7 @@ const Quiz = () => {
       <p>Loading . . .</p>
     ) : questions.length ? (
       questions.map((q, index) => {
-        const matches = q.question.match(/&.+;/g);
-        let newQuestion;
-        if (matches) {
-          matches.forEach((entity) => {
-            newQuestion = q.question.replaceAll(entity, decode(entity));
-          });
-        } else {
-          newQuestion = q.question;
-        }
+        const newQuestion = matches(q.question);
         return (
           <QACard
             key={`q_${index}`}
@@ -40,6 +32,7 @@ const Quiz = () => {
   const dispatch = useDispatch();
   const searchQs = ({ category, difficulty }) =>
     dispatch(getQuestions({ category, difficulty }));
+
   return (
     <>
       <CreateGame getQuestions={searchQs} />
