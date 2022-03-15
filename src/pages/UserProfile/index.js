@@ -1,5 +1,5 @@
 import React from "react";
-import { Settings  } from "../../components";
+import { Settings, Edit, Chat } from "../../components";
 import Edit from "../../components/Edit";
 
 
