@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 // this is to use the useSocket hook on required buttons
 const SocketContext = React.createContext();
 
-export function useSocket() {
+export const useSocket = () => {
   return useContext(SocketContext);
 }
 
