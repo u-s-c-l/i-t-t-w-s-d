@@ -1,6 +1,7 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext } from "react";
+import PropTypes from "prop-types";
 import jwt_decode from "jwt-decode";
-import axios from 'axios';
+import axios from "axios";
 
 const AuthContext = React.createContext();
 
@@ -69,3 +70,8 @@ export const AuthProvider = ({ children }) => {
         </AuthContext.Provider>
     )
 }
+
+
+AuthProvider.propTypes = {
+  children: PropTypes.string.isRequired
+};
