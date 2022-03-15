@@ -5,7 +5,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import store from "./store";
 import { Provider } from "react-redux";
-import SocketProvider from "./components/SocketContext"
+import SocketProvider from "./components/SocketContext";
 
 ReactDOM.render(
   <React.StrictMode>

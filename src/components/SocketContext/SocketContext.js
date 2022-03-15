@@ -1,27 +1,29 @@
-import React, { useContext, useState, useEffect } from "react"
-import io from "socket.io-client"
+import React, { useContext, useState, useEffect } from "react";
+import io from "socket.io-client";
+import PropTypes from "prop-types";
 
 
 // this is to use the useSocket hook on required buttons
 const SocketContext = React.createContext();
 
-export const useSocket = useContext(SocketContext)
+export const useSocket = useContext(SocketContext);
 
 // this is for the SocketContext Provider 
 
 const SocketProvider = (props) => {
+ 
 
-  const [socket, setSocket] = useState(null)
+  const [socket, setSocket] = useState(null);
 
   useEffect(() => {
-    const ENDPOINT = "https://localhost:3003" //server
+    const ENDPOINT = "https://localhost:3003"; //server
     const newSocket = io(ENDPOINT);
-    setSocket(newSocket)
+    setSocket(newSocket);
     return () => newSocket.close();
-  }, [setSocket])
+  }, [setSocket]);
 
   if (!socket) {
-    return <div>Loading...</div>
+    return <div>Loading...</div>;
   }
 
   return (
@@ -29,7 +31,11 @@ const SocketProvider = (props) => {
     <SocketContext.Provider value={socket}>
       {props.children}
     </SocketContext.Provider>
-  )
-}
+  );
+};
 
-export default SocketProvider
+SocketProvider.propTypes = {
+  children: PropTypes.any
+};
+
+export default SocketProvider;
