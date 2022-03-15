@@ -61,7 +61,7 @@ const CreateGame = ({ getQuestions }) => {
 };
 
 CreateGame.propTypes = {
-  getQuestions: PropTypes.func
+  getQuestions: PropTypes.func.isRequired
 };
 
 export default CreateGame;
