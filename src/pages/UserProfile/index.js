@@ -1,5 +1,5 @@
 import React from "react";
-import { Settings } from "../../components";
+import { Settings  } from "../../components";
 import Edit from "../../components/Edit";
 
 
@@ -12,6 +12,7 @@ const UserProfile = () => {
         <div id="profile_buttons">
           <Settings/>
           <Edit/>
+          <Chat/>
         </div>
       </div>
     </>
