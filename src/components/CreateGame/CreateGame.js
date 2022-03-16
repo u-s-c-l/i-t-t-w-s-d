@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+// dispatch to create the game 
+
 const CreateGame = ({ getQuestions, startGame }) => {
   const categories = [
     "animals",

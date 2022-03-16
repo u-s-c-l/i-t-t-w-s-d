@@ -5,7 +5,7 @@ const initState = {
   room: "",
   username: "",
   // playerScores: [],
-  // loading: false, 
+  loading: false, 
   owner: false
 };
 
