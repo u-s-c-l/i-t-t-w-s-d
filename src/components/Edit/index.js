@@ -1,13 +1,15 @@
 import React from "react";
 
-const Edit = () => {
-  return (
-    <div>
-      <button id="edit_btn">
-        {/* <i className="fa-solid fa-user-pen"></i> */}
+const Edit = ({ onSubmit, children }) => (
+  <div className="card">
+    <form onSubmit={onSubmit}>
+      <h1>Profile Card</h1>
+      {children}
+      <button type="submit" className="save">
+        Save{" "}
       </button>
-    </div>
-  );
-};
+    </form>
+  </div>
+);
 
 export default Edit;
