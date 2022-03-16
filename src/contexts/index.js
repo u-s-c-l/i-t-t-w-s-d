@@ -22,7 +22,7 @@ export const AuthProvider = ({ children }) => {
   const register = async (userData) => {
     try {
       const options = {
-        headers: { "Content-Type": "application/json" , "authorization" : localStorage.getItem("token")}
+        headers: { "Content-Type": "application/json" }
       };
       const { data } = await axios.post(
         `${process.env.API_URL}/auth/register`,
@@ -42,7 +42,7 @@ export const AuthProvider = ({ children }) => {
   const login = async (userData) => {
     try {
       const options = {
-        headers: { "Content-Type": "application/json" , "authorization" : localStorage.getItem("token")}
+        headers: { "Content-Type": "application/json" }
       };
       const { data } = await axios.post(
         `${process.env.API_URL}/auth/login`,
