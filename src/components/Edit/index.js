@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const Edit = ({ onSubmit, children }) => (
   <div className="card">
@@ -12,4 +13,8 @@ const Edit = ({ onSubmit, children }) => (
   </div>
 );
 
+Edit.propTypes = {
+  onSubmit: PropTypes.func,
+  children: PropTypes.object
+};
 export default Edit;
