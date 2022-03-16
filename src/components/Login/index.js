@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const { login } = useAuthContext();
-  const history = useNavigate();
+  const navigate = useNavigate();
 
   const [formData, setFormData] = useState({ email: "", password: "" });
   const [error, setError] = useState();
@@ -18,7 +18,7 @@ const Login = () => {
     try {
       setLoading(true);
       await login(formData);
-      history.push("/home");
+      navigate("/home");
     } catch (err) {
       setLoading(false);
       setError(err);
