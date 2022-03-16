@@ -3,10 +3,10 @@ const initState = {
   difficulty: "",
   category: "",
   room: "",
-  username: ""
+  username: "",
   // playerScores: [],
   // loading: false, 
-  // admin: false
+  owner: false
 };
 
 const quizReducer = (state = initState, action) => {

@@ -1,5 +1,4 @@
 import React from "react";
-import QuizLanding from "./components/QuizLanding";
 import { Routes, Route } from "react-router-dom";
 import * as Pages from "./pages";
 
@@ -11,7 +10,8 @@ function App() {
     <div className="App">
       <Routes>
         <Route path={"/"} element={<>hello world</>} />
-        <Route path={"/quiz/*"} element={<QuizLanding />} /> 
+        {/* <Route path={"/quiz/*"} element={<QuizLanding />} /> */}
+        <Route exact path={"/quiz"} element={<Pages.QuizMenu />} />
         {/* This is the home page  */}
         <Route path={"/quiz/create/*"} element={<Pages.Quiz />} />
         {/* <Route path={"/quiz/create/*"} element={<Pages.CreateGame />} /> */}
