@@ -1,9 +1,11 @@
 const initState = {
   questions: [],
-  difficulty: ""
-  // room: "",
-  // playerScores: [],
-  // loading: false
+  difficulty: "",
+  category: "",
+  room: "",
+  playerScores: [],
+  loading: false, 
+  admin: false
 };
 
 const quizReducer = (state = initState, action) => {
