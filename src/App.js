@@ -3,10 +3,10 @@ import { Header, Footer } from "./layout";
 import QuizLanding from "./components/QuizLanding";
 import { Routes, Route } from "react-router-dom";
 import * as Pages from "./pages";
-import { useAuthContext } from "./contexts";
+// import { useAuthContext } from "./contexts";
 
 function App() {
-  const { currentUser } = useAuthContext();
+  // const { currentUser } = useAuthContext();
 
   return (
     <div className="App">
