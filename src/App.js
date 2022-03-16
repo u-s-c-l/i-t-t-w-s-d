@@ -12,12 +12,8 @@ function App() {
       <Routes>
         <Route path={"/"} element={<Pages.Home />} />
         <Route path={"/about"} element={<Pages.About />} />
-        <CustomRoutes.LoggedOutRoute path="/login">
-                        <Pages.About />
-                    </CustomRoutes.LoggedOutRoute>
-                    <CustomRoutes.LoggedOutRoute path="/register">
-                        <Pages.About />
-                    </CustomRoutes.LoggedOutRoute>
+        <CustomRoutes.LoggedOutRoute path="/login"><Pages.About /></CustomRoutes.LoggedOutRoute>
+        <CustomRoutes.LoggedOutRoute path="/register"><Pages.About /></CustomRoutes.LoggedOutRoute>
         <Route path={"/quiz/*"} element={<QuizLanding />} />
         <Route path={"/quiz/create/*"} element={<Pages.Quiz />} />
       </Routes>
