@@ -1,6 +1,6 @@
 import React from "react";
 
-const Settings = () => {
+const SettingsBtn = () => {
   return (
     <div>
       <button id="settings_btn">
@@ -10,4 +10,4 @@ const Settings = () => {
   );
 };
 
-export default Settings;
+export default SettingsBtn;
