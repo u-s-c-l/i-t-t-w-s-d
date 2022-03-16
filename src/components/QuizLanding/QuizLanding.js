@@ -4,7 +4,9 @@ import { Link } from "react-router-dom";
 const QuizLanding = () => {
   return (
     <>
-      <Link to="/quiz/create">Create a Game</Link>
+      <Link role="link" to="/quiz/create">
+        Create a Game
+      </Link>
     </>
   );
 };
