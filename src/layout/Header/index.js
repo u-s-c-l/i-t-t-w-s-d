@@ -10,7 +10,7 @@ const Header = () => {
         <nav>
           <NavLink exact to="/" activeClassName="active">Home</NavLink>
           <NavLink to="/about" activeClassName="active">About</NavLink>
-          {!currentUser ? 
+          { !currentUser ? 
             <>
               <NavLink activeClassName="current" to="/login">Login </NavLink>
               <NavLink activeClassName="current" to="/register">Register</NavLink>
