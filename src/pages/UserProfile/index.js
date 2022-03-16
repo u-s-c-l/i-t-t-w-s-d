@@ -1,7 +1,7 @@
 import React from "react";
 // import { Edit } from "../../components";
 import PropTypes from "prop-types";
-import { Edit } from "../../components";
+import { Edit, Status } from "../../components";
 
 const UserProfile = () => {
   const Name = ({ onChange, value }) => (
@@ -14,21 +14,6 @@ const UserProfile = () => {
         maxLength="25"
         value={value}
         placeholder="Alexa"
-        required
-      />
-    </div>
-  );
-
-  const Status = ({ onChange, value }) => (
-    <div className="field">
-      <label htmlFor="status">status:</label>
-      <input
-        id="status"
-        type="text"
-        onChange={onChange}
-        maxLength="35"
-        value={value}
-        placeholder="It's a nice day!"
         required
       />
     </div>
