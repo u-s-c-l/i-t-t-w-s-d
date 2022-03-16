@@ -6,7 +6,7 @@ const LeaderBoard = () => {
   const [scores, setScores] = useState();
   useEffect(async () => {
     const response = await axios.get(
-      "http://localhost:3003/scores/leadersboard"
+      "https://ultimate-quiz-game.herokuapp.com/scores/leadersboard"
     );
     setScores(response.data);
   }, []);
