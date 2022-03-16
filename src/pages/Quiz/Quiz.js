@@ -17,6 +17,9 @@ const Quiz = () => {
   const [started, setStarted] = useState(0);
   
   // const socket = useSocket();
+  // const score = useSelector(state=> state.score)
+  // const room = useSelector(state => state.room)
+  // const username = useSelector(state=> state.username)
 
   const nextQ = (e) => {
     let points = 1;

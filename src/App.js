@@ -11,6 +11,7 @@ function App() {
         <Route path={"/"} element={<>hello world</>} />
         <Route path={"/quiz/*"} element={<QuizLanding />} />
         <Route path={"/quiz/create/*"} element={<Pages.Quiz />} />
+        {/* <Route path={"/quiz/join/*"} element={<Pages.Join />} /> */}
       </Routes>
     </div>
   );
