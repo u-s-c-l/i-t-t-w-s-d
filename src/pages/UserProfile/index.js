@@ -1,5 +1,6 @@
 import React from "react";
 import { Edit } from "../../components";
+import PropTypes from "prop-types";
 
 const UserProfile = () => {
   const Name = ({ onChange, value }) => (
