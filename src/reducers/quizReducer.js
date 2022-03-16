@@ -22,10 +22,10 @@ const quizReducer = (state = initState, action) => {
         error: false
       };
     case "JOIN_PLAYER": {
-       return {
-         ...state,
-          username: action.payload.username,
-          room: action.payload.room
+      return {
+        ...state,
+        username: action.payload.username,
+        room: action.payload.room
       };
     }
     

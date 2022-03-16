@@ -11,11 +11,12 @@ function App() {
     <div className="App">
       <Routes>
         <Route path={"/"} element={<>hello world</>} />
-        <Route path={"/quiz/*"} element={<QuizLanding />} />
+        <Route path={"/quiz/*"} element={<QuizLanding />} /> 
+        {/* This is the home page  */}
         <Route path={"/quiz/create/*"} element={<Pages.Quiz />} />
         {/* <Route path={"/quiz/create/*"} element={<Pages.CreateGame />} /> */}
-        {/* <Route path={"/quiz/join/*"} element={<Pages.JoinGame />} /> */}
-        {/* <Route path={"/quiz/waiting/*"} element={<Pages.Waiting />} /> */}
+        <Route path={"/quiz/join/*"} element={<Pages.JoinGame />} />
+        <Route path={"/quiz/waiting/*"} element={<Pages.WaitingRoom />} />
         {/* <Route path={"/quiz/game/*"} element={<Pages.Game />} /> */}
         {/* <Route path={"/quiz/results/*"} element={<Pages.Results />} /> */}
       </Routes>

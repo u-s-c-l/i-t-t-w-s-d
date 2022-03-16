@@ -1,7 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { useHistory } from "react-router-dom";
-import { useSocket } from "../../contexts/SocketProvider";
+import  {useSocket} from "../../components/SocketContext/SocketContext";
 import { useDispatch } from "react-redux";
 import { joinPlayer } from "../../actions";
 
@@ -12,29 +11,30 @@ const JoinGame = () => {
 
   const socket = useSocket();
   const dispatch = useDispatch();
-  const history = useHistory();
+ 
 
-  const [username, setUsername] = useState("")
+  const [username, setUsername] = useState("username");
 
-  const [roomName, setRoomName] = useState("")
+  const [roomName, setRoomName] = useState("room");
 
-  const handleSubmit = () => {
-    socket.emit('join-game', roomName, username);
-    dispatch(joinPlayer(username, roomName));
-    history.push('/waiting');
-  }
 
   const handleNameInput = (e) => {
     e.preventDefault();
     const input = e.target.value;
     setUsername(input);
-  }
+  };
 
   const handleRoomInput = (e) => {
     const input = e.target.value;
     setRoomName(input);
   };
 
+  const handleSubmit = () => {
+    socket.emit("join-game", roomName, username);
+    console.log("joined game");
+    dispatch(joinPlayer(username, roomName));
+    // go to /waiting page
+  };
 
   return (
     <>
@@ -42,7 +42,6 @@ const JoinGame = () => {
       <form onSubmit={(e) => e.preventDefault()}>
         <input type="text" value={username} onChange={handleNameInput}></input>
         <input type="text" value={roomName} onChange={handleRoomInput}></input>
-
         <button type="submit" onClick={handleSubmit}>
           Join
         </button>

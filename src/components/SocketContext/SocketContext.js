@@ -10,9 +10,10 @@ export const useSocket = () => {
   return useContext(SocketContext);
 };
 
+
 // this is for the SocketContext Provider 
 
-const SocketProvider = (props) => {
+export const SocketProvider = (props) => {
  
   const [socket, setSocket] = useState(null);
 
@@ -39,4 +40,4 @@ SocketProvider.propTypes = {
   children: PropTypes.any
 };
 
-export default SocketProvider;
+
