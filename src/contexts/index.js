@@ -25,7 +25,7 @@ export const AuthProvider = ({ children }) => {
         headers: { "Content-Type": "application/json" }
       };
       const { data } = await axios.post(
-        `${process.env.API_URL}/auth/register`,
+        `${process.env.API_URL}auth/register`,
         userData,
         options
       );
@@ -45,7 +45,7 @@ export const AuthProvider = ({ children }) => {
         headers: { "Content-Type": "application/json" }
       };
       const { data } = await axios.post(
-        `${process.env.API_URL}/auth/login`,
+        `${process.env.API_URL}auth/login`,
         userData,
         options
       );
