@@ -1,5 +1,5 @@
 import React from "react";
-import { Edit } from "../../components";
+// import { Edit } from "../../components";
 import PropTypes from "prop-types";
 
 const UserProfile = () => {
@@ -10,7 +10,7 @@ const UserProfile = () => {
         id="name"
         type="text"
         onChange={onChange}
-        maxlength="25"
+        maxLength="25"
         value={value}
         placeholder="Alexa"
         required
@@ -61,7 +61,7 @@ const UserProfile = () => {
 
   return (
     <>
-      {active === "edit" ? (
+      {onclick === "edit" ? (
         <Edit onSubmit={this.handleSubmit}>
           <Name onChange={this.editName} value={name} />
           <Status onChange={this.editStatus} value={status} />
@@ -72,19 +72,14 @@ const UserProfile = () => {
     </>
   );
 };
-Profile.propTypes = {
-  onChange: PropTypes.func.isRequired
-};
-Name.propTypes = {
-  onChange: PropTypes.func.isRequired
-};
 
-Status.propTypes = {
-  onChange: PropTypes.func.isRequired
-};
-
-Edit.propTypes = {
-  onChange: PropTypes.func.isRequired
+UserProfile.propTypes = {
+  onChange: PropTypes.func,
+  onSubmit: PropTypes.func,
+  value: PropTypes.object,
+  name: PropTypes.any,
+  status: PropTypes.any,
+  children: PropTypes.object
 };
 
 export default UserProfile;
