@@ -11,7 +11,7 @@ export const LoggedOutRoute = ({ children }) => {
             !currentUser
                 ? children
                 : <Redirect to='/userprofile' /> }
-        </Route> )
+        </Route> ) 
 }
 
 
