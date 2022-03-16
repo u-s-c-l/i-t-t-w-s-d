@@ -12,6 +12,7 @@ const LeaderBoard = () => {
   }, []);
   return (
     <>
+      <h2>Leader Board</h2>
       {scores && (
         <table>
           <thead>
