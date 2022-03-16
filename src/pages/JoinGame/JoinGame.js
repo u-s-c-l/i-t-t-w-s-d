@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useSocket } from "../../contexts/SocketProvider";
 import { useDispatch } from "react-redux";
-import { loadPlayer } from "../../actions";
+import { joinPlayer } from "../../actions";
 
 
 const JoinGame = () => {
@@ -20,7 +20,8 @@ const JoinGame = () => {
 
   const handleSubmit = () => {
     socket.emit('join-game', roomName, username);
-    
+    dispatch(joinPlayer(username, roomName));
+    history.push('/waiting');
   }
 
   const handleNameInput = (e) => {

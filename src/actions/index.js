@@ -32,4 +32,11 @@ const getQuestions = ({ category, difficulty }) => {
   };
 };
 
+
+
+export const joinPlayer = (username, room) => ({
+  type: "JOIN_PLAYER",
+  payload: {username, room}
+});
+
 export default getQuestions;

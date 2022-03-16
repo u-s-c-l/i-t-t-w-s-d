@@ -3,9 +3,10 @@ const initState = {
   difficulty: "",
   category: "",
   room: "",
-  playerScores: [],
-  loading: false, 
-  admin: false
+  username: ""
+  // playerScores: [],
+  // loading: false, 
+  // admin: false
 };
 
 const quizReducer = (state = initState, action) => {
@@ -20,6 +21,15 @@ const quizReducer = (state = initState, action) => {
         loading: false,
         error: false
       };
+    case "JOIN_PLAYER": {
+       return {
+         ...state,
+          username: action.payload.username,
+          room: action.payload.room
+      };
+    }
+    
+
     case "SET_ERROR":
       return { ...state, error: action.payload, loading: false };
     default:
