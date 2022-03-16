@@ -1,5 +1,5 @@
 import React from "react";
-import { SettingsBtn, Edit, Chat } from "../../components";
+import { Edit } from "../../components";
 
 const UserProfile = () => {
   const Name = ({ onChange, value }) => (
