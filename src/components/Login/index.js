@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useAuthContext } from "../../contexts";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const { login } = useAuthContext();
-  const history = useHistory();
+  const history = useNavigate();
 
   const [formData, setFormData] = useState({ email: "", password: "" });
   const [error, setError] = useState();
