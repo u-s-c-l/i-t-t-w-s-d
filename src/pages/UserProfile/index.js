@@ -16,7 +16,7 @@ const UserProfile = () => {
           {/*  scores */}
           {/* premium button with div that has another button */}
 
-        </div> 
+        </div>
       </div>
     </>
   );
