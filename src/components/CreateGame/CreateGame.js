@@ -36,13 +36,15 @@ const CreateGame = ({ getQuestions, startGame }) => {
 
   return (
     <div className=" text-tblack">
-      <h2 className="text-2xl font-bold ">Create A Game</h2>
+      <h2 className="text-3xl font-semibold text-center text-torange p-5">
+        Create A Game
+      </h2>
       <form
         onSubmit={handleSubmit}
         aria-label="create game form"
-        className=" container flex flex-col space-y-4"
+        className=" container flex flex-col"
       >
-        <>
+        <div className={selected ? "hidden" : "flex flex-col space-y-4"}>
           <h3 className="capitalize text-center text-2xl font-medium">
             Select a category:
           </h3>
@@ -69,10 +71,10 @@ const CreateGame = ({ getQuestions, startGame }) => {
               </div>
             );
           })}
-        </>
+        </div>
 
         {selected > 0 && (
-          <>
+          <div className="space-y-4">
             <h3 className="capitalize text-center text-2xl font-medium">
               Select a difficulty:
             </h3>
@@ -97,15 +99,17 @@ const CreateGame = ({ getQuestions, startGame }) => {
                 </div>
               );
             })}
-          </>
+          </div>
         )}
         {selected === 2 && (
-          <input
-            aria-label="submit btn"
-            type={"submit"}
-            value="Start Game!"
-            className="capitalize bg-gradient-to-r from-tpink to-torange text-white py-3 text-center rounded-full font-bold w-60 mx-auto block opacity-70 cursor-pointer hover:opacity-100 disabled:hidden"
-          ></input>
+          <div>
+            <input
+              aria-label="submit btn"
+              type={"submit"}
+              value="Start Game!"
+              className="capitalize bg-gradient-to-r from-tpink to-torange text-white py-3 text-center rounded-full font-bold w-44 mx-auto block opacity-70 cursor-pointer hover:opacity-100 disabled:hidden mt-8"
+            ></input>
+          </div>
         )}
       </form>
     </div>
