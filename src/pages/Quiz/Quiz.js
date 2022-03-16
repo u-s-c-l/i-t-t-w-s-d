@@ -4,7 +4,7 @@ import getQuestions from "../../actions";
 import CreateGame from "../../components/CreateGame";
 import QACard from "../../components/QACard";
 import matches from "./helpers";
-// import {useSocket} from "../../components/SocketContext"
+
 
 
 const Quiz = () => {
@@ -16,10 +16,7 @@ const Quiz = () => {
   const [score, setScore] = useState(0);
   const [started, setStarted] = useState(0);
   
-  // const socket = useSocket();
-  // const score = useSelector(state=> state.score)
-  // const room = useSelector(state => state.room)
-  // const username = useSelector(state=> state.username)
+
 
   const nextQ = (e) => {
     let points = 1;
@@ -60,13 +57,7 @@ const Quiz = () => {
   const searchQs = ({ category, difficulty }) =>
     dispatch(getQuestions({ category, difficulty }));
 
-  // useEffect(() => {
-  //   socket.on("game-over", (username, score) => {
-  //     dispatch(getResult(username, score))
-  //   })
-  // }, [socket])
 
-  // add getresult to reducer
 
   return (
     <>

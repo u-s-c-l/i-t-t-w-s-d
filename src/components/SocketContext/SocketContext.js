@@ -10,7 +10,6 @@ export const useSocket = () => {
   return useContext(SocketContext);
 };
 
-
 // this is for the SocketContext Provider 
 
 export const SocketProvider = (props) => {
@@ -18,7 +17,7 @@ export const SocketProvider = (props) => {
   const [socket, setSocket] = useState(null);
 
   useEffect(() => {
-    const ENDPOINT = "https://localhost:3003"; //server
+    const ENDPOINT = "https://neon-reactor.herokuapp.com"; //server
     const newSocket = io(ENDPOINT);
     setSocket(newSocket);
     return () => newSocket.close();

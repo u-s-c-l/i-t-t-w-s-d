@@ -17,7 +17,6 @@ const JoinGame = () => {
 
   const [roomName, setRoomName] = useState("room");
 
-
   const handleNameInput = (e) => {
     e.preventDefault();
     const input = e.target.value;
@@ -30,7 +29,7 @@ const JoinGame = () => {
   };
 
   const handleSubmit = () => {
-    socket.emit("join-game", roomName, username);
+    socket.emit("join-room", roomName, username);
     console.log("joined game");
     dispatch(joinPlayer(username, roomName));
     // go to /waiting page
