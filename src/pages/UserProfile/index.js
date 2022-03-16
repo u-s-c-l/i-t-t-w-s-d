@@ -1,6 +1,7 @@
 import React from "react";
 // import { Edit } from "../../components";
 import PropTypes from "prop-types";
+import { Edit } from "../../components";
 
 const UserProfile = () => {
   const Name = ({ onChange, value }) => (
@@ -42,18 +43,6 @@ const UserProfile = () => {
         <div className="status">{status}</div>
         <button type="submit" className="edit">
           Edit Profile{" "}
-        </button>
-      </form>
-    </div>
-  );
-
-  const Edit = ({ onSubmit, children }) => (
-    <div className="card">
-      <form onSubmit={onSubmit}>
-        <h1>Profile Card</h1>
-        {children}
-        <button type="submit" className="save">
-          Save{" "}
         </button>
       </form>
     </div>
