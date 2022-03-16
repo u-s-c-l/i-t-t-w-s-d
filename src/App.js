@@ -1,25 +1,20 @@
 import React from "react";
-import { Switch, Route } from "react-router-dom";
 import { Header, Footer } from "./layout";
-import { About, Home, UserProfile } from "./pages";
+import QuizLanding from "./components/QuizLanding";
+import { Routes, Route } from "react-router-dom";
+import * as Pages from "./pages";
 
 function App() {
   return (
-    <>
+    <div className="App">
       <Header />
-      <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route path="/about">
-          <About />
-        </Route>
-        <Route path="/userprofile">
-          <UserProfile />
-        </Route>
-      </Switch>
+      <Routes>
+        <Route path={"/"} element={<Pages.Home />} />
+        <Route path={"/quiz/*"} element={<QuizLanding />} />
+        <Route path={"/quiz/create/*"} element={<Pages.Quiz />} />
+      </Routes>
       <Footer />
-    </>
+    </div>
   );
 }
 
