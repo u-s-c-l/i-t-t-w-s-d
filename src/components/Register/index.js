@@ -20,6 +20,7 @@ const Register = () => {
 
   const handleInput = (e) => {
     setPassword(formData.password);
+    setError();
     return setFormData((prev) => ({
       ...prev,
       [e.target.name]: e.target.value
@@ -29,7 +30,8 @@ const Register = () => {
     return (
       Object.values(formData).some((v) => !v) ||
       passwordNoMatch() ||
-      formData.username.length < 4
+      formData.username.length < 4 ||
+      error
     );
   };
   const passwordNoMatch = () => {
@@ -40,12 +42,17 @@ const Register = () => {
     e.preventDefault();
     try {
       setLoading(true);
-      await register(formData);
-      await login(formData);
-      navigate("/");
+      const registerTest = await register(formData);
+
+      if (typeof registerTest === "string") {
+        await login(formData);
+        navigate("/");
+      } else {
+        throw new Error("That username is already taken");
+      }
     } catch (err) {
       setLoading(false);
-      setError(err);
+      setError(err.message);
     }
   };
 
@@ -118,8 +125,16 @@ const Register = () => {
           value="Create Account"
         />
       </form>
-      {error && <div id="error">{error}</div>}
-      {loading && <div id="loading">Creating account . . .</div>}
+      {error && (
+        <div className="pb-4 text-center" id="error">
+          {error}
+        </div>
+      )}
+      {loading && (
+        <div className="pb-4 text-center" id="loading">
+          Creating account . . .
+        </div>
+      )}
       {/* <div>{wisdom}</div> */}
     </>
   );
