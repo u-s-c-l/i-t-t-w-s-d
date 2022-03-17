@@ -32,16 +32,18 @@ const UserProfile = () => {
 
   return (
     <>
-      {active === "edit" ? (
-        <Edit onSubmit={handleSubmit}>
-          <Name onChange={handleName} value={name} />
-          <Status onChange={handleStatus} value={status} />
-        </Edit>
-      ) : (
-        <Profile onSubmit={handleSubmit} name={name} status={status} />
-      )}
-      <SettingsBtn />
-      <Chat />
+      <form className="profile_form">
+        {active === "edit" ? (
+          <Edit onSubmit={handleSubmit}>
+            <Name onChange={handleName} value={name} />
+            <Status onChange={handleStatus} value={status} />
+          </Edit>
+        ) : (
+          <Profile onSubmit={handleSubmit} name={name} status={status} />
+        )}
+        <SettingsBtn />
+        <Chat />
+      </form>
     </>
   );
 };
