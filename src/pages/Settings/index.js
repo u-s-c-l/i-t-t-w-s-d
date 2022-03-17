@@ -128,7 +128,7 @@ const Settings = () => {
           </div>
         </ul>
       </div>
-      <a id="privacy_btn" href="#">
+      <a id="general_btn" href="#">
         <i className="fa fa-lock" onClick={() => setPrivacy((s) => !s)}>
           Privacy{" "}
         </i>{" "}
