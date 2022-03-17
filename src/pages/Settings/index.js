@@ -36,6 +36,20 @@ const Settings = () => {
             </div>
           </div>
           <li>Option 2</li>
+          <div className="m-4">
+            <div className="toggle colour">
+              <input
+                id="profile1"
+                className="toggle-checkbox hidden"
+                type="checkbox"
+              ></input>
+              <label
+                htmlFor="profile1"
+                className="toggle-label block w-12 h-6 rounded-full transition-color duration-150 ease-out"
+              ></label>
+            </div>
+          </div>
+
           <li>Option 3</li>
           <li>Option 4</li>
         </ul>
