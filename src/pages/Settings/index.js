@@ -64,7 +64,7 @@ const Settings = () => {
               ></label>
             </div>
           </div>
-          <li>Option 4</li>
+          <li>Change Username</li>
           <div className="m-4">
             <div className="toggle colour">
               <input
