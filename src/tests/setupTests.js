@@ -1,7 +1,7 @@
 import React from "react";
 import "@testing-library/jest-dom/extend-expect";
 
-import { render, screen } from "@testing-library/react";
+import { render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import { Provider } from "react-redux";
@@ -36,6 +36,6 @@ const renderWithProviders = (ui, options = {}) => {
 };
 
 global.React = React;
-global.screen = screen;
+global.render = render;
 global.renderWithProviders = renderWithProviders;
 global.userEvent = userEvent;
