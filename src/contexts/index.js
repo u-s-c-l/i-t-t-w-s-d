@@ -51,11 +51,13 @@ export const AuthProvider = ({ children }) => {
         userData,
         options
       );
+      console.log(data);
       if (!data.success) {
         throw new Error("Login not authorised");
       }
       localStorage.setItem("token", data.token);
       const user = jwt_decode(data.token);
+      console.log(user);
       setCurrentUser(user);
       return "Login successful";
     } catch (err) {
