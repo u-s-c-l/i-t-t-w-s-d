@@ -16,8 +16,8 @@ const JoinWR = () => {
       dispatch(loadGameMode());
       history("/quiz/game");
     });
-  }),
-    [socket];
+  }, [socket]);
+ 
 
   return (
     <div data-testid="joinWR">
