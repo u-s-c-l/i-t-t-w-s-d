@@ -5,7 +5,7 @@ const Chat = () => {
     <div>
       <a id="chat_btn" href="/pages/ChatRoom">
         <i className="fa-solid fa-hand-holding-heart"></i>
-      </button>
+      </a>
     </div>
   );
 };
