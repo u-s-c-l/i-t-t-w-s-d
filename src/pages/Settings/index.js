@@ -25,12 +25,12 @@ const Settings = () => {
           <div className="m-4">
             <div className="toggle colour">
               <input
-                id="check3"
+                id="profile1"
                 className="toggle-checkbox hidden"
                 type="checkbox"
               ></input>
               <label
-                htmlFor="check3"
+                htmlFor="profile1"
                 className="toggle-label block w-12 h-6 rounded-full transition-color duration-150 ease-out"
               ></label>
             </div>
