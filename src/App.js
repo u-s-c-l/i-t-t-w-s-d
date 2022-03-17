@@ -1,5 +1,5 @@
 import React from "react";
-import { Header, Footer } from "./layout";
+import { Header } from "./layout";
 import QuizLanding from "./components/QuizLanding";
 import { Routes, Route } from "react-router-dom";
 import * as Pages from "./pages";
@@ -28,7 +28,6 @@ function App() {
         <Route path={"/quiz/*"} element={<QuizLanding />} />
         <Route path={"/quiz/create/*"} element={<Pages.Quiz />} />
       </Routes>
-      <Footer />
     </div>
   );
 }
