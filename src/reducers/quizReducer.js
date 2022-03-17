@@ -33,6 +33,13 @@ const quizReducer = (state = initState, action) => {
         loading: false,
         error: false
       };
+    case "LOAD_QUESTIONS":
+      return {
+        ...state,
+        NoOfQus: action.payload.NoOfQus,
+        difficulty: action.payload.diff
+      };
+
     case "JOIN_PLAYER": {
       return {
         ...state,
@@ -40,6 +47,7 @@ const quizReducer = (state = initState, action) => {
         room: action.payload.room
       };
     }
+    
 
     case "SET_ERROR":
       return { ...state, error: action.payload, loading: false };
