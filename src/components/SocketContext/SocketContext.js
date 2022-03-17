@@ -3,7 +3,7 @@ import io from "socket.io-client";
 import PropTypes from "prop-types";
 
 
-// this is to use the useSocket hook on required buttons
+// this is to use the useSocket hook where required
 const SocketContext = React.createContext();
 
 export const useSocket = () => {
@@ -17,7 +17,7 @@ export const SocketProvider = (props) => {
   const [socket, setSocket] = useState(null);
 
   useEffect(() => {
-    const ENDPOINT = "https://ultimate-quiz-game-sock.herokuapp.com/"; //server
+    const ENDPOINT = "https://ultimate-quiz-game-sock.herokuapp.com/"; 
     const newSocket = io(ENDPOINT);
     setSocket(newSocket);
     return () => newSocket.close();

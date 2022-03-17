@@ -3,6 +3,7 @@ import { useState } from "react";
 import  {useSocket} from "../../components/SocketContext/SocketContext";
 import { useDispatch } from "react-redux";
 import { joinPlayer } from "../../actions";
+import { useNavigate } from "react-router-dom";
 
 
 const JoinGame = () => {
@@ -11,6 +12,7 @@ const JoinGame = () => {
 
   const socket = useSocket();
   const dispatch = useDispatch();
+  const history = useNavigate();
  
 
   const [username, setUsername] = useState("username");
@@ -32,7 +34,7 @@ const JoinGame = () => {
     socket.emit("join-room", roomName, username);
     console.log("joined game");
     dispatch(joinPlayer(username, roomName));
-    // go to /waiting page
+    history("/quiz/waiting");
   };
 
   return (
