@@ -24,7 +24,8 @@ const CreateGame = ({ getQuestions, startGame }) => {
   const handleNameInput = (e) => {
   const value = e.target.value;
   setNameInput(value);
-
+  }
+  
   const handleSubmit = (e) => {
     e.preventDefault();
 
