@@ -16,12 +16,18 @@ const Register = () => {
   const [error, setError] = useState();
   const [loading, setLoading] = useState(false);
 
-  const handleInput = (e) =>
-    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-  const formIncomplete = () =>
-    Object.values(formData).some((v) => !v) || passwordNoMatch();
-  const passwordNoMatch = () =>
-    formData.password !== formData.passwordConfirmation;
+  const handleInput = (e) => {
+    return setFormData((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value
+    }));
+  };
+  const formIncomplete = () => {
+    return Object.values(formData).some((v) => !v) || passwordNoMatch();
+  };
+  const passwordNoMatch = () => {
+    return formData.password !== formData.passwordConfirmation;
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
