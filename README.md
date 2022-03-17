@@ -52,8 +52,8 @@ This server is continuosly deployed on [Netlify](https://ultimate-quiz-game.netl
 
 - [node.js 🔗](https://nodejs.org/)
 - [Jest 🔗](https://jestjs.io/)
-- [React]()
-- [Tailwind]()
-- [Socket.io]()
+- [React 🔗](https://reactjs.org/)
+- [Tailwind 🔗](https://tailwindcss.com/)
+- [Socket.io 🔗](https://socket.io/)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
