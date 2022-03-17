@@ -79,15 +79,13 @@ const CreateGame = ({ getQuestions, startGame }) => {
         );
       })}
       <input
-        type="text"
+        type={"text"}
         value={roomInput}
         onChange={handleRoomInput}
         required
       />
       <input
-        className="inp-player d-flex justify-content-end"
-        type="text"
-        maxLength="20"
+        type={"text"}
         value={nameInput}
         onChange={handleNameInput}
         required
