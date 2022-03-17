@@ -98,7 +98,7 @@ const Settings = () => {
               ></label>
             </div>
           </div>
-          <li>Game Notifications</li>
+          <li>Anonymous mode </li>
           <div className="m-4">
             <div className="toggle colour">
               <input
