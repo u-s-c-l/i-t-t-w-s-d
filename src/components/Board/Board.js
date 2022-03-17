@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 const Board = ({ data }) => {
   const { cat, username, score } = data;
   return (
-    <tbody>
+    <tbody role="table">
       <tr>
         <td>{cat}</td>
         <td>{username}</td>
