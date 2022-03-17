@@ -18,7 +18,7 @@ function About() {
   const buttonStyle = "w-1/2 text-xl p-2 ";
 
   return (
-    <>
+    <section className="pb-8">
       <h1 className="capitalize text-center text-4xl font-bold text-slate-50">
         I thought this was speed dating
       </h1>
@@ -36,7 +36,7 @@ function About() {
           feel that I never was a greater artist than now.
         </p>
       </div>
-      <div className="m-8 rounded-lg overflow-hidden bg-slate-50 border-2 border-tblack">
+      <div className="m-8 mb-0 rounded-lg overflow-hidden bg-slate-50 border-2 border-tblack">
         <div className="flex justify-between">
           <button
             className={
@@ -64,7 +64,7 @@ function About() {
         {openLogin && <Login />}
         {openRegister && <Register />}
       </div>
-    </>
+    </section>
   );
 }
 
