@@ -57,7 +57,6 @@ export const AuthProvider = ({ children }) => {
       }
       localStorage.setItem("token", data.token);
       const user = jwt_decode(data.token);
-      console.log(user);
       setCurrentUser(user);
       return "Login successful";
     } catch (err) {
