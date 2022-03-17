@@ -1,10 +1,10 @@
 import React from "react";
 import { useState } from "react";
-import { useSocket } from "../../components/SocketContext/SocketContext";
+import { useSocket } from "../../contexts/SocketContext/SocketContext";
 import { useDispatch } from "react-redux";
 import { joinPlayer } from "../../actions";
 import { useNavigate } from "react-router-dom";
-import { useAuthContext } from "../../contexts";
+import { useAuthContext } from "../../contexts/AuthContext";
 
 const JoinGame = () => {
   // need username and room to join a game with socket

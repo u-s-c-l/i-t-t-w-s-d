@@ -2,7 +2,7 @@ import React from "react";
 import { Header } from "./layout";
 import { Routes, Route } from "react-router-dom";
 import * as Pages from "./pages";
-import { useAuthContext } from "./contexts";
+import { useAuthContext } from "./contexts/AuthContext";
 
 function App() {
   const { currentUser } = useAuthContext();
@@ -35,7 +35,7 @@ function App() {
             <Route path={"/quiz/results/*"} element={<Pages.Results />} />
           </>
         )}
-        {/* <Route element={<Pages.NotFound />} /> */}
+        <Route path="/*" element={<Pages.NotFound />} />
       </Routes>
     </div>
   );
