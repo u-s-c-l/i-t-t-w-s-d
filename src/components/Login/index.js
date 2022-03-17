@@ -31,7 +31,7 @@ const Login = () => {
         id="form-registration"
         onSubmit={handleSubmit}
         aria-label="register"
-        className="p-4"
+        className="p-4 flex flex-col items-center"
       >
         <div>
           <h3 className="text-3xl mr-20">What is your username?</h3>
@@ -43,7 +43,7 @@ const Login = () => {
             placeholder="Enter username"
             required
             className={
-              "peer border-b-2 border-tblack font-extralight pb-1 mt-4 w-full focus:outline-none focus:border-green-500 focus:invalid:border-tpink"
+              "peer border-b-2 border-tblack font-extralight p-1 mt-4 w-full focus:outline-none focus:border-green-500 focus:invalid:border-tpink"
             }
           />
         </div>
@@ -56,13 +56,13 @@ const Login = () => {
             onChange={handleInput}
             placeholder="Password"
             required
-            className="peer border-b-2 border-tblack font-extralight pb-1 mt-4 w-full focus:outline-none focus:border-green-500 focus:invalid:border-tpink"
+            className="peer border-b-2 border-tblack font-extralight p-1 mt-4 w-full focus:outline-none focus:border-green-500 focus:invalid:border-tpink"
           />
         </div>
         <input
           type="submit"
           className={
-            "disabled:opacity-0 bg-gradient-to-r from-tpink to-torange text-white py-3 text-center rounded-full font-bold w-60 transition-opacity duration-300"
+            "disabled:opacity-0 bg-gradient-to-r from-tpink to-torange text-white py-3 text-center rounded-full font-bold w-60 transition-opacity duration-300 mt-4"
           }
           disabled={formIncomplete()}
           value="Login"

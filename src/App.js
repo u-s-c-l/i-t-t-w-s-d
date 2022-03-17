@@ -9,7 +9,7 @@ function App() {
   const { currentUser } = useAuthContext();
 
   return (
-    <div className="App">
+    <div className="App bg-gradient-to-r from-tpink to-torange min-h-screen">
       <Header />
       <Routes>
         <Route path={"/"} element={<Pages.Home />} />
