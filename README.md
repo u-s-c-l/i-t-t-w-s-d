@@ -1,4 +1,6 @@
-# I thought this was speed dating: AN ONLINE INTERACTIVE QUIZ GAME PLATFORM
+# I THOUGHT THIS WAS SPED DATING:
+
+## an online quiz game platform.
 
 <!-- badges -->
 
