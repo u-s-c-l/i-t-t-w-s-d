@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import PropTypes from "prop-types";
 
 // dispatch to create the game 
@@ -13,6 +13,9 @@ const CreateGame = ({ getQuestions, startGame }) => {
   ];
 
   const difficulties = ["easy", "medium", "hard"];
+
+  const [roomInput, setRoomInput] = useState("bobs house");
+  const [nameInput, setNameInput] = useState("bob");
 
   const handleSubmit = (e) => {
     e.preventDefault();
