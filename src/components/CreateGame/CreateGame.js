@@ -1,8 +1,19 @@
-import React, { useState } from "react";
-import PropTypes from "prop-types";
+import React, {useState} from "react";
+import { useDispatch } from "react-redux";
+import { createGame } from "../../actions";
+import { useNavigate } from "react-router-dom";
 
-const CreateGame = ({ getQuestions, startGame }) => {
+// dispatch to create the game 
+
+const CreateGame = () => {
+
+  const dispatch = useDispatch();
+  const history = useNavigate();
+
+
+
   const [selected, setSelected] = useState(0);
+
 
   const categories = [
     "animals",
@@ -14,12 +25,29 @@ const CreateGame = ({ getQuestions, startGame }) => {
 
   const difficulties = ["easy", "medium", "hard"];
 
+
+  // Name input is for testing - will use localstorage
+
+  const [roomInput, setRoomInput] = useState("bobs house");
+  const [nameInput, setNameInput] = useState("bob");
+
+  const handleRoomInput = (e) => {
+    const value = e.target.value;
+    setRoomInput(value);
+  };
+  const handleNameInput = (e) => {
+    const value = e.target.value;
+    setNameInput(value);
+  };
+
+
   const setFirstInput = () => {
     setSelected(1);
   };
   const setSecondInput = () => {
     setSelected(2);
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -30,8 +58,8 @@ const CreateGame = ({ getQuestions, startGame }) => {
     const difficulties = Array.from(e.target.difficulty);
     const selectDiff = difficulties.filter((diff) => diff.checked === true);
     const diffValue = selectDiff[0].value;
-    getQuestions({ category: catValue, difficulty: diffValue });
-    startGame();
+    dispatch(createGame(roomInput, catValue, diffValue, nameInput));
+    history("/quiz/waiting");
   };
 
   return (
@@ -101,6 +129,30 @@ const CreateGame = ({ getQuestions, startGame }) => {
             })}
           </div>
         )}
+        <label htmlFor={roomInput} className="capitalize">
+        Username: 
+        </label>
+        <input
+          type={"text"}
+          value={nameInput}
+          onChange={handleNameInput}
+          required
+        />
+        <label htmlFor={roomInput} className="capitalize">
+          Room Name:  
+        </label>
+        <input
+          type={"text"}
+          id={roomInput}
+          value={roomInput}
+          onChange={handleRoomInput}
+          required
+        />
+        <input
+          aria-label="submit btn"
+          type={"submit"}
+          value="Create Game!"
+        ></input>
         {selected === 2 && (
           <div>
             <input
@@ -116,9 +168,9 @@ const CreateGame = ({ getQuestions, startGame }) => {
   );
 };
 
-CreateGame.propTypes = {
-  getQuestions: PropTypes.func.isRequired,
-  startGame: PropTypes.func.isRequired
-};
+// CreateGame.propTypes = {
+//   getQuestions: PropTypes.func.isRequired,
+//   startGame: PropTypes.func.isRequired
+// };
 
 export default CreateGame;
