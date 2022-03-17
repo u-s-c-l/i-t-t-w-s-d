@@ -44,7 +44,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --setupFilesAfterEnv ./src/tests/setupTests.js",
+    "coverage": "react-scripts test --setupFilesAfterEnv ./src/tests/setupTests.js --coverage --watchAll",
     "eject": "react-scripts eject"
   },
   "browserslist": {
