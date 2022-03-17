@@ -43,7 +43,7 @@ const Login = () => {
             placeholder="Enter username"
             required
             className={
-              "peer border-b-2 border-tblack font-extralight pb-1 mt-4 w-full focus:outline-none focus:border-green-500 focus:invalid:border-tpink"
+              "peer border-b-2 border-tblack font-extralight p-1 mt-4 w-full focus:outline-none focus:border-green-500 focus:invalid:border-tpink"
             }
           />
         </div>
@@ -56,7 +56,7 @@ const Login = () => {
             onChange={handleInput}
             placeholder="Password"
             required
-            className="peer border-b-2 border-tblack font-extralight pb-1 mt-4 w-full focus:outline-none focus:border-green-500 focus:invalid:border-tpink"
+            className="peer border-b-2 border-tblack font-extralight p-1 mt-4 w-full focus:outline-none focus:border-green-500 focus:invalid:border-tpink"
           />
         </div>
         <input

@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 // import { Wisdom } from "../../contexts"
 
 const Register = () => {
-  const [password, setPassword] = useState();
+  const [password, setPassword] = useState("");
 
   let navigate = useNavigate();
   const { register, login } = useAuthContext();
@@ -67,7 +67,7 @@ const Register = () => {
             placeholder="Enter username"
             required
             className={
-              "peer border-b-2 border-tblack font-extralight pb-1 mt-4 w-full focus:outline-none focus:border-green-500 focus:invalid:border-tpink"
+              "peer border-b-2 border-tblack font-extralight p-1 mt-4 w-full focus:outline-none focus:border-green-500 focus:invalid:border-tpink"
             }
             pattern={"([0-9]|[A-Z]|[a-z]){4,20}"}
           />
@@ -86,7 +86,7 @@ const Register = () => {
             placeholder="Password"
             pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,30}$"
             required
-            className="peer border-b-2 border-tblack font-extralight pb-1 mt-4 w-full focus:outline-none focus:border-green-500 focus:invalid:border-tpink"
+            className="peer border-b-2 border-tblack font-extralight p-1 mt-4 w-full focus:outline-none focus:border-green-500 focus:invalid:border-tpink"
           />
           <p className="invisible peer-invalid:visible text-tpink text-xs font-thin">
             The password must contain a between 8 and thirty characters, at
@@ -101,7 +101,7 @@ const Register = () => {
             value={formData.passwordConfirmation}
             onChange={handleInput}
             placeholder="Confirm Password"
-            className="peer border-b-2 border-tblack font-extralight pb-1 mt-4 w-full focus:outline-none focus:border-green-500 focus:invalid:border-tpink"
+            className="peer border-b-2 border-tblack font-extralight p-1 mt-4 w-full focus:outline-none focus:border-green-500 focus:invalid:border-tpink"
             required
             pattern={password}
           />
