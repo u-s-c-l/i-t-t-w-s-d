@@ -14,7 +14,7 @@ function App() {
       <Routes>
         <Route path={"/"} element={<Pages.Home />} />
         <Route path={"/about"} element={<Pages.About />} />
-
+        <Route path={"/settings"} element={<Pages.Settings />} />
         {/* {!currentUser ? (
           <>
             <Route path={"/login"} element={<Pages.About />} />
