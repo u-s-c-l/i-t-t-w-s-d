@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate} from "react-router";
+import { useNavigate } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
-import { useSocket} from "../SocketContext/SocketContext";
+import { useSocket } from "../SocketContext/SocketContext";
 import { loadGameMode } from "../../actions";
-
 
 const CreateWR = () => {
   const history = useNavigate();
@@ -12,12 +11,12 @@ const CreateWR = () => {
   const room = useSelector((state) => state.room);
   const username = useSelector((state) => state.username);
   const difficulty = useSelector((state) => state.difficulty);
-  const numQ = useSelector((state) => state.numQ);
+  const currentQ = useSelector((state) => state.currentQ);
   const questions = useSelector((state) => state.questions);
   const [newPlayers, setNewPlayers] = useState([]);
 
   const handleNext = () => {
-    socket.emit("start-game", room, difficulty, numQ, questions);
+    socket.emit("start-game", room, difficulty, currentQ, questions);
     history("/quiz/game");
   };
 
@@ -32,15 +31,12 @@ const CreateWR = () => {
     });
   }, [socket]);
 
-
   return (
-    <div >
+    <div>
       <div>
         {newPlayers.length === 0 ? (
           <>
-            <h2>
-              Waiting for others players to join the game
-            </h2>
+            <h2>Waiting for others players to join the game</h2>
           </>
         ) : (
           <div>
@@ -51,9 +47,7 @@ const CreateWR = () => {
           </div>
         )}
       </div>
-      <a onClick={handleNext}>
-        Play Game
-      </a>
+      <a onClick={handleNext}>Play Game</a>
     </div>
   );
 };

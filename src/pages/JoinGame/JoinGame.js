@@ -14,7 +14,6 @@ const JoinGame = () => {
   const dispatch = useDispatch();
   const history = useNavigate();
  
-
   const [username, setUsername] = useState("bab");
 
   const [roomName, setRoomName] = useState("bobs house");

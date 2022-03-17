@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate} from "react-router";
+import { useNavigate } from "react-router";
 import { recordAnswer } from "../../actions";
 import { Container, Row, Col } from "reactstrap";
 import { shuffle, matches } from "./helpers";
@@ -8,7 +8,7 @@ import { shuffle, matches } from "./helpers";
 const TheQuestions = () => {
   const dispatch = useDispatch();
   const history = useNavigate();
-  const numQ = useSelector((state) => state.numQ);
+  const currentQ = useSelector((state) => state.currentQ);
   const index = useSelector((state) => state.index);
   const set = useSelector((state) => state.questions[index]);
   const score = useSelector((state) => state.score);
@@ -17,9 +17,9 @@ const TheQuestions = () => {
   const answers = shuffle(set.answers);
   const difficulty = useSelector((state) => state.difficulty);
 
-  const callNextQuestion = (curScore) => {
+  const nextQ = (curScore) => {
     dispatch(recordAnswer(curScore));
-    if (index === numQ - 1) {
+    if (index === currentQ - 1) {
       history("/quiz/results");
     }
   };
@@ -36,23 +36,22 @@ const TheQuestions = () => {
       curScore = answer === cAnswer ? 3 : 0;
     }
 
-    callNextQuestion(curScore);
+    nextQ(curScore);
   };
-
 
   return (
     <div>
       <div>
         <h2>
-          QUESTION {index + 1} / {numQ}
+          QUESTION {index + 1} / {currentQ}
         </h2>
 
         <div>
-          <p > {matches(question)} </p>
+          <p> {matches(question)} </p>
         </div>
 
         <Container>
-          <Row >
+          <Row>
             <Col>
               <button
                 key={answers[0].answer}
@@ -70,10 +69,9 @@ const TheQuestions = () => {
               </button>
             </Col>
           </Row>
-          <Row >
+          <Row>
             <Col>
               <button
-
                 key={answers[2].answer}
                 onClick={() => handleAnswerSelect(answers[2].answer)}
               >
@@ -91,7 +89,7 @@ const TheQuestions = () => {
           </Row>
         </Container>
 
-        <div >
+        <div>
           <label> You have {score} points </label>
         </div>
       </div>

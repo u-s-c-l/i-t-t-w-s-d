@@ -4,10 +4,10 @@ const initState = {
   category: "",
   room: "",
   username: "",
-  loading: false, 
+  loading: false,
   owner: false,
   score: 0,
-  numQ: 0,
+  currentQ: 0,
   finishQuiz: false,
   index: 0,
   multiplayer: false,
@@ -23,16 +23,16 @@ const quizReducer = (state = initState, action) => {
         category: action.payload.category,
         difficulty: action.payload.difficulty,
         username: action.payload.username,
-        numQ: action.payload.numQ,
+        currentQ: action.payload.currentQ,
         owner: true
       };
     }
     case "LOAD_QUESTIONS": {
       const matchedQuestions = action.payload.map((a) => {
         const answers = [...a.incorrect_answers, a.correct_answer];
-        const eachAnswer = answers.map((b)=> 
-        {let obj = {};
-          obj["answer"]=b;
+        const eachAnswer = answers.map((b) => {
+          let obj = {};
+          obj["answer"] = b;
           return obj;
         });
         a["answers"] = eachAnswer;
@@ -51,7 +51,7 @@ const quizReducer = (state = initState, action) => {
     case "LOAD_SETTINGS":
       return {
         ...state,
-        numQ: action.payload.qnum,
+        currentQ: action.payload.qnum,
         difficulty: action.payload.difficulty
       };
 
@@ -65,7 +65,7 @@ const quizReducer = (state = initState, action) => {
     case "RECORD_ANSWER": {
       const newIndex = state.index + 1;
       const newScore = state.score + action.payload;
-      const finish = newIndex === state.numQ ? true : false;
+      const finish = newIndex === state.currentQ ? true : false;
       return { ...state, score: newScore, index: newIndex, finishQuiz: finish };
     }
     case "RECORD_PLAYER_RESULT": {
