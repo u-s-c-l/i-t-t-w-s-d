@@ -27,24 +27,43 @@ const Login = () => {
 
   return (
     <>
-      <form onSubmit={handleSubmit} aria-label="login">
-        <input
-          type="username"
-          name="username"
-          value={formData.username}
-          onChange={handleInput}
-          placeholder="Username"
-        />
-        <input
-          type="password"
-          name="password"
-          value={formData.password}
-          onChange={handleInput}
-          placeholder="Password"
-        />
+      <form
+        id="form-registration"
+        onSubmit={handleSubmit}
+        aria-label="register"
+        className="p-4"
+      >
+        <div>
+          <h3 className="text-3xl mr-20">What is your username?</h3>
+          <input
+            type="text"
+            name="username"
+            value={formData.username}
+            onChange={handleInput}
+            placeholder="Enter username"
+            required
+            className={
+              "peer border-b-2 border-tblack font-extralight pb-1 mt-4 w-full focus:outline-none focus:border-green-500 focus:invalid:border-tpink"
+            }
+          />
+        </div>
+        <div>
+          <h3 className="text-3xl mr-20">What is your password?</h3>
+          <input
+            type="password"
+            name="password"
+            value={formData.password}
+            onChange={handleInput}
+            placeholder="Password"
+            required
+            className="peer border-b-2 border-tblack font-extralight pb-1 mt-4 w-full focus:outline-none focus:border-green-500 focus:invalid:border-tpink"
+          />
+        </div>
         <input
           type="submit"
-          className={formIncomplete() ? "disabled" : "enabled"}
+          className={
+            "disabled:opacity-0 bg-gradient-to-r from-tpink to-torange text-white py-3 text-center rounded-full font-bold w-60 transition-opacity duration-300"
+          }
           disabled={formIncomplete()}
           value="Login"
         />
