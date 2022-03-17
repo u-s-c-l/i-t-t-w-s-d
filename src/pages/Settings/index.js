@@ -82,10 +82,7 @@ const Settings = () => {
           Privacy{" "}
         </i>{" "}
       </a>
-      <div
-        className="privacy-dropdown"
-        style={{ visibility: show ? "visible" : "hidden" }}
-      >
+      <div className={privacy ? "block" : "hidden"}>
         <ul>
           <li>Chat Notifications</li>
           <div className="m-4">
