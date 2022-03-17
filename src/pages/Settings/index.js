@@ -130,12 +130,12 @@ const Settings = () => {
       </div>
       <a id="general_btn" href="#">
         <i className="fas fa-cogs" onClick={() => setGeneral((s) => !s)}>
-          Privacy{" "}
+          general{" "}
         </i>{" "}
       </a>
       <div className={general ? "hidden" : "block"}>
         <ul>
-          <li>Accept Chat Requests</li>
+          <li>Help</li>
           <div className="m-4">
             <div className="toggle colour">
               <input
@@ -172,7 +172,7 @@ const Settings = () => {
                 type="checkbox"
               ></input>
               <label
-                htmlFor="privacy3"
+                htmlFor="general3"
                 className="toggle-label block w-12 h-6 rounded-full transition-color duration-150 ease-out"
               ></label>
             </div>
