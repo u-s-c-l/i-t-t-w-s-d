@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React  from "react";
+// import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 import { recordAnswer } from "../../actions";
@@ -6,7 +7,7 @@ import { Container, Row, Col } from "reactstrap";
 import { shuffle, matches } from "./helpers";
 
 
-const questionTime = 15;
+// const questionTime = 15;
 
 const TheQuestions = () => {
   const dispatch = useDispatch();
@@ -22,7 +23,7 @@ const TheQuestions = () => {
 
   const nextQ = (curScore) => {
     dispatch(recordAnswer(curScore));
-    setTimer(questionTime);
+    // setTimer(questionTime);
     if (index === currentQ - 1) {
       history("/quiz/results");
     }
@@ -45,32 +46,32 @@ const TheQuestions = () => {
     nextQ(curScore);
   };
 
-  const zeroScore = () => {
-    const curScore = 0;
-    nextQ(curScore);
-  };
+  // const zeroScore = () => {
+  //   const curScore = 0;
+  //   nextQ(curScore);
+  // };
 
-  const [timer, setTimer] = useState(questionTime);
-  const [second, setSecond] = useState(timer);
+  // const [timer, setTimer] = useState(questionTime);
+  // const [second, setSecond] = useState(timer);
 
-  useEffect(() => {
-    let myInterval = setInterval(() => {
-      if (second > 0) {
-        setSecond(second - 1);
-      }
-    }, 1000);
-    return () => clearInterval(myInterval);
-  });
+  // useEffect(() => {
+  //   let myInterval = setInterval(() => {
+  //     if (second > 0) {
+  //       setSecond(second - 1);
+  //     }
+  //   }, 1000);
+  //   return () => clearInterval(myInterval);
+  // });
 
-  useEffect(() => {
-    setSecond(timer);
-  }, [index]);
+  // useEffect(() => {
+  //   setSecond(timer);
+  // }, [index]);
 
-  useEffect(() => {
-    if (second === 0) {
-      zeroScore();
-    }
-  }, [second]);
+  // useEffect(() => {
+  //   if (second === 0) {
+  //     zeroScore();
+  //   }
+  // }, [second]);
 
 
 
