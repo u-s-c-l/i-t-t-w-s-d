@@ -62,7 +62,7 @@ const Login = () => {
         <input
           type="submit"
           className={
-            "disabled:opacity-0 bg-gradient-to-r from-tpink to-torange text-white py-3 text-center rounded-full font-bold w-60 transition-opacity duration-300"
+            "disabled:opacity-0 bg-gradient-to-r from-tpink to-torange text-white py-3 text-center rounded-full font-bold w-60 transition-opacity duration-300 mt-4"
           }
           disabled={formIncomplete()}
           value="Login"
