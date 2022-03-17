@@ -165,7 +165,7 @@ const Settings = () => {
           </div>
         </ul>
       </div>
-      <button> delete </button>
+      <button> Delete Account </button>
     </div>
   );
 };
