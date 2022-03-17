@@ -3,9 +3,6 @@ import "jest-localstorage-mock";
 
 import { AuthProvider, useAuthContext } from ".";
 
-import axios from "axios";
-jest.mock("axios");
-
 describe("useAuthContext", () => {
   let wrapper;
   beforeEach(() => {
