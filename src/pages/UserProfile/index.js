@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 // import PropTypes from "prop-types";
+import { useAuthContext } from "../../contexts";
 import {
   Edit,
   Status,
@@ -10,6 +11,7 @@ import {
 } from "../../components";
 
 const UserProfile = () => {
+  const { currentUser } = useAuthContext();
   const [name, setName] = useState("");
   const [status, setStatus] = useState("");
   const [active, setActive] = useState("edit");
@@ -33,6 +35,8 @@ const UserProfile = () => {
   return (
     <>
       <form className="profile_form">
+        <p> {currentUser.username} </p>
+        {console.log(currentUser)}
         {active === "edit" ? (
           <Edit onSubmit={handleSubmit}>
             <Name onChange={handleName} value={name} />
