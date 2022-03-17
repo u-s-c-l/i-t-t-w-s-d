@@ -5,6 +5,8 @@ import CreateGame from "../../components/CreateGame";
 import QACard from "../../components/QACard";
 import matches from "./helpers";
 
+
+
 const Quiz = () => {
   const questions = useSelector((state) => state.questions);
   const loading = useSelector((state) => state.loading);
@@ -13,6 +15,8 @@ const Quiz = () => {
   const [currentQ, setCurrentQ] = useState(0);
   const [score, setScore] = useState(0);
   const [started, setStarted] = useState(0);
+  
+
 
   const nextQ = (e) => {
     let points = 1;
@@ -52,6 +56,8 @@ const Quiz = () => {
   const dispatch = useDispatch();
   const searchQs = ({ category, difficulty }) =>
     dispatch(getQuestions({ category, difficulty }));
+
+
 
   return (
     <>
