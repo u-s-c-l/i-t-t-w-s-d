@@ -21,6 +21,9 @@ const CreateGame = ({ getQuestions, startGame }) => {
     const value = e.target.value;
     setRoomInput(value);
   };
+  const handleNameInput = (e) => {
+  const value = e.target.value;
+  setNameInput(value);
 
   const handleSubmit = (e) => {
     e.preventDefault();
