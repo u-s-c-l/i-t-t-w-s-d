@@ -36,7 +36,7 @@ export const AuthProvider = ({ children }) => {
       await login(userData);
       return "Registration successful";
     } catch (err) {
-      return `Registration Error: ${err}`;
+      return err;
     }
   };
 
