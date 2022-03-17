@@ -45,6 +45,7 @@ const Register = () => {
           value={formData.username}
           onChange={handleInput}
           placeholder="Username"
+          required
         />
         <input
           type="password"
@@ -52,6 +53,7 @@ const Register = () => {
           value={formData.password}
           onChange={handleInput}
           placeholder="Password"
+          required
         />
         <input
           type="password"
@@ -59,7 +61,10 @@ const Register = () => {
           value={formData.passwordConfirmation}
           onChange={handleInput}
           placeholder="Confirm Password"
+          className="peer"
+          required
         />
+        <p className="invisible peer-invalid:visible">Passwords do not match</p>
         <input
           type="submit"
           className={"disabled:opacity-40"}
