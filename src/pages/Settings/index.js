@@ -62,12 +62,7 @@ const Settings = () => {
           ></input>
           <div className="Dropdown_billInfo">
             <div className="setting_name"> bill information </div>
-            <input
-              type="checkbox"
-              id="setting_name"
-              name="setting_name"
-              value=" "
-            ></input>
+            {/* can be a dropdown form or link to a page where you can fill in billing information */}
           </div>
         </div>
       </a>
