@@ -2,15 +2,23 @@ import axios from "axios";
 
 const loading = (category) => ({ type: "LOADING", payload: category });
 
+
+
 const loadQuestions = (questions, difficulty) => ({
   type: "GET_QUESTIONS",
   payload: { questions, difficulty }
 });
 
+const create = (room, category, difficulty, username) => ({
+  type: "CREATE",
+  payload: { room, category, difficulty, username}
+});
+
+
 
 // combined getQuestions with startGame function
 
-export const startGame = (category, difficulty) => {
+export const startGame = (room,category, difficulty, username) => {
   const categoryMap = {
     generalknowledge: 9,
     animals: 27,
@@ -19,12 +27,13 @@ export const startGame = (category, difficulty) => {
     music: 12
   };
   const catId = categoryMap[category];
+  
 
   return async (dispatch) => {
     dispatch(loading(category));
+    dispatch(create(room, catId, difficulty, username));
     try {
-      const questions = await fetchQuestions(catId, difficulty);
-      console.log(questions);
+      const questions = await getQuestions(catId, difficulty);
       dispatch(loadQuestions(questions));
     } catch (err) {
       console.warn(err.message);
