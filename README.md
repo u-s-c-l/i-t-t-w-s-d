@@ -9,6 +9,12 @@
 
 This repo hosts the client side of an interactive quiz game.
 
+## Table of Contents
+
+- [Installation & Usage](#installation--usage)
+- [Deployment](#deployment)
+- [Technologies](#technologies)
+
 ## Installation and Usage
 
 - Clone the repo.
