@@ -13,6 +13,11 @@ import { quizReducer } from "../reducers";
 import { SocketProvider } from "../components/SocketContext/SocketContext";
 import { MemoryRouter } from "react-router-dom";
 
+import 'setimmediate'
+if (!global.setImmediate) {
+  global.setImmediate = setTimeout
+}
+
 const TestProviders = ({ initialState }) => {
   initialState ||= {
     questions: [],

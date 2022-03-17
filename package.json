@@ -39,6 +39,7 @@
     "redux": "^4.1.2",
     "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.4.1",
+    "setimmediate": "^1.0.5",
     "socket.io-client": "^4.4.1",
     "uuidv4": "^6.2.12",
     "web-vitals": "^2.1.4"
@@ -47,7 +48,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --setupFilesAfterEnv ./src/tests/setupTests.js",
-    "coverage": "react-scripts test --setupFilesAfterEnv ./src/tests/setupTests.js --coverage --watchAll",
+    "coverage": "react-scripts test --setupFilesAfterEnv ./src/tests/setupTests.js --coverage --watchAll --silent",
     "eject": "react-scripts eject"
   },
   "browserslist": {
