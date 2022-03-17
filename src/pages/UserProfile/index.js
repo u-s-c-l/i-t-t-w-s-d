@@ -1,6 +1,13 @@
 import React, { useState } from "react";
 // import PropTypes from "prop-types";
-import { Edit, Status, Name, Profile } from "../../components";
+import {
+  Edit,
+  Status,
+  Name,
+  Profile,
+  SettingsBtn,
+  Chat
+} from "../../components";
 
 const UserProfile = () => {
   const [name, setName] = useState("");
@@ -33,6 +40,8 @@ const UserProfile = () => {
       ) : (
         <Profile onSubmit={handleSubmit} name={name} status={status} />
       )}
+      <SettingsBtn />
+      <Chat />
     </>
   );
 };

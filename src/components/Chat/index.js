@@ -4,7 +4,7 @@ const Chat = () => {
   return (
     <div>
       <button id="chat_btn">
-        {/* <i className="fa-solid fa-hand-holding-heart"></i> */}
+        <i className="fa-solid fa-hand-holding-heart"></i>
       </button>
     </div>
   );

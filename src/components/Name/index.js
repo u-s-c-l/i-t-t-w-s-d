@@ -11,7 +11,7 @@ const Name = ({ onChange, value }) => {
         onChange={onChange}
         maxLength="25"
         value={value}
-        placeholder="Alexa"
+        placeholder="Name"
         required
       />
     </div>
