@@ -45,7 +45,7 @@ const CreateGame = () => {
     const selectDiff = difficulties.filter((diff) => diff.checked === true);
     const diffValue = selectDiff[0].value;
     dispatch(startGame(roomInput, catValue, diffValue, nameInput));
-    history("/quiz/game");
+    history("/quiz/waiting");
   };
 
   return (
