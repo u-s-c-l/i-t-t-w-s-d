@@ -15,7 +15,7 @@ const LeaderBoard = () => {
     <>
       <h2>Leader Board</h2>
       {scores && (
-        <table>
+        <table data-testid="score-table">
           <thead>
             <tr>
               <th>Category:</th>

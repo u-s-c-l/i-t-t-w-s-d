@@ -11,12 +11,12 @@ describe("LeadersBoard page", () => {
     expect(heading).toBeInTheDocument();
   });
 
-  test("if scores exist then table is rendered", () => {
+  test("if scores exist then table is rendered", async () => {
     jest.spyOn(React, "useEffect").mockImplementation((f) => f());
-    jest.spyOn(axios, "get").mockResolvedValueOnce({ data: [{}] });
-    renderWithProviders(<LeaderBoard />);
-    // act(() => )
-    const table = screen.getByRole("table");
+    jest.spyOn(axios, "get").mockResolvedValueOnce({ data: [{}, {}, {}] });
+    await act(async () => renderWithProviders(<LeaderBoard />));
+    // renderWithProviders(<LeaderBoard />);
+    const table = screen.getByTestId("score-table");
     expect(table).toBeInTheDocument();
   });
 });
