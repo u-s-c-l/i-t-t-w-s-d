@@ -1,11 +1,10 @@
-import React  from "react";
+import React from "react";
 // import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 import { recordAnswer } from "../../actions";
 import { Container, Row, Col } from "reactstrap";
 import { shuffle, matches } from "./helpers";
-
 
 // const questionTime = 15;
 
@@ -28,8 +27,6 @@ const TheQuestions = () => {
       history("/quiz/results");
     }
   };
-
-
 
   const handleAnswerSelect = (answer) => {
     let curScore;
@@ -73,10 +70,8 @@ const TheQuestions = () => {
   //   }
   // }, [second]);
 
-
-
   return (
-    <div>
+    <div data-testid="the-questions">
       <div>
         <h2>
           QUESTION {index + 1} / {currentQ}
