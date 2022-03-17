@@ -20,6 +20,8 @@ const Profile = ({ onSubmit, name, status }) => {
 Profile.propTypes = {
   onSubmit: PropTypes.func,
   onChange: PropTypes.func,
+  name: PropTypes.any,
+  status: PropTypes.any,
   value: PropTypes.object
 };
 export default Profile;
