@@ -16,7 +16,7 @@ const Settings = () => {
             Profile{" "}
           </i>{" "}
         </a>
-        <div className={profile ? "block" : "hidden"}>
+        <div className={profile ? "hidden" : "block"}>
           <ul>
             <li>Chat Notifications</li>
             <div className="m-4">
