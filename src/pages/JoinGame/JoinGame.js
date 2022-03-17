@@ -32,7 +32,7 @@ const JoinGame = () => {
   const handleSubmit = () => {
     socket.emit("join-room", roomName, nameInput);
     console.log("joined game");
-    dispatch(joinPlayer(nameInput, roomName));
+    dispatch(joinPlayer(roomName, nameInput));
     history("/quiz/waiting");
   };
 
