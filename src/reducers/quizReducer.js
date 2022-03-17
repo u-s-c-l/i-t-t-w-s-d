@@ -84,6 +84,7 @@ const quizReducer = (state = initState, action) => {
 
     case "SET_ERROR":
       return { ...state, error: action.payload, loading: false };
+
     default:
       return state;
   }
