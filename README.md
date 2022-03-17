@@ -14,7 +14,7 @@ This repo hosts the client side of an interactive quiz game.
 - [Installation & Usage](#installation--usage)
 - [Technologies](#technologies)
 
-# Installation and Usage
+## Installation and Usage
 
 - Clone the repo.
 - Open terminal and navigate to `/i-t-t-w-s-d` folder.
