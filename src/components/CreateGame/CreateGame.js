@@ -22,10 +22,10 @@ const CreateGame = ({ getQuestions, startGame }) => {
     setRoomInput(value);
   };
   const handleNameInput = (e) => {
-  const value = e.target.value;
-  setNameInput(value);
-  }
-  
+    const value = e.target.value;
+    setNameInput(value);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -78,6 +78,20 @@ const CreateGame = ({ getQuestions, startGame }) => {
           </div>
         );
       })}
+      <input
+        type="text"
+        value={roomInput}
+        onChange={handleRoomInput}
+        required
+      />
+      <input
+        className="inp-player d-flex justify-content-end"
+        type="text"
+        maxLength="20"
+        value={nameInput}
+        onChange={handleNameInput}
+        required
+      />
 
       <input
         aria-label="submit btn"
