@@ -1,25 +1,58 @@
-import React from "react";
-import { Settings, Edit, Chat  } from "../../components";
+import React, { useState } from "react";
+// import PropTypes from "prop-types";
+import {
+  Edit,
+  Status,
+  Name,
+  Profile,
+  SettingsBtn,
+  Chat
+} from "../../components";
 
 const UserProfile = () => {
+  const [name, setName] = useState("");
+  const [status, setStatus] = useState("");
+  const [active, setActive] = useState("edit");
+
+  const handleName = (e) => {
+    const name = e.target.value;
+    setName(name);
+  };
+
+  const handleStatus = (e) => {
+    const status = e.target.value;
+    setStatus(status);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    let activeP = active === "edit" ? "profile" : "edit";
+    setActive(activeP);
+  };
+
   return (
     <>
-      <div id="profile">
-        {/* profile picture */}
-        {/* profile bio */}
-        <div id="profile_buttons">
-  
-          <Settings />
-          <Edit />
-          <Chat />
-          {/* Scoreboard div */}
-          {/*  scores */}
-          {/* premium button with div that has another button */}
-
-        </div>
-      </div>
+      {active === "edit" ? (
+        <Edit onSubmit={handleSubmit}>
+          <Name onChange={handleName} value={name} />
+          <Status onChange={handleStatus} value={status} />
+        </Edit>
+      ) : (
+        <Profile onSubmit={handleSubmit} name={name} status={status} />
+      )}
+      <SettingsBtn />
+      <Chat />
     </>
   );
 };
+
+// UserProfile.propTypes = {
+//   onChange: PropTypes.func,
+//   onSubmit: PropTypes.func,
+//   value: PropTypes.object,
+//   name: PropTypes.any,
+//   status: PropTypes.any,
+//   children: PropTypes.object
+// };
 
 export default UserProfile;
