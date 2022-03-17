@@ -149,7 +149,7 @@ const Settings = () => {
               ></label>
             </div>
           </div>
-          <li>Anonymous mode </li>
+          <li> Compeition Alerts </li>
           <div className="m-4">
             <div className="toggle colour">
               <input
@@ -159,20 +159,6 @@ const Settings = () => {
               ></input>
               <label
                 htmlFor="general2"
-                className="toggle-label block w-12 h-6 rounded-full transition-color duration-150 ease-out"
-              ></label>
-            </div>
-          </div>
-          <li>Billing info</li>
-          <div className="m-4">
-            <div className="toggle colour">
-              <input
-                id="general3"
-                className="toggle-checkbox hidden"
-                type="checkbox"
-              ></input>
-              <label
-                htmlFor="general3"
                 className="toggle-label block w-12 h-6 rounded-full transition-color duration-150 ease-out"
               ></label>
             </div>
