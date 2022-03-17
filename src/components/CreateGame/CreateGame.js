@@ -14,6 +14,8 @@ const CreateGame = ({ getQuestions, startGame }) => {
 
   const difficulties = ["easy", "medium", "hard"];
 
+  // Name input is for testing - will use localstorage
+
   const [roomInput, setRoomInput] = useState("bobs house");
   const [nameInput, setNameInput] = useState("bob");
 
@@ -78,19 +80,25 @@ const CreateGame = ({ getQuestions, startGame }) => {
           </div>
         );
       })}
-      <input
-        type={"text"}
-        value={roomInput}
-        onChange={handleRoomInput}
-        required
-      />
+      <label htmlFor={roomInput} className="capitalize">
+        Username: 
+      </label>
       <input
         type={"text"}
         value={nameInput}
         onChange={handleNameInput}
         required
       />
-
+      <label htmlFor={roomInput} className="capitalize">
+        Room Name:  
+      </label>
+      <input
+        type={"text"}
+        id={roomInput}
+        value={roomInput}
+        onChange={handleRoomInput}
+        required
+      />
       <input
         aria-label="submit btn"
         type={"submit"}

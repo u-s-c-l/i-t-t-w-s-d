@@ -7,6 +7,7 @@ const initState = {
   loading: false, 
   owner: false,
   score: 0,
+  NoOfQus: 0
 };
 
 const quizReducer = (state = initState, action) => {
