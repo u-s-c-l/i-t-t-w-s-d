@@ -17,6 +17,11 @@ const CreateGame = ({ getQuestions, startGame }) => {
   const [roomInput, setRoomInput] = useState("bobs house");
   const [nameInput, setNameInput] = useState("bob");
 
+  const handleRoomInput = (e) => {
+    const value = e.target.value;
+    setRoomInput(value);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
