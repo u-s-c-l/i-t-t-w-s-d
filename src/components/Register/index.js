@@ -62,7 +62,7 @@ const Register = () => {
         />
         <input
           type="submit"
-          className={formIncomplete() ? "disabled" : "enabled"}
+          className={"disabled:opacity-40"}
           disabled={formIncomplete()}
           value="Create Account"
         />

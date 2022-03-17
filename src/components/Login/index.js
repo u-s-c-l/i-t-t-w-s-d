@@ -44,7 +44,7 @@ const Login = () => {
         />
         <input
           type="submit"
-          className={formIncomplete() ? "disabled" : "enabled"}
+          className={"disabled:opacity-40"}
           disabled={formIncomplete()}
           value="Login"
         />
