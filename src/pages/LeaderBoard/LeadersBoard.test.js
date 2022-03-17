@@ -11,7 +11,7 @@ describe("LeadersBoard page", () => {
     expect(heading).toBeInTheDocument();
   });
 
-  test("if scores exist then table is rendered", () => {
+  test.skip("if scores exist then table is rendered", () => {
     jest.spyOn(React, "useEffect").mockImplementation((f) => f());
     jest.spyOn(axios, "get").mockResolvedValueOnce({ data: [{}] });
     renderWithProviders(<LeaderBoard />);
