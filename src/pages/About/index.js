@@ -21,7 +21,7 @@ function About() {
 
   return (
     <section className=" pb-28">
-      <h1 className="capitalize text-center text-4xl font-bold text-slate-50">
+      <h1 className="capitalize text-center text-4xl font-bold text-slate-50 pt-10">
         I thought this was speed dating
       </h1>
       <div className="m-8">

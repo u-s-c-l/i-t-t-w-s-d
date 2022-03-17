@@ -1,19 +1,18 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { createGame } from "../../actions";
 import { useNavigate } from "react-router-dom";
+import { useAuthContext } from "../../contexts";
 
-// dispatch to create the game 
+// dispatch to create the game
 
 const CreateGame = () => {
-
+  const { getCurrentUser } = useAuthContext();
+  const { username } = getCurrentUser();
   const dispatch = useDispatch();
   const history = useNavigate();
 
-
-
   const [selected, setSelected] = useState(0);
-
 
   const categories = [
     "animals",
@@ -25,11 +24,8 @@ const CreateGame = () => {
 
   const difficulties = ["easy", "medium", "hard"];
 
-
-  // Name input is for testing - will use localstorage
-
-  const [roomInput, setRoomInput] = useState("bobs house");
-  const [nameInput, setNameInput] = useState("bob");
+  const [roomInput, setRoomInput] = useState("");
+  const [nameInput, setNameInput] = useState(username);
 
   const handleRoomInput = (e) => {
     const value = e.target.value;
@@ -39,7 +35,6 @@ const CreateGame = () => {
     const value = e.target.value;
     setNameInput(value);
   };
-
 
   const setFirstInput = () => {
     setSelected(1);
@@ -63,10 +58,7 @@ const CreateGame = () => {
   };
 
   return (
-    <div className=" text-tblack">
-      <h2 className="text-3xl font-semibold text-center text-torange p-5">
-        Create A Game
-      </h2>
+    <div className="m-8 mb-0 rounded-lg overflow-hidden bg-slate-50 border-2 border-tblack p-4">
       <form
         onSubmit={handleSubmit}
         aria-label="create game form"
@@ -129,36 +121,40 @@ const CreateGame = () => {
             })}
           </div>
         )}
-        <label htmlFor={roomInput} className="capitalize">
-        Username: 
-        </label>
-        <input
-          type={"text"}
-          value={nameInput}
-          onChange={handleNameInput}
-          required
-        />
-        <label htmlFor={roomInput} className="capitalize">
-          Room Name:  
-        </label>
-        <input
-          type={"text"}
-          id={roomInput}
-          value={roomInput}
-          onChange={handleRoomInput}
-          required
-        />
-        <input
-          aria-label="submit btn"
-          type={"submit"}
-          value="Create Game!"
-        ></input>
         {selected === 2 && (
-          <div>
+          <div className="space-y-4 mt-10">
+            <div>
+              <label htmlFor={roomInput} className="capitalize hidden">
+                Username:
+              </label>
+              <input
+                type={"text"}
+                value={nameInput}
+                onChange={handleNameInput}
+                required
+                disabled
+                placeholder="enter username:"
+                className="capitalize bg-gradient-to-r from-tpink to-torange text-white py-3 rounded-xl font-bold w-60 mx-auto block focus:outline-none placeholder:text-slate-50 text-left px-4"
+              />
+            </div>
+            <div>
+              <label htmlFor={roomInput} className="capitalize hidden">
+                Room Name:
+              </label>
+              <input
+                type={"text"}
+                id={roomInput}
+                value={roomInput}
+                onChange={handleRoomInput}
+                required
+                placeholder="room name:"
+                className="capitalize bg-gradient-to-r from-tpink opacity-70 to-torange text-white py-3 rounded-xl font-bold w-60 mx-auto block focus:opacity-100 focus:outline-none placeholder:text-slate-50 text-left px-4"
+              />
+            </div>
             <input
               aria-label="submit btn"
               type={"submit"}
-              value="Start Game!"
+              value="Create Game!"
               className="capitalize bg-gradient-to-r from-tpink to-torange text-white py-3 text-center rounded-full font-bold w-44 mx-auto block opacity-70 cursor-pointer hover:opacity-100 disabled:hidden mt-8"
             ></input>
           </div>
