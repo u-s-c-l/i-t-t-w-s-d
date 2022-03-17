@@ -128,6 +128,57 @@ const Settings = () => {
           </div>
         </ul>
       </div>
+      <a id="privacy_btn" href="#">
+        <i className="fa fa-lock" onClick={() => setPrivacy((s) => !s)}>
+          Privacy{" "}
+        </i>{" "}
+      </a>
+      <div className={privacy ? "hidden" : "block"}>
+        <ul>
+          <li>Accept Chat Requests</li>
+          <div className="m-4">
+            <div className="toggle colour">
+              <input
+                id="privacy1"
+                className="toggle-checkbox hidden"
+                type="checkbox"
+              ></input>
+              <label
+                htmlFor="privacy1"
+                className="toggle-label block w-12 h-6 rounded-full transition-color duration-150 ease-out"
+              ></label>
+            </div>
+          </div>
+          <li>Anonymous mode </li>
+          <div className="m-4">
+            <div className="toggle colour">
+              <input
+                id="privacy2"
+                className="toggle-checkbox hidden"
+                type="checkbox"
+              ></input>
+              <label
+                htmlFor="privacy2"
+                className="toggle-label block w-12 h-6 rounded-full transition-color duration-150 ease-out"
+              ></label>
+            </div>
+          </div>
+          <li>Billing info</li>
+          <div className="m-4">
+            <div className="toggle colour">
+              <input
+                id="privacy3"
+                className="toggle-checkbox hidden"
+                type="checkbox"
+              ></input>
+              <label
+                htmlFor="privacy3"
+                className="toggle-label block w-12 h-6 rounded-full transition-color duration-150 ease-out"
+              ></label>
+            </div>
+          </div>
+        </ul>
+      </div>
     </div>
   );
 };
