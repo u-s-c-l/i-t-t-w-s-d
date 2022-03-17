@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./index.css";
 
 const Settings = () => {
   const [show, setShow] = useState(true);
@@ -21,7 +22,32 @@ const Settings = () => {
         style={{ visibility: show ? "visible" : "hidden" }}
       >
         <ul>
-          <li>Option 1</li>
+          <div className="m-4">
+            <div className="toggle colour">
+              <input
+                id="check3"
+                className="toggle-checkbox hidden"
+                type="checkbox"
+              ></input>
+              <label
+                htmlFor="check3"
+                className="toggle-label block w-12 h-6 rounded-full transition-color duration-150 ease-out"
+              ></label>
+            </div>
+          </div>
+          <div className="m-4">
+            <div className="toggle slim colour">
+              <input
+                id="check4"
+                className="toggle-checkbox hidden"
+                type="checkbox"
+              ></input>
+              <label
+                htmlFor="check4"
+                className="toggle-label block w-12 h-4 rounded-full transition-color duration-150 ease-out"
+              ></label>
+            </div>
+          </div>
           <li>Option 2</li>
           <li>Option 3</li>
           <li>Option 4</li>
