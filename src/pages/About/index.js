@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 
 import { Login, Register } from "../../components";
+import { useAuthContext } from "../../contexts";
 
 function About() {
   const [openLogin, setOpenLogin] = useState(true);
   const [openRegister, setOpenRegister] = useState(false);
+  const { currentUser } = useAuthContext();
 
   const toggleLogin = () => {
     setOpenLogin(true);
@@ -36,34 +38,36 @@ function About() {
           feel that I never was a greater artist than now.
         </p>
       </div>
-      <div className="m-8 mb-0 rounded-lg overflow-hidden bg-slate-50 border-2 border-tblack">
-        <div className="flex justify-between">
-          <button
-            className={
-              openLogin
-                ? buttonStyle
-                : buttonStyle +
-                  "bg-gradient-to-r from-tpink to-torange text-white border-b-2 border-r-2 border-tblack "
-            }
-            onClick={toggleLogin}
-          >
-            Login
-          </button>
-          <button
-            className={
-              openRegister
-                ? buttonStyle
-                : buttonStyle +
-                  "bg-gradient-to-r from-tpink to-torange text-white border-b-2 border-l-2 border-tblack "
-            }
-            onClick={toggleRegister}
-          >
-            Register
-          </button>
+      {!currentUser && (
+        <div className="m-8 mb-0 rounded-lg overflow-hidden bg-slate-50 border-2 border-tblack">
+          <div className="flex justify-between">
+            <button
+              className={
+                openLogin
+                  ? buttonStyle
+                  : buttonStyle +
+                    "bg-gradient-to-r from-tpink to-torange text-white border-b-2 border-r-2 border-tblack "
+              }
+              onClick={toggleLogin}
+            >
+              Login
+            </button>
+            <button
+              className={
+                openRegister
+                  ? buttonStyle
+                  : buttonStyle +
+                    "bg-gradient-to-r from-tpink to-torange text-white border-b-2 border-l-2 border-tblack "
+              }
+              onClick={toggleRegister}
+            >
+              Register
+            </button>
+          </div>
+          {openLogin && <Login />}
+          {openRegister && <Register />}
         </div>
-        {openLogin && <Login />}
-        {openRegister && <Register />}
-      </div>
+      )}
     </section>
   );
 }
