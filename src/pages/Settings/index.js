@@ -82,7 +82,7 @@ const Settings = () => {
           Privacy{" "}
         </i>{" "}
       </a>
-      <div className={privacy ? "block" : "hidden"}>
+      <div className={privacy ? "hidden" : "block"}>
         <ul>
           <li>Chat Notifications</li>
           <div className="m-4">
