@@ -36,7 +36,7 @@ export const AuthProvider = ({ children }) => {
       await login(userData);
       return "Registration successful";
     } catch (err) {
-      return `Registration Error: ${err}`;
+      return err;
     }
   };
 
@@ -57,9 +57,9 @@ export const AuthProvider = ({ children }) => {
       localStorage.setItem("token", data.token);
       const user = jwt_decode(data.token);
       setCurrentUser(user);
-      return "Login successful";
+      return "successful";
     } catch (err) {
-      return `Login Error: ${err}`;
+      return err.response.data;
     }
   };
 
@@ -68,7 +68,7 @@ export const AuthProvider = ({ children }) => {
     setCurrentUser(null);
   };
 
-  const auth = { register, login, logout, currentUser };
+  const auth = { register, login, logout, currentUser, getCurrentUser };
 
   return <AuthContext.Provider value={auth}>{children}</AuthContext.Provider>;
 };

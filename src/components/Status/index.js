@@ -4,7 +4,9 @@ import PropTypes from "prop-types";
 const Status = ({ onChange, value }) => {
   return (
     <div className="field">
-      <label htmlFor="status">status:</label>
+      <label htmlFor="status" aria-label="status-field">
+        status:
+      </label>
       <input
         id="status"
         type="text"

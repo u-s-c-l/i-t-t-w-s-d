@@ -9,9 +9,14 @@ import {
   SettingsBtn,
   Chat
 } from "../../components";
+import { useAuthContext } from "../../contexts";
 
 const UserProfile = () => {
   const { currentUser } = useAuthContext();
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7aadadd9cfa148cbf27fd95589fc8bebec94f661
   const [name, setName] = useState("");
   const [status, setStatus] = useState("");
   const [active, setActive] = useState("edit");
@@ -34,18 +39,19 @@ const UserProfile = () => {
 
   return (
     <>
-      <p>{!!currentUser && currentUser.username}</p>
-      {console.log(currentUser)}
-      {active === "edit" ? (
-        <Edit onSubmit={handleSubmit}>
-          <Name onChange={handleName} value={name} />
-          <Status onChange={handleStatus} value={status} />
-        </Edit>
-      ) : (
-        <Profile onSubmit={handleSubmit} name={name} status={status} />
-      )}
-      <SettingsBtn />
-      <Chat />
+      <form>
+        <p>{!!currentUser && currentUser.username}</p>
+        {active === "edit" ? (
+          <Edit onSubmit={handleSubmit}>
+            <Name onChange={handleName} value={name} />
+            <Status onChange={handleStatus} value={status} />
+          </Edit>
+        ) : (
+          <Profile onSubmit={handleSubmit} name={name} status={status} />
+        )}
+        <SettingsBtn />
+        <Chat />
+      </form>
     </>
   );
 };
