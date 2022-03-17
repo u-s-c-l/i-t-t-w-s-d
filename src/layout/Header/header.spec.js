@@ -14,22 +14,15 @@ const AuthProvider = ({children}) => {
   const getCurrentUser = jest.fn()
   const currentUser = {username: "tester"}
   const auth = {login, register, logout, getCurrentUser, currentUser}
-  return <AuthContext.Provider value={auth}>{children}</AuthContext.Provider>
+  return <useAuthContext value={auth}>{children}</useAuthContext>
 }
-
-const useAuthContext = () => useContext(AuthContext);
 
 describe('Header', () => {
 
-    let wrapper;
-  beforeEach(() => {
-    jest.resetAllMocks();
-    wrapper = ({ children }) => <AuthProvider>{children}</AuthProvider>;
-  });
     
     test('it renders a nav tag', () => {
-        renderHook(() => useAuthContext(), { wrapper });
-        render(<AuthProvider> <Header /> </AuthProvider>, { wrapper: MemoryRouter });
+        
+        render(<AuthProvider > <Header /> </AuthProvider>, { wrapper: MemoryRouter });
         const nav = screen.queryByRole('navigation');
         expect(nav).toBeInTheDocument();
     })
