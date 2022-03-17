@@ -4,7 +4,7 @@ import "./index.css";
 const Settings = () => {
   const [profile, setProfile] = useState(true);
   const [privacy, setPrivacy] = useState(true);
-
+  const [general, setGeneral] = useState(true);
   return (
     <div className="settings-div">
       <div className="profile_section">
