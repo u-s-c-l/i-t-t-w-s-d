@@ -40,7 +40,7 @@ const quizReducer = (state = initState, action) => {
       });
       return { ...state, questions: matchedQuestions, loading: true };
     }
-    case "GET_QUESTIONS":
+    case "GET_QUESTIONS": {
       return {
         ...state,
         questions: action.payload.questions,
@@ -48,18 +48,20 @@ const quizReducer = (state = initState, action) => {
         loading: false,
         error: false
       };
-    case "LOAD_SETTINGS":
+    }
+    case "LOAD_SETTINGS":{
       return {
         ...state,
         currentQ: action.payload.qnum,
-        difficulty: action.payload.difficulty
+        difficulty: action.payload.diff,
       };
+    }
 
     case "JOIN_PLAYER": {
       return {
         ...state,
+        room: action.payload.room,
         username: action.payload.username,
-        room: action.payload.room
       };
     }
     case "RECORD_ANSWER": {
