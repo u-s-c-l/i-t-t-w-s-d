@@ -7,13 +7,16 @@ const Settings = () => {
         <i className="far fa-user-circle"></i> Profile
       </a>
       <a href="#" className="nav-link">
-        <i className="far fa-bell"></i> Notifications
+        <i className="far fa-bell"></i> Account
       </a>
       <a href="#" className="nav-link">
-        <i className="far fa-file-alt"></i> Billing Info
+        <i className="far fa-file-alt"></i> Privacy
       </a>
       <a href="#" className="nav-link">
         <i className="fas fa-cogs"></i> General
+      </a>
+      <a href="#" className="nav-link">
+        <i className="fas fa-cogs"></i> Delete Account
       </a>
     </div>
   );
