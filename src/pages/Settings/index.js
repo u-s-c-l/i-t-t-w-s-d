@@ -22,7 +22,7 @@ const Settings = () => {
         style={{ visibility: show ? "visible" : "hidden" }}
       >
         <ul>
-          <li>Option 1</li>
+          <li>Chat Notifications</li>
           <div className="m-4">
             <div className="toggle colour">
               <input
