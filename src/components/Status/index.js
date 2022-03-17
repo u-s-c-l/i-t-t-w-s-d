@@ -20,6 +20,6 @@ const Status = ({ onChange, value }) => {
 
 Status.propTypes = {
   onChange: PropTypes.func,
-  value: PropTypes.object
+  value: PropTypes.any
 };
 export default Status;

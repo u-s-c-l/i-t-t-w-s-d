@@ -17,6 +17,6 @@ const Edit = ({ onSubmit, children }) => {
 
 Edit.propTypes = {
   onSubmit: PropTypes.func,
-  children: PropTypes.object
+  children: PropTypes.any
 };
 export default Edit;

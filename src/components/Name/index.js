@@ -11,7 +11,7 @@ const Name = ({ onChange, value }) => {
         onChange={onChange}
         maxLength="25"
         value={value}
-        placeholder="Name"
+        placeholder="Alexa"
         required
       />
     </div>
@@ -20,6 +20,6 @@ const Name = ({ onChange, value }) => {
 
 Name.propTypes = {
   onChange: PropTypes.func,
-  value: PropTypes.object
+  value: PropTypes.any
 };
 export default Name;
