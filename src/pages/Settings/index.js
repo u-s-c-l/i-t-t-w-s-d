@@ -76,7 +76,7 @@ const Settings = () => {
       </div>
       <a id="privacy_btn" href="#">
         <i className="fa fa-lock" onClick={() => setShow((s) => !s)}>
-          Profile{" "}
+          Privacy{" "}
         </i>{" "}
       </a>
       <div
