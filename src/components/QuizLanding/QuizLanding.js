@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const QuizLanding = () => {
   return (
-    <>
+    <div data-testid="landing-component">
       <div className="flex flex-col space-y-4 mt-96">
         <Link
           role="link"
@@ -20,7 +20,7 @@ const QuizLanding = () => {
           Join a Game
         </Link>
       </div>
-    </>
+    </div>
   );
 };
 
