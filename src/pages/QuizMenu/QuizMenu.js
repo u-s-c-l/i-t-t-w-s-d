@@ -7,8 +7,8 @@ const QuizMenu = () => {
       <h1 className="capitalize text-center text-4xl font-bold text-slate-50 pt-10">
         Quiz Menu{" "}
       </h1>
-      <p className="text-center m-6 text-xl text-slate-50 max-w-prose mb-4">
-        Either join a game or start your own
+      <p className="mx-auto w-72 text-xl text-slate-50 max-w-prose my-8">
+        From here you can either join a game, or create your own!
       </p>
       <QuizLanding />
     </>
