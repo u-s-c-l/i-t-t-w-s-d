@@ -50,7 +50,7 @@ const Settings = () => {
               ></label>
             </div>
           </div>
-          <li>Option 3</li>
+          <li>Change Password</li>
           <div className="m-4">
             <div className="toggle colour">
               <input
