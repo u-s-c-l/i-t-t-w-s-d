@@ -39,13 +39,6 @@ const Settings = () => {
             name="setting_name"
             value=" "
           ></input>
-          <div className="setting_name"> Accept Chat Requests </div>
-          <input
-            type="checkbox"
-            id="setting_name"
-            name="setting_name"
-            value=" "
-          ></input>
           <div className="setting_name"> Change Password </div>
           <input
             type="checkbox"
@@ -68,7 +61,22 @@ const Settings = () => {
       </a>
       <a href="#" className="nav-link">
         <i className="fa fa-lock"></i> Privacy
-        <div className="dropdown"> </div>
+        <div className="dropdown">
+          <div className="setting_name"> Aceept Chat requests </div>
+          <input
+            type="checkbox"
+            id="setting_name"
+            name="setting_name"
+            value=" "
+          ></input>
+          <div className="setting_name"> Anonymous mode </div>
+          <input
+            type="checkbox"
+            id="setting_name"
+            name="setting_name"
+            value=" "
+          ></input>
+        </div>
       </a>
       <a href="#" className="nav-link">
         <i className="fas fa-cogs"></i> General
