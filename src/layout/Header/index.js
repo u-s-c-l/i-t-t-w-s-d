@@ -8,18 +8,13 @@ const Header = () => {
   return (
     <>
       <nav>
-        <NavLink exact="true" to="/">
-          Home
-        </NavLink>
-        <NavLink to="/about">About</NavLink>
+        <NavLink to="/">Home</NavLink>
         {!currentUser ? (
-          <>
-            <NavLink to="/about">Login </NavLink>
-            <NavLink to="/about">Register</NavLink>
-          </>
+          <></>
         ) : (
           <>
             <NavLink to="/userprofile">Profile</NavLink>
+            <NavLink to="/quiz">Quiz</NavLink>
             <button onClick={logout}>Logout</button>
           </>
         )}
