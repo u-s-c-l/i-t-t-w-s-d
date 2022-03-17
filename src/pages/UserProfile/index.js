@@ -35,7 +35,7 @@ const UserProfile = () => {
   return (
     <>
       <form className="profile_form">
-        <p> {currentUser.username} </p>
+        <p>{!!currentUser && currentUser.username}</p>
         {console.log(currentUser)}
         {active === "edit" ? (
           <Edit onSubmit={handleSubmit}>
