@@ -2,20 +2,21 @@ import React, { useState } from "react";
 import "./index.css";
 
 const Settings = () => {
-  const [show, setShow] = useState(true);
+  const [profile, setProfile] = useState(true);
+  const [privacy, setPrivacy] = useState(true);
 
   return (
     <div className="settings-div">
       <div className="profile_section">
         <a id="profile_btn" href="#">
-          <i className="far fa-user-circle" onClick={() => setShow((s) => !s)}>
+          <i
+            className="far fa-user-circle"
+            onClick={() => setProfile((s) => !s)}
+          >
             Profile{" "}
           </i>{" "}
         </a>
-        <div
-          className={show ? "block" : "hidden"}
-          // style={{ visibility: show ? "visible" : "hidden" }}
-        >
+        <div className={profile ? "block" : "hidden"}>
           <ul>
             <li>Chat Notifications</li>
             <div className="m-4">
