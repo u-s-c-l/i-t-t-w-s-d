@@ -51,7 +51,6 @@ export const AuthProvider = ({ children }) => {
         userData,
         options
       );
-      console.log(data);
       if (!data.success) {
         throw new Error("Login not authorised");
       }
