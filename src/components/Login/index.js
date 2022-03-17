@@ -25,7 +25,7 @@ const Login = () => {
       const loginTest = await login(formData);
 
       if (loginTest === "successful") {
-        navigate("/");
+        navigate("/quiz");
       } else {
         throw new Error(loginTest);
       }
