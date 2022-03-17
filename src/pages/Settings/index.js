@@ -36,7 +36,7 @@ const Settings = () => {
               ></label>
             </div>
           </div>
-          <li>Option 2</li>
+          <li>Game Notifications</li>
           <div className="m-4">
             <div className="toggle colour">
               <input
