@@ -129,11 +129,11 @@ const Settings = () => {
         </ul>
       </div>
       <a id="general_btn" href="#">
-        <i className="fa fa-lock" onClick={() => setPrivacy((s) => !s)}>
+        <i className="fas fa-cogs" onClick={() => setGeneral((s) => !s)}>
           Privacy{" "}
         </i>{" "}
       </a>
-      <div className={privacy ? "hidden" : "block"}>
+      <div className={general ? "hidden" : "block"}>
         <ul>
           <li>Accept Chat Requests</li>
           <div className="m-4">
