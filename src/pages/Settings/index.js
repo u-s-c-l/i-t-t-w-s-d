@@ -88,12 +88,12 @@ const Settings = () => {
           <div className="m-4">
             <div className="toggle colour">
               <input
-                id="profile1"
+                id="privacy1"
                 className="toggle-checkbox hidden"
                 type="checkbox"
               ></input>
               <label
-                htmlFor="profile1"
+                htmlFor="privacy1"
                 className="toggle-label block w-12 h-6 rounded-full transition-color duration-150 ease-out"
               ></label>
             </div>
@@ -102,12 +102,12 @@ const Settings = () => {
           <div className="m-4">
             <div className="toggle colour">
               <input
-                id="profile2"
+                id="privacy2"
                 className="toggle-checkbox hidden"
                 type="checkbox"
               ></input>
               <label
-                htmlFor="profile2"
+                htmlFor="privacy2"
                 className="toggle-label block w-12 h-6 rounded-full transition-color duration-150 ease-out"
               ></label>
             </div>
@@ -116,12 +116,12 @@ const Settings = () => {
           <div className="m-4">
             <div className="toggle colour">
               <input
-                id="profile3"
+                id="privacy3"
                 className="toggle-checkbox hidden"
                 type="checkbox"
               ></input>
               <label
-                htmlFor="profile3"
+                htmlFor="privacy3"
                 className="toggle-label block w-12 h-6 rounded-full transition-color duration-150 ease-out"
               ></label>
             </div>
@@ -130,12 +130,12 @@ const Settings = () => {
           <div className="m-4">
             <div className="toggle colour">
               <input
-                id="profile4"
+                id="privacy4"
                 className="toggle-checkbox hidden"
                 type="checkbox"
               ></input>
               <label
-                htmlFor="profile4"
+                htmlFor="privacy4"
                 className="toggle-label block w-12 h-6 rounded-full transition-color duration-150 ease-out"
               ></label>
             </div>
