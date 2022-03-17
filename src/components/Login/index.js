@@ -24,10 +24,10 @@ const Login = () => {
       setLoading(true);
       const loginTest = await login(formData);
 
-      if (typeof loginTest === "string") {
+      if (loginTest === "successful") {
         navigate("/");
       } else {
-        throw new Error("No match for that username and password combination");
+        throw new Error(loginTest);
       }
     } catch (err) {
       setLoading(false);
