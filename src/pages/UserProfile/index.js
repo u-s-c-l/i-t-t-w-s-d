@@ -8,7 +8,7 @@ import {
   SettingsBtn,
   Chat
 } from "../../components";
-import { useAuthContext } from "../../contexts";
+import { useAuthContext } from "../../contexts/AuthContext";
 
 const UserProfile = () => {
   const { currentUser } = useAuthContext();
