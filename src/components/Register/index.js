@@ -58,7 +58,7 @@ const Register = () => {
         className="p-4 flex flex-col items-center"
       >
         <div>
-          <h3 className="text-3xl mr-20">What is your username?</h3>
+          <h3 className="text-3xl mr-20 font-light">What is your username?</h3>
           <input
             type="text"
             name="username"
@@ -77,7 +77,7 @@ const Register = () => {
           </p>
         </div>
         <div>
-          <h3 className="text-3xl mr-20">What is your password?</h3>
+          <h3 className="text-3xl mr-20 font-light">What is your password?</h3>
           <input
             type="password"
             name="password"
@@ -94,7 +94,7 @@ const Register = () => {
           </p>
         </div>
         <div>
-          <h3 className="text-3xl mr-20">Confirm your password?</h3>
+          <h3 className="text-3xl mr-20 font-light">Confirm your password?</h3>
           <input
             type="password"
             name="passwordConfirmation"
