@@ -19,8 +19,6 @@ const Name = ({ onChange, value }) => {
 };
 
 Name.propTypes = {
-  onSubmit: PropTypes.func,
-  children: PropTypes.object,
   onChange: PropTypes.func,
   value: PropTypes.object
 };

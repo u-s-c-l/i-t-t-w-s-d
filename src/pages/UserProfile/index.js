@@ -1,6 +1,5 @@
 import React from "react";
-// import { Edit } from "../../components";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 import { Edit, Status, Name, Profile } from "../../components";
 
 const UserProfile = () => {
@@ -18,13 +17,13 @@ const UserProfile = () => {
   );
 };
 
-UserProfile.propTypes = {
-  onChange: PropTypes.func,
-  onSubmit: PropTypes.func,
-  value: PropTypes.object,
-  name: PropTypes.any,
-  status: PropTypes.any,
-  children: PropTypes.object
-};
+// UserProfile.propTypes = {
+//   onChange: PropTypes.func,
+//   onSubmit: PropTypes.func,
+//   value: PropTypes.object,
+//   name: PropTypes.any,
+//   status: PropTypes.any,
+//   children: PropTypes.object
+// };
 
 export default UserProfile;

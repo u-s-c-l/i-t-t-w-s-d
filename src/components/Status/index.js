@@ -20,8 +20,6 @@ const Status = ({ onChange, value }) => {
 
 Status.propTypes = {
   onChange: PropTypes.func,
-  value: PropTypes.object,
-  onSubmit: PropTypes.func,
-  children: PropTypes.object
+  value: PropTypes.object
 };
 export default Status;
