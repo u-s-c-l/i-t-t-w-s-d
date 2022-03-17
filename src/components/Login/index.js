@@ -31,7 +31,7 @@ const Login = () => {
         id="form-registration"
         onSubmit={handleSubmit}
         aria-label="register"
-        className="p-8"
+        className="p-4"
       >
         <div>
           <h3 className="text-3xl mr-20">What is your username?</h3>
