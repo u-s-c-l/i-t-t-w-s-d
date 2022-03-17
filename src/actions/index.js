@@ -1,6 +1,8 @@
 import axios from "axios";
 
-const loading = (category) => ({ type: "LOADING", payload: category });
+export const loading = (category) => ({ type: "LOADING", payload: category });
+
+//loadQuestions = loading
 
 
 

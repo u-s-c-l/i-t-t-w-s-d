@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useSocket } from "../../components/SocketContext/SocketContext";
 import { useDispatch } from "react-redux";
+import { loading } from "../../actions";
 import { useNavigate } from "react-router-dom";
 
 const JoinGame = () => {
@@ -10,9 +11,10 @@ const JoinGame = () => {
 
   useEffect(() => {
     socket.on("init-game", (diff, qnum, quiz) => {
-      dispatch();
+      dispatch(loading(quiz));
+      history("/quiz/game");
     });
-  });
+  }),[socket];
 
   return (
     <>

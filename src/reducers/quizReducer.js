@@ -13,7 +13,6 @@ const initState = {
 const quizReducer = (state = initState, action) => {
   switch (action.type) {
     case "CREATE": {
-      console.log(action.payload);
       return {
         ...state,
         room: action.payload.room,
