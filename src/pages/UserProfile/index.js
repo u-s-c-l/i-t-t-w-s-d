@@ -4,21 +4,6 @@ import PropTypes from "prop-types";
 import { Edit, Status } from "../../components";
 
 const UserProfile = () => {
-  const Name = ({ onChange, value }) => (
-    <div className="field">
-      <label htmlFor="name">name:</label>
-      <input
-        id="name"
-        type="text"
-        onChange={onChange}
-        maxLength="25"
-        value={value}
-        placeholder="Alexa"
-        required
-      />
-    </div>
-  );
-
   const Profile = ({ onSubmit, name, status }) => (
     <div className="card">
       <form onSubmit={onSubmit}>
