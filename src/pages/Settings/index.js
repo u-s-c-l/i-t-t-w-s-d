@@ -165,6 +165,7 @@ const Settings = () => {
           </div>
         </ul>
       </div>
+      <button> delete </button>
     </div>
   );
 };
