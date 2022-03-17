@@ -25,7 +25,8 @@ export const AuthProvider = ({ children }) => {
         headers: { "Content-Type": "application/json" }
       };
       const { data } = await axios.post(
-        `${process.env.API_URL}auth/register`,
+        // eslint-disable-next-line no-undef
+        `${process.env.REACT_APP_API_URL}auth/register`,
         userData,
         options
       );
@@ -45,7 +46,8 @@ export const AuthProvider = ({ children }) => {
         headers: { "Content-Type": "application/json" }
       };
       const { data } = await axios.post(
-        `${process.env.API_URL}auth/login`,
+        // eslint-disable-next-line no-undef
+        `${process.env.REACT_APP_API_URL}auth/login`,
         userData,
         options
       );

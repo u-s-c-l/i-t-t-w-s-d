@@ -6,7 +6,7 @@ const Login = () => {
   const { login } = useAuthContext();
   const navigate = useNavigate();
 
-  const [formData, setFormData] = useState({ email: "", password: "" });
+  const [formData, setFormData] = useState({ username: "", password: "" });
   const [error, setError] = useState();
   const [loading, setLoading] = useState(false);
 
@@ -18,7 +18,7 @@ const Login = () => {
     try {
       setLoading(true);
       await login(formData);
-      navigate("/home");
+      navigate("/");
     } catch (err) {
       setLoading(false);
       setError(err);
@@ -29,11 +29,11 @@ const Login = () => {
     <>
       <form onSubmit={handleSubmit} aria-label="login">
         <input
-          type="email"
-          name="email"
-          value={formData.email}
+          type="username"
+          name="username"
+          value={formData.username}
           onChange={handleInput}
-          placeholder="Email"
+          placeholder="Username"
         />
         <input
           type="password"
