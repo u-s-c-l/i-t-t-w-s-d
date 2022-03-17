@@ -112,7 +112,7 @@ const Settings = () => {
               ></label>
             </div>
           </div>
-          <li>Change Password</li>
+          <li>Billing info</li>
           <div className="m-4">
             <div className="toggle colour">
               <input
