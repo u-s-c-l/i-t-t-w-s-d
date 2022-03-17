@@ -1,9 +1,8 @@
 import React from "react";
-
 import { Routes, Route } from "react-router-dom";
 import * as Pages from "./pages";
 
-// change quiz page to create page and separate all
+
 
 function App() {
 
