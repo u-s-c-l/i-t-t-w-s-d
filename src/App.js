@@ -1,5 +1,5 @@
 import React from "react";
-import { Header, Footer } from "./layout";
+import { Header } from "./layout";
 import QuizLanding from "./components/QuizLanding";
 import { Routes, Route } from "react-router-dom";
 import * as Pages from "./pages";
@@ -31,7 +31,6 @@ function App() {
         )}
         {/* <Route element={<Pages.NotFound />} /> */}
       </Routes>
-      <Footer />
     </div>
   );
 }
