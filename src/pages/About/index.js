@@ -19,6 +19,10 @@ function About() {
 
   return (
     <>
+      <h1 className="capitalize text-center text-4xl font-bold text-slate-50">
+        I thought this was speed dating
+      </h1>
+      <p></p>
       <div className="m-8 rounded-lg overflow-hidden bg-slate-50 border-2 border-tblack">
         <div className="flex justify-between">
           <button
