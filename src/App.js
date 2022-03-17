@@ -15,6 +15,7 @@ function App() {
         <Route path={"/"} element={<Pages.Home />} />
         <Route path={"/about"} element={<Pages.About />} />
         <Route path={"/settings"} element={<Pages.Settings />} />
+        <Route path={"/chatroom"} element={<Pages.Chatroom />} />
         {/* {!currentUser ? (
           <>
             <Route path={"/login"} element={<Pages.About />} />
