@@ -139,12 +139,12 @@ const Settings = () => {
           <div className="m-4">
             <div className="toggle colour">
               <input
-                id="privacy1"
+                id="general1"
                 className="toggle-checkbox hidden"
                 type="checkbox"
               ></input>
               <label
-                htmlFor="privacy1"
+                htmlFor="general1"
                 className="toggle-label block w-12 h-6 rounded-full transition-color duration-150 ease-out"
               ></label>
             </div>
@@ -153,12 +153,12 @@ const Settings = () => {
           <div className="m-4">
             <div className="toggle colour">
               <input
-                id="privacy2"
+                id="general2"
                 className="toggle-checkbox hidden"
                 type="checkbox"
               ></input>
               <label
-                htmlFor="privacy2"
+                htmlFor="general2"
                 className="toggle-label block w-12 h-6 rounded-full transition-color duration-150 ease-out"
               ></label>
             </div>
@@ -167,7 +167,7 @@ const Settings = () => {
           <div className="m-4">
             <div className="toggle colour">
               <input
-                id="privacy3"
+                id="general3"
                 className="toggle-checkbox hidden"
                 type="checkbox"
               ></input>
