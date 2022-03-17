@@ -35,7 +35,7 @@ function App() {
             <Route path={"/quiz/results/*"} element={<Pages.Results />} />
           </>
         )}
-        {/* <Route element={<Pages.NotFound />} /> */}
+        <Route path="/*" element={<Pages.NotFound />} />
       </Routes>
     </div>
   );
