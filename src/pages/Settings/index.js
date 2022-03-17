@@ -126,20 +126,6 @@ const Settings = () => {
               ></label>
             </div>
           </div>
-          <li>Change Username</li>
-          <div className="m-4">
-            <div className="toggle colour">
-              <input
-                id="privacy4"
-                className="toggle-checkbox hidden"
-                type="checkbox"
-              ></input>
-              <label
-                htmlFor="privacy4"
-                className="toggle-label block w-12 h-6 rounded-full transition-color duration-150 ease-out"
-              ></label>
-            </div>
-          </div>
         </ul>
       </div>
     </div>
