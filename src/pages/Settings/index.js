@@ -2,7 +2,7 @@ import React from "react";
 
 const Settings = () => {
   return (
-    <div className="side-menu">
+    <div className="settings-div">
       <a href="#" className="nav-link">
         <i className="far fa-user-circle"></i> Profile
       </a>
