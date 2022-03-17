@@ -9,11 +9,10 @@ function App() {
   const { currentUser } = useAuthContext();
 
   return (
-    <div className="App bg-gradient-to-r from-tpink to-torange min-h-screen">
+    <div className="App bg-gradient-to-r from-tpink to-torange min-h-screen text-tblack">
       <Header />
       <Routes>
-        <Route path={"/"} element={<Pages.Home />} />
-        <Route path={"/about"} element={<Pages.About />} />
+        <Route path={"/"} element={<Pages.About />} />
         <Route path={"/settings"} element={<Pages.Settings />} />
         <Route path={"/chatroom"} element={<Pages.ChatRoom />} />
         {!currentUser ? (
