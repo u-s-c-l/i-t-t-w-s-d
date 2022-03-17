@@ -6,73 +6,75 @@ const Settings = () => {
 
   return (
     <div className="settings-div">
-      <a id="profile_btn" href="#">
-        <i className="far fa-user-circle" onClick={() => setShow((s) => !s)}>
-          Profile{" "}
-        </i>{" "}
-      </a>
-      <div
-        className="dropdown"
-        style={{ visibility: show ? "visible" : "hidden" }}
-      >
-        <ul>
-          <li>Chat Notifications</li>
-          <div className="m-4">
-            <div className="toggle colour">
-              <input
-                id="profile1"
-                className="toggle-checkbox hidden"
-                type="checkbox"
-              ></input>
-              <label
-                htmlFor="profile1"
-                className="toggle-label block w-12 h-6 rounded-full transition-color duration-150 ease-out"
-              ></label>
+      <div className="profile_section">
+        <a id="profile_btn" href="#">
+          <i className="far fa-user-circle" onClick={() => setShow((s) => !s)}>
+            Profile{" "}
+          </i>{" "}
+        </a>
+        <div
+          className={show ? "block" : "hidden"}
+          // style={{ visibility: show ? "visible" : "hidden" }}
+        >
+          <ul>
+            <li>Chat Notifications</li>
+            <div className="m-4">
+              <div className="toggle colour">
+                <input
+                  id="profile1"
+                  className="toggle-checkbox hidden"
+                  type="checkbox"
+                ></input>
+                <label
+                  htmlFor="profile1"
+                  className="toggle-label block w-12 h-6 rounded-full transition-color duration-150 ease-out"
+                ></label>
+              </div>
             </div>
-          </div>
-          <li>Game Notifications</li>
-          <div className="m-4">
-            <div className="toggle colour">
-              <input
-                id="profile2"
-                className="toggle-checkbox hidden"
-                type="checkbox"
-              ></input>
-              <label
-                htmlFor="profile2"
-                className="toggle-label block w-12 h-6 rounded-full transition-color duration-150 ease-out"
-              ></label>
+            <li>Game Notifications</li>
+            <div className="m-4">
+              <div className="toggle colour">
+                <input
+                  id="profile2"
+                  className="toggle-checkbox hidden"
+                  type="checkbox"
+                ></input>
+                <label
+                  htmlFor="profile2"
+                  className="toggle-label block w-12 h-6 rounded-full transition-color duration-150 ease-out"
+                ></label>
+              </div>
             </div>
-          </div>
-          <li>Change Password</li>
-          <div className="m-4">
-            <div className="toggle colour">
-              <input
-                id="profile3"
-                className="toggle-checkbox hidden"
-                type="checkbox"
-              ></input>
-              <label
-                htmlFor="profile3"
-                className="toggle-label block w-12 h-6 rounded-full transition-color duration-150 ease-out"
-              ></label>
+            <li>Change Password</li>
+            <div className="m-4">
+              <div className="toggle colour">
+                <input
+                  id="profile3"
+                  className="toggle-checkbox hidden"
+                  type="checkbox"
+                ></input>
+                <label
+                  htmlFor="profile3"
+                  className="toggle-label block w-12 h-6 rounded-full transition-color duration-150 ease-out"
+                ></label>
+              </div>
             </div>
-          </div>
-          <li>Change Username</li>
-          <div className="m-4">
-            <div className="toggle colour">
-              <input
-                id="profile4"
-                className="toggle-checkbox hidden"
-                type="checkbox"
-              ></input>
-              <label
-                htmlFor="profile4"
-                className="toggle-label block w-12 h-6 rounded-full transition-color duration-150 ease-out"
-              ></label>
+            <li>Change Username</li>
+            <div className="m-4">
+              <div className="toggle colour">
+                <input
+                  id="profile4"
+                  className="toggle-checkbox hidden"
+                  type="checkbox"
+                ></input>
+                <label
+                  htmlFor="profile4"
+                  className="toggle-label block w-12 h-6 rounded-full transition-color duration-150 ease-out"
+                ></label>
+              </div>
             </div>
-          </div>
-        </ul>
+          </ul>
+        </div>
       </div>
       <a id="privacy_btn" href="#">
         <i className="fa fa-lock" onClick={() => setShow((s) => !s)}>
@@ -80,7 +82,7 @@ const Settings = () => {
         </i>{" "}
       </a>
       <div
-        className="dropdown"
+        className="privacy-dropdown"
         style={{ visibility: show ? "visible" : "hidden" }}
       >
         <ul>
