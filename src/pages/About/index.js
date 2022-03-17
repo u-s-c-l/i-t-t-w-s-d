@@ -20,7 +20,7 @@ function About() {
   const buttonStyle = "w-1/2 text-xl p-2 ";
 
   return (
-    <section className="pb-8">
+    <section className=" pb-28">
       <h1 className="capitalize text-center text-4xl font-bold text-slate-50">
         I thought this was speed dating
       </h1>
