@@ -84,7 +84,7 @@ const Settings = () => {
       </a>
       <div className={privacy ? "hidden" : "block"}>
         <ul>
-          <li>Chat Notifications</li>
+          <li>Accept Chat Requests</li>
           <div className="m-4">
             <div className="toggle colour">
               <input
