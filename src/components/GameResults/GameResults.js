@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { useSocket } from "../SocketContext/SocketContext";
+import { useSocket } from "../../contexts/SocketContext/SocketContext";
 import { Col, Row, Container } from "reactstrap";
 
 const GameResults = () => {
