@@ -17,7 +17,7 @@ const JoinWR = () => {
       history("/quiz/game");
     });
   }),
-    [socket];
+  [socket];
 
   return (
     <div data-testid="joinWR">

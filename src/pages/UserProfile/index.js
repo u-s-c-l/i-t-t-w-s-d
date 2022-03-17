@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 // import PropTypes from "prop-types";
-import { useAuthContext } from "../../contexts";
 import {
   Edit,
   Status,
@@ -13,10 +12,6 @@ import { useAuthContext } from "../../contexts";
 
 const UserProfile = () => {
   const { currentUser } = useAuthContext();
-<<<<<<< HEAD
-=======
-
->>>>>>> 7aadadd9cfa148cbf27fd95589fc8bebec94f661
   const [name, setName] = useState("");
   const [status, setStatus] = useState("");
   const [active, setActive] = useState("edit");
