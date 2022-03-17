@@ -1,22 +1,22 @@
 import React from "react";
 import { useState } from "react";
-import  {useSocket} from "../../components/SocketContext/SocketContext";
+import { useSocket } from "../../components/SocketContext/SocketContext";
 import { useDispatch } from "react-redux";
 import { joinPlayer } from "../../actions";
 import { useNavigate } from "react-router-dom";
-
+import { useAuthContext } from "../../contexts";
 
 const JoinGame = () => {
-
   // need username and room to join a game with socket
-
+  const { getCurrentUser } = useAuthContext();
+  const { username } = getCurrentUser();
   const socket = useSocket();
   const dispatch = useDispatch();
   const history = useNavigate();
- 
-  const [username, setUsername] = useState("bab");
 
-  const [roomName, setRoomName] = useState("bobs house");
+  const [nameInput, setUsername] = useState(username);
+
+  const [roomName, setRoomName] = useState("");
 
   const handleNameInput = (e) => {
     e.preventDefault();
@@ -30,22 +30,44 @@ const JoinGame = () => {
   };
 
   const handleSubmit = () => {
-    socket.emit("join-room", roomName, username);
+    socket.emit("join-room", roomName, nameInput);
     console.log("joined game");
-    dispatch(joinPlayer(username, roomName));
+    dispatch(joinPlayer(nameInput, roomName));
     history("/quiz/waiting");
   };
 
   return (
     <>
-      <h1> Join Game</h1>
-    
-      <input type="text" value={username} onChange={handleNameInput}></input>
-      <input type="text" value={roomName} onChange={handleRoomInput}></input>
-      <button type="submit" onClick={handleSubmit}>
-        Join
-      </button>
-   
+      <h1 className="capitalize text-center text-4xl font-bold text-slate-50 pt-10">
+        Join Game
+      </h1>
+      <div className="m-8 mb-0 rounded-lg overflow-hidden bg-slate-50 border-2 border-tblack p-4 py-12">
+        <div className="space-y-4">
+          <input
+            type="text"
+            value={nameInput}
+            onChange={handleNameInput}
+            required
+            disabled
+            className="capitalize bg-gradient-to-r from-tpink to-torange text-white py-3 rounded-xl font-bold w-60 mx-auto block focus:outline-none placeholder:text-slate-50 text-left px-4"
+          ></input>
+          <input
+            type="text"
+            value={roomName}
+            onChange={handleRoomInput}
+            placeholder="Room name:"
+            required
+            className="capitalize bg-gradient-to-r from-tpink opacity-70 to-torange text-white py-3 rounded-xl font-bold w-60 mx-auto block focus:opacity-100 focus:outline-none placeholder:text-slate-50 text-left px-4"
+          ></input>
+        </div>
+        <button
+          type="submit"
+          onClick={handleSubmit}
+          className="capitalize bg-gradient-to-r from-tpink to-torange text-white py-3 text-center rounded-full font-bold w-44 mx-auto block opacity-70 cursor-pointer hover:opacity-100 disabled:hidden mt-8"
+        >
+          Join Game!
+        </button>
+      </div>
     </>
   );
 };

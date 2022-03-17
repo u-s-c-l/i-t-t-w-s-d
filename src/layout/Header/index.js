@@ -4,23 +4,45 @@ import { useAuthContext } from "../../contexts";
 
 const Header = () => {
   const { currentUser, logout } = useAuthContext();
-
+  const linkStyle = "py-4 px-5 text-lg hover:font-extrabold";
   return (
     <>
-      <nav>
-        <NavLink exact="true" to="/">
+      <nav
+        className={
+          "bg-slate-50 fixed bottom-0 w-full flex justify-around rounded-tl-3xl rounded-tr-3xl"
+        }
+      >
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? `${linkStyle} font-extrabold` : linkStyle
+          }
+          to="/"
+        >
           Home
         </NavLink>
-        <NavLink to="/about">About</NavLink>
         {!currentUser ? (
-          <>
-            <NavLink to="/about">Login </NavLink>
-            <NavLink to="/about">Register</NavLink>
-          </>
+          <></>
         ) : (
           <>
-            <NavLink to="/userprofile">Profile</NavLink>
-            <button onClick={logout}>Logout</button>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? `${linkStyle} font-extrabold` : linkStyle
+              }
+              to="/userprofile"
+            >
+              Profile
+            </NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? `${linkStyle} font-extrabold` : linkStyle
+              }
+              to="/quiz"
+            >
+              Quiz
+            </NavLink>
+            <button className={linkStyle} onClick={logout}>
+              Logout
+            </button>
           </>
         )}
       </nav>

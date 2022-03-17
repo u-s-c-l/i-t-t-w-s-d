@@ -46,7 +46,7 @@ const Register = () => {
 
       if (typeof registerTest === "string") {
         await login(formData);
-        navigate("/");
+        navigate("/quiz");
       } else {
         throw new Error("That username is already taken");
       }

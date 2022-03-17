@@ -10,12 +10,24 @@ import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 
 import { quizReducer } from "../reducers";
+import { SocketProvider } from "../components/SocketContext/SocketContext";
+import { MemoryRouter } from "react-router-dom";
 
 const TestProviders = ({ initialState }) => {
   initialState ||= {
     questions: [],
     difficulty: "",
-    loading: false
+    category: "",
+    room: "",
+    username: "",
+    loading: false,
+    owner: false,
+    score: 0,
+    currentQ: 0,
+    finishQuiz: false,
+    index: 0,
+    multiplayer: false,
+    playerScores: []
   };
   let testReducer = () =>
     quizReducer(initialState, {
@@ -25,7 +37,11 @@ const TestProviders = ({ initialState }) => {
 
   return ({ children }) => (
     <AuthProvider>
-      <Provider store={testStore}>{children}</Provider>
+      <SocketProvider>
+        <MemoryRouter>
+          <Provider store={testStore}>{children}</Provider>
+        </MemoryRouter>
+      </SocketProvider>
     </AuthProvider>
   );
 };

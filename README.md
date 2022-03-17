@@ -14,7 +14,7 @@ This repo hosts the client side of an interactive quiz game.
 - [Installation & Usage](#installation--usage)
 - [Technologies](#technologies)
 
-# Installation and Usage
+## Installation and Usage
 
 - Clone the repo.
 - Open terminal and navigate to `/i-t-t-w-s-d` folder.
@@ -52,8 +52,8 @@ This server is continuosly deployed on [Netlify](https://ultimate-quiz-game.netl
 
 - [node.js 🔗](https://nodejs.org/)
 - [Jest 🔗](https://jestjs.io/)
-- [React]()
-- [Tailwind]()
-- [Socket.io]()
+- [React 🔗](https://reactjs.org/)
+- [Tailwind 🔗](https://tailwindcss.com/)
+- [Socket.io 🔗](https://socket.io/)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

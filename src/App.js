@@ -4,11 +4,8 @@ import { Routes, Route } from "react-router-dom";
 import * as Pages from "./pages";
 import { useAuthContext } from "./contexts";
 
-
 function App() {
-
   const { currentUser } = useAuthContext();
-
 
   return (
     <div className="App bg-gradient-to-r from-tpink to-torange min-h-screen text-tblack">
@@ -28,18 +25,20 @@ function App() {
           <>
             <Route exact path={"/quiz"} element={<Pages.QuizMenu />} />
             {/* This is the home page  */}
-            <Route path={"/quiz/createnew/*"} element={<Pages.CreateNewGame />} />
+            <Route
+              path={"/quiz/createnew/*"}
+              element={<Pages.CreateNewGame />}
+            />
             <Route path={"/quiz/join/*"} element={<Pages.JoinGame />} />
             <Route path={"/quiz/waiting/*"} element={<Pages.WaitingRoom />} />
-            <Route path={"/quiz/game/*"} element={<Pages.PlayGame />} /> 
-            <Route path={"/quiz/results/*"} element={<Pages.Results />} /> 
+            <Route path={"/quiz/game/*"} element={<Pages.PlayGame />} />
+            <Route path={"/quiz/results/*"} element={<Pages.Results />} />
           </>
         )}
         {/* <Route element={<Pages.NotFound />} /> */}
       </Routes>
     </div>
   );
-
 }
 // DELETE HELLO WORLD
 export default App;

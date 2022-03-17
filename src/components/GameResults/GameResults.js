@@ -1,15 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useSocket } from "../SocketContext/SocketContext";
-import {Col,Row, Container} from "reactstrap";
-
-
+import { Col, Row, Container } from "reactstrap";
 
 const GameResults = () => {
-
-  const room = useSelector(state => state.room);
-  const username = useSelector(state => state.username);
-  const score = useSelector(state => state.score);
+  const room = useSelector((state) => state.room);
+  const username = useSelector((state) => state.username);
+  const score = useSelector((state) => state.score);
   const socket = useSocket();
   const playerScores = useSelector((state) => state.playerScores);
   const multiplayer = useSelector((state) => state.multiplayer);
@@ -17,19 +14,19 @@ const GameResults = () => {
 
   useEffect(() => {
     socket.emit("end-game", room, username, score);
-  },[]);
+  }, []);
 
   useEffect(() => {
     playerScores.forEach((p) => {
       if (p.score < score) {
         setGameResult({
-          res: "YOU WIN",
+          res: "YOU WIN"
         });
       }
 
       if (p.score === score) {
         setGameResult({
-          res: "ITS A DRAW",
+          res: "ITS A DRAW"
         });
       }
 
@@ -41,10 +38,8 @@ const GameResults = () => {
     });
   }, [playerScores]);
 
-
-
   return (
-    <>
+    <div data-testid="results-component">
       <h1> Results </h1>
       {!multiplayer ? (
         <h2> YOUR SCORE: {score}</h2>
@@ -78,7 +73,7 @@ const GameResults = () => {
           </Container>
         </div>
       )}
-    </>
+    </div>
   );
 };
 export default GameResults;
