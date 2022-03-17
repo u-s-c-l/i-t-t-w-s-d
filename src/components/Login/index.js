@@ -10,18 +10,28 @@ const Login = () => {
   const [error, setError] = useState();
   const [loading, setLoading] = useState(false);
 
-  const handleInput = (e) =>
-    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  const handleInput = (e) => {
+    setError();
+    return setFormData((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value
+    }));
+  };
   const formIncomplete = () => Object.values(formData).some((v) => !v);
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       setLoading(true);
-      await login(formData);
-      navigate("/");
+      const loginTest = await login(formData);
+
+      if (typeof loginTest === "string") {
+        navigate("/");
+      } else {
+        throw new Error("No match for that username and password combination");
+      }
     } catch (err) {
       setLoading(false);
-      setError(err);
+      setError(err.message);
     }
   };
 
@@ -68,8 +78,16 @@ const Login = () => {
           value="Login"
         />
       </form>
-      {error && <div id="error">{error}</div>}
-      {loading && <div id="loading">Logging in . . .</div>}
+      {error && (
+        <div className="pb-4 text-center" id="error">
+          {error}
+        </div>
+      )}
+      {loading && (
+        <div className="pb-4 text-center" id="loading">
+          Logging in . . .
+        </div>
+      )}
     </>
   );
 };
