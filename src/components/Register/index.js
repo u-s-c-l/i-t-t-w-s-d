@@ -25,7 +25,11 @@ const Register = () => {
     }));
   };
   const formIncomplete = () => {
-    return Object.values(formData).some((v) => !v) || passwordNoMatch();
+    return (
+      Object.values(formData).some((v) => !v) ||
+      passwordNoMatch() ||
+      formData.username.length < 4
+    );
   };
   const passwordNoMatch = () => {
     return formData.password !== formData.passwordConfirmation;
@@ -46,7 +50,12 @@ const Register = () => {
 
   return (
     <>
-      <form onSubmit={handleSubmit} aria-label="register">
+      <form
+        id="form-registration"
+        onSubmit={handleSubmit}
+        aria-label="register"
+        className="mt-10"
+      >
         <div>
           <input
             type="text"
@@ -56,11 +65,11 @@ const Register = () => {
             placeholder="Username"
             required
             className={"peer"}
-            pattern={"([0-9]|[A-Z]|[a-z]){4,}"}
+            pattern={"([0-9]|[A-Z]|[a-z]){4,20}"}
           />
           <p className="invisible peer-invalid:visible">
-            Username must be at least four letters long and only contain numbers
-            or letters
+            Username must be between 4 and twenty letters long and only contain
+            numbers or letters
           </p>
         </div>
         <div>
@@ -70,13 +79,13 @@ const Register = () => {
             value={formData.password}
             onChange={handleInput}
             placeholder="Password"
-            pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$"
+            pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,30}$"
             required
             className="peer"
           />
           <p className="invisible peer-invalid:visible">
-            The password must contain a minimum eight characters, at least one
-            letter, one number and one special character.
+            The password must contain a between 8 and thirty characters, at
+            least one letter, one number and one special character.
           </p>
         </div>
         <div>
