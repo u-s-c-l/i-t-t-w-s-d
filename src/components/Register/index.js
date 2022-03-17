@@ -29,7 +29,7 @@ const Register = () => {
       setLoading(true);
       await register(formData);
       await login(formData);
-      navigate("");
+      navigate("/");
     } catch (err) {
       setLoading(false);
       setError(err);
