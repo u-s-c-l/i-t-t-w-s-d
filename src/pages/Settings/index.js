@@ -88,7 +88,7 @@ const Settings = () => {
             name="setting_name"
             value=" "
           ></input>
-          <div className="setting_name"> Compeition alerts </div>
+          <div className="setting_name"> Competition alerts </div>
           <input
             type="checkbox"
             id="setting_name"
@@ -97,10 +97,10 @@ const Settings = () => {
           ></input>
         </div>
       </a>
-      <a href="#" className="nav-link">
+      {/* <a href="#" className="nav-link">
         <i className="fa fa-question"></i> Delete Account
         <button> delete </button>
-      </a>
+      </a> */}
     </div>
   );
 };
