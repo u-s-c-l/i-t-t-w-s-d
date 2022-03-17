@@ -1,9 +1,15 @@
 import React, {useState} from "react";
 import PropTypes from "prop-types";
+import { useDispatch } from "react-redux";
+import { startGame } from "../../actions";
+import { useNavigate } from "react-router-dom";
 
 // dispatch to create the game 
 
-const CreateGame = ({ getQuestions, startGame }) => {
+const CreateGame = () => {
+
+  const dispatch = useDispatch();
+  const history = useNavigate();
   const categories = [
     "animals",
     "general knowledge",
@@ -38,8 +44,8 @@ const CreateGame = ({ getQuestions, startGame }) => {
     const difficulties = Array.from(e.target.difficulty);
     const selectDiff = difficulties.filter((diff) => diff.checked === true);
     const diffValue = selectDiff[0].value;
-    getQuestions({ category: catValue, difficulty: diffValue });
-    startGame();
+    dispatch(startGame(roomInput, catValue, diffValue, nameInput));
+    history("/quiz/game");
   };
 
   return (

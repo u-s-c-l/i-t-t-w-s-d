@@ -18,7 +18,7 @@ const create = (room, category, difficulty, username) => ({
 
 // combined getQuestions with startGame function
 
-export const startGame = (room,category, difficulty, username) => {
+export const startGame = (room, category, difficulty, username) => {
   const categoryMap = {
     generalknowledge: 9,
     animals: 27,
