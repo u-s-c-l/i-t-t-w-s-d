@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 const Profile = ({ onSubmit, name, status }) => {
   return (
     <div className="card">
-      <form onSubmit={onSubmit}>
+      <form onSubmit={onSubmit} aria-label="profile-form">
         <h1>Profile Card</h1>
         <label className="custom-file-upload fas"></label>
         <div className="name">{name}</div>

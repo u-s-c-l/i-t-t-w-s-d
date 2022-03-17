@@ -12,7 +12,6 @@ This repo hosts the client side of an interactive quiz game.
 ## Table of Contents
 
 - [Installation & Usage](#installation--usage)
-- [Deployment](#deployment)
 - [Technologies](#technologies)
 
 ## Installation and Usage
@@ -20,6 +19,8 @@ This repo hosts the client side of an interactive quiz game.
 - Clone the repo.
 - Open terminal and navigate to `/i-t-t-w-s-d` folder.
 - Run `npm i` to install dependencies.
+
+## Local Usage
 
 In the project directory, you can run:
 
@@ -47,7 +48,7 @@ The build is minified and the filenames include the hashes.\
 
 This server is continuosly deployed on [Netlify](https://ultimate-quiz-game.netlify.app/)
 
-### Technologies
+## Technologies
 
 - [node.js 🔗](https://nodejs.org/)
 - [Jest 🔗](https://jestjs.io/)
