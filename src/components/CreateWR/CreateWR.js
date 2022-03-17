@@ -32,7 +32,7 @@ const CreateWR = () => {
   }, [socket]);
 
   return (
-    <div>
+    <div data-testid="createWR">
       <div>
         {newPlayers.length === 0 ? (
           <>
