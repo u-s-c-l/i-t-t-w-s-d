@@ -15,9 +15,9 @@ const JoinGame = () => {
   const history = useNavigate();
  
 
-  const [username, setUsername] = useState("username");
+  const [username, setUsername] = useState("bab");
 
-  const [roomName, setRoomName] = useState("room");
+  const [roomName, setRoomName] = useState("bobs house");
 
   const handleNameInput = (e) => {
     e.preventDefault();
@@ -40,13 +40,13 @@ const JoinGame = () => {
   return (
     <>
       <h1> Join Game</h1>
-      <form onSubmit={(e) => e.preventDefault()}>
-        <input type="text" value={username} onChange={handleNameInput}></input>
-        <input type="text" value={roomName} onChange={handleRoomInput}></input>
-        <button type="submit" onClick={handleSubmit}>
-          Join
-        </button>
-      </form>
+    
+      <input type="text" value={username} onChange={handleNameInput}></input>
+      <input type="text" value={roomName} onChange={handleRoomInput}></input>
+      <button type="submit" onClick={handleSubmit}>
+        Join
+      </button>
+   
     </>
   );
 };

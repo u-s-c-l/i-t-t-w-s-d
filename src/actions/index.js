@@ -2,25 +2,47 @@ import axios from "axios";
 
 export const loading = (category) => ({ type: "LOADING", payload: category });
 
-//loadQuestions = loading
+const numq = 10;
 
-
-
-const loadQuestions = (questions, difficulty) => ({
-  type: "GET_QUESTIONS",
-  payload: { questions, difficulty }
-});
-
-const create = (room, category, difficulty, username) => ({
+export const create = (room, category, difficulty, username, numq) => ({
   type: "CREATE",
-  payload: { room, category, difficulty, username}
+  payload: { room, category, difficulty, username, numq}
 });
-
-
 
 // combined getQuestions with startGame function
 
-export const startGame = (room, category, difficulty, username) => {
+export const loadQuestions = (questions) => ({
+  type: "LOAD_QUESTIONS",
+  payload: questions
+});
+
+export const joinPlayer = (username, room) => ({
+  type: "JOIN_PLAYER",
+  payload: { username, room }
+});
+
+export const loadSettings = (diff, qnum) => ({
+  type: "LOAD_SETTINGS",
+  payload: { diff, qnum }
+});
+
+export const loadGameMode = () => ({
+  type: "LOAD_THE_GAME"
+});
+
+export const recordPlayerResult = (username, score) => ({
+  type: "RECORD_PLAYER_RESULT",
+  payload: { username, score }
+});
+
+export const recordAnswer = (curScore) => ({
+  type: "RECORD_ANSWER",
+  payload: curScore
+});
+
+
+
+export const createGame = (room, category, difficulty, username) => {
   const categoryMap = {
     generalknowledge: 9,
     animals: 27,
@@ -31,9 +53,10 @@ export const startGame = (room, category, difficulty, username) => {
   const catId = categoryMap[category];
   
 
+
   return async (dispatch) => {
     dispatch(loading(category));
-    dispatch(create(room, catId, difficulty, username));
+    dispatch(create(room, catId, difficulty, username, numq));
     try {
       const questions = await getQuestions(catId, difficulty);
       dispatch(loadQuestions(questions));
@@ -57,10 +80,5 @@ const getQuestions = async ( category, difficulty ) => {
 };
 
 
-
-export const joinPlayer = (username, room) => ({
-  type: "JOIN_PLAYER",
-  payload: {username, room}
-});
 
 export default getQuestions;

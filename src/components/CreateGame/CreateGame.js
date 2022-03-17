@@ -1,7 +1,7 @@
 import React, {useState} from "react";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 import { useDispatch } from "react-redux";
-import { startGame } from "../../actions";
+import { createGame } from "../../actions";
 import { useNavigate } from "react-router-dom";
 
 // dispatch to create the game 
@@ -44,7 +44,7 @@ const CreateGame = () => {
     const difficulties = Array.from(e.target.difficulty);
     const selectDiff = difficulties.filter((diff) => diff.checked === true);
     const diffValue = selectDiff[0].value;
-    dispatch(startGame(roomInput, catValue, diffValue, nameInput));
+    dispatch(createGame(roomInput, catValue, diffValue, nameInput));
     history("/quiz/waiting");
   };
 
@@ -114,9 +114,9 @@ const CreateGame = () => {
   );
 };
 
-CreateGame.propTypes = {
-  getQuestions: PropTypes.func.isRequired,
-  startGame: PropTypes.func.isRequired
-};
+// CreateGame.propTypes = {
+//   getQuestions: PropTypes.func.isRequired,
+//   startGame: PropTypes.func.isRequired
+// };
 
 export default CreateGame;

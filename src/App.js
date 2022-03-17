@@ -16,8 +16,8 @@ function App() {
         <Route path={"/quiz/createnew/*"} element={<Pages.CreateNewGame />} />
         <Route path={"/quiz/join/*"} element={<Pages.JoinGame />} />
         <Route path={"/quiz/waiting/*"} element={<Pages.WaitingRoom />} />
-        {/* <Route path={"/quiz/game/*"} element={<Pages.Game />} /> */}
-        {/* <Route path={"/quiz/results/*"} element={<Pages.Results />} /> */}
+        <Route path={"/quiz/game/*"} element={<Pages.PlayGame />} /> 
+        <Route path={"/quiz/results/*"} element={<Pages.Results />} /> 
       </Routes>
     </div>
   );
