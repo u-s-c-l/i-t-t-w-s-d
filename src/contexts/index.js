@@ -36,7 +36,7 @@ export const AuthProvider = ({ children }) => {
       await login(userData);
       return "Registration successful";
     } catch (err) {
-      return `Registration Error: ${err}`;
+      return err;
     }
   };
 
@@ -51,17 +51,15 @@ export const AuthProvider = ({ children }) => {
         userData,
         options
       );
-      console.log(data);
       if (!data.success) {
         throw new Error("Login not authorised");
       }
       localStorage.setItem("token", data.token);
       const user = jwt_decode(data.token);
-      console.log(user);
       setCurrentUser(user);
-      return "Login successful";
+      return "successful";
     } catch (err) {
-      return `Login Error: ${err}`;
+      return err.response.data;
     }
   };
 
