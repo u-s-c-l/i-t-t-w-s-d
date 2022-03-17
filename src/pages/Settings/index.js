@@ -80,11 +80,26 @@ const Settings = () => {
       </a>
       <a href="#" className="nav-link">
         <i className="fas fa-cogs"></i> General
-        <div className="dropdown"> </div>
+        <div className="dropdown">
+          <div className="setting_name"> Help </div>
+          <input
+            type="checkbox"
+            id="setting_name"
+            name="setting_name"
+            value=" "
+          ></input>
+          <div className="setting_name"> Compeition alerts </div>
+          <input
+            type="checkbox"
+            id="setting_name"
+            name="setting_name"
+            value=" "
+          ></input>
+        </div>
       </a>
       <a href="#" className="nav-link">
         <i className="fa fa-question"></i> Delete Account
-        <div className="dropdown"> </div>
+        <button> delete </button>
       </a>
     </div>
   );
