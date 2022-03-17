@@ -1,6 +1,4 @@
-# I THOUGHT THIS WAS SPED DATING:
-
-## an online quiz game platform.
+# I THOUGHT THIS WAS SPED DATING: an online quiz game platform.
 
 <!-- badges -->
 
