@@ -49,7 +49,7 @@ const JoinGame = () => {
             onChange={handleNameInput}
             required
             disabled
-            className="capitalize bg-gradient-to-r from-tpink to-torange text-white py-3 rounded-xl font-bold w-60 mx-auto block focus:outline-none placeholder:text-slate-50 text-left px-4"
+            className=" bg-gradient-to-r from-tpink to-torange text-white py-3 rounded-xl font-bold w-60 mx-auto block focus:outline-none placeholder:text-slate-50 text-left px-4"
           ></input>
           <input
             type="text"
@@ -57,7 +57,7 @@ const JoinGame = () => {
             onChange={handleRoomInput}
             placeholder="Room name:"
             required
-            className="capitalize bg-gradient-to-r from-tpink opacity-70 to-torange text-white py-3 rounded-xl font-bold w-60 mx-auto block focus:opacity-100 focus:outline-none placeholder:text-slate-50 text-left px-4"
+            className=" bg-gradient-to-r from-tpink opacity-70 to-torange text-white py-3 rounded-xl font-bold w-60 mx-auto block focus:opacity-100 focus:outline-none placeholder:text-slate-50 text-left px-4"
           ></input>
         </div>
         <button
