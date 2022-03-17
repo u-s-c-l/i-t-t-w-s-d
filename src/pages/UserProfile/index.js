@@ -1,7 +1,7 @@
 import React from "react";
 // import { Edit } from "../../components";
 import PropTypes from "prop-types";
-import { Edit, Status } from "../../components";
+import { Edit, Status, Name } from "../../components";
 
 const UserProfile = () => {
   const Profile = ({ onSubmit, name, status }) => (
