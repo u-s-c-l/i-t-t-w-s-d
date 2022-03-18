@@ -1,14 +1,12 @@
 import React, { useState } from "react";
-import { useAuthContext } from "../../contexts";
+import { useAuthContext } from "../../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
-// import { Wisdom } from "../../contexts"
 
 const Register = () => {
   const [password, setPassword] = useState("");
 
   let navigate = useNavigate();
   const { register, login } = useAuthContext();
-  // const wisdom = useContext(Wisdom)
 
   const [formData, setFormData] = useState({
     username: "",

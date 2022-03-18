@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import  TheQuestions  from "../../components/TheQuestions";
-import { useSocket } from "../../components/SocketContext/SocketContext";
+import TheQuestions from "../../components/TheQuestions";
+import { useSocket } from "../../contexts/SocketContext/SocketContext";
 import { recordPlayerResult } from "../../actions";
 
 const PlayGame = () => {

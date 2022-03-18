@@ -5,13 +5,18 @@ import { render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import { Provider } from "react-redux";
-import { AuthProvider } from "../contexts/index";
+import { AuthProvider } from "../contexts/AuthContext/index";
 import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 
 import { quizReducer } from "../reducers";
-import { SocketProvider } from "../components/SocketContext/SocketContext";
+import { SocketProvider } from "../contexts/SocketContext/SocketContext";
 import { MemoryRouter } from "react-router-dom";
+
+import 'setimmediate'
+if (!global.setImmediate) {
+  global.setImmediate = setTimeout
+}
 
 const TestProviders = ({ initialState }) => {
   initialState ||= {

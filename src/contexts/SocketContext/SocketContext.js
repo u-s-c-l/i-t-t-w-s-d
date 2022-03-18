@@ -17,8 +17,12 @@ export const SocketProvider = (props) => {
   const [socket, setSocket] = useState(null);
 
   useEffect(() => {
-    const ENDPOINT = "https://ultimate-quiz-game-sock.herokuapp.com/"; 
-    const newSocket = io(ENDPOINT);
+    const newSocket = io("https://ultimate-quiz-game-sock.herokuapp.com/", {
+      withCredentials: true,
+      extraHeaders: {
+        "my-custom-header": "abcd"
+      }
+    });
     setSocket(newSocket);
     return () => newSocket.close();
   }, [setSocket]);

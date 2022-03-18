@@ -8,6 +8,7 @@ const Status = ({ onChange, value }) => {
         status:
       </label>
       <input
+        aria-label="status-field-input"
         id="status"
         type="text"
         onChange={onChange}

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const QuizLanding = () => {
   return (
     <div data-testid="landing-component">
-      <div className="flex flex-col space-y-4 mt-96">
+      <div className="flex flex-col space-y-4 fixed bottom-24 right-0 left-0">
         <Link
           role="link"
           to="/quiz/createnew"

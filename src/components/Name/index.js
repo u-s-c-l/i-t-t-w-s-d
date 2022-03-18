@@ -8,6 +8,7 @@ const Name = ({ onChange, value }) => {
         name:
       </label>
       <input
+        aria-label="name-field-input"
         id="name"
         type="text"
         onChange={onChange}

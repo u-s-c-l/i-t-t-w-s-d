@@ -8,7 +8,7 @@ import {
   SettingsBtn,
   Chat
 } from "../../components";
-import { useAuthContext } from "../../contexts";
+import { useAuthContext } from "../../contexts/AuthContext";
 
 const UserProfile = () => {
   const { currentUser } = useAuthContext();
@@ -34,7 +34,7 @@ const UserProfile = () => {
 
   return (
     <>
-      <form>
+      <form className="p-4 flex flex-col items-center">
         <p>{!!currentUser && currentUser.username}</p>
         {active === "edit" ? (
           <Edit onSubmit={handleSubmit}>

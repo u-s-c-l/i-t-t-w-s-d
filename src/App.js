@@ -2,13 +2,13 @@ import React from "react";
 import { Header } from "./layout";
 import { Routes, Route } from "react-router-dom";
 import * as Pages from "./pages";
-import { useAuthContext } from "./contexts";
+import { useAuthContext } from "./contexts/AuthContext";
 
 function App() {
   const { currentUser } = useAuthContext();
 
   return (
-    <div className="App bg-gradient-to-r from-tpink to-torange min-h-screen text-tblack">
+    <div className="App bg-gradient-to-r from-tpink to-torange min-h-screen text-tblack max-w-sm mx-auto">
       <Header />
       <Routes>
         <Route path={"/"} element={<Pages.About />} />
@@ -36,7 +36,7 @@ function App() {
             <Route path={"/quiz/results/*"} element={<Pages.Results />} />
           </>
         )}
-        {/* <Route element={<Pages.NotFound />} /> */}
+        <Route path="/*" element={<Pages.NotFound />} />
       </Routes>
     </div>
   );
