@@ -99,7 +99,7 @@ const TheQuestions = () => {
                 <button
                   key={answers[0].answer}
                   onClick={() => handleAnswerSelect(answers[0].answer)}
-                  className="bg-gradient-to-r from-tpink to-torange text-white py-3 text-center rounded-full w-60"
+                  className="bg-gradient-to-r from-tpink to-torange text-white py-3 text-center rounded-full w-60 px-8"
                 >
                   {matches(answers[0].answer)}
                 </button>
@@ -108,7 +108,7 @@ const TheQuestions = () => {
                 <button
                   key={answers[1].answer}
                   onClick={() => handleAnswerSelect(answers[1].answer)}
-                  className="bg-gradient-to-r from-tpink to-torange text-white py-3 text-center rounded-full w-60"
+                  className="bg-gradient-to-r from-tpink to-torange text-white py-3 text-center rounded-full w-60 px-8"
                 >
                   {matches(answers[1].answer)}
                 </button>
@@ -119,7 +119,7 @@ const TheQuestions = () => {
                 <button
                   key={answers[2].answer}
                   onClick={() => handleAnswerSelect(answers[2].answer)}
-                  className="bg-gradient-to-r from-tpink to-torange text-white py-3 text-center rounded-full w-60"
+                  className="bg-gradient-to-r from-tpink to-torange text-white py-3 text-center rounded-full w-60 px-8"
                 >
                   {matches(answers[2].answer)}
                 </button>
@@ -128,7 +128,7 @@ const TheQuestions = () => {
                 <button
                   key={answers[3].answer}
                   onClick={() => handleAnswerSelect(answers[3].answer)}
-                  className="bg-gradient-to-r from-tpink to-torange text-white py-3 text-center rounded-full w-60"
+                  className="bg-gradient-to-r from-tpink to-torange text-white py-3 text-center rounded-full w-60 px-8"
                 >
                   {matches(answers[3].answer)}
                 </button>

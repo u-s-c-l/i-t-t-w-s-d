@@ -39,12 +39,16 @@ const GameResults = () => {
   }, [playerScores]);
 
   return (
-    <div data-testid="results-component">
-      <h1> Results </h1>
+    <div data-testid="results-component" className="mx-5">
+      <h1 className="capitalize text-center text-4xl font-bold text-slate-50 py-10">
+        Results
+      </h1>
       {!multiplayer ? (
-        <h2> YOUR SCORE: {score}</h2>
+        <h2 className="uppercase text-center text-2xl font-bold text-slate-50 px-4">
+          YOUR SCORE: {score}
+        </h2>
       ) : playerScores.length === 0 ? (
-        <h2>
+        <h2 className="text-center text-2xl font-bold text-slate-50 px-4">
           Waiting for other players to finish the game
           <span>...</span>
         </h2>
@@ -52,7 +56,7 @@ const GameResults = () => {
         <div>
           <h1> {gameResult.res} </h1>
           <Container>
-            <Row>
+            <Row className="flex justify-between w-2/3 text-2xl font-bold text-slate-50 px-4">
               <Col>
                 <h3> {username} </h3>
               </Col>
@@ -61,7 +65,10 @@ const GameResults = () => {
               </Col>
             </Row>
             {playerScores.map((p) => (
-              <Row key={p.score}>
+              <Row
+                className="flex justify-between w-2/3 text-2xl font-bold text-slate-50 px-4"
+                key={p.score}
+              >
                 <Col>
                   <label key={p.username}> {p.username} </label>
                 </Col>

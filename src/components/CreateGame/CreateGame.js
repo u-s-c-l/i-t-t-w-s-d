@@ -14,13 +14,7 @@ const CreateGame = () => {
 
   const [selected, setSelected] = useState(0);
 
-  const categories = [
-    "animals",
-    "general knowledge",
-    "film",
-    "gadgets",
-    "music"
-  ];
+  const categories = ["animals", "general knowledge", "film", "music"];
 
   const difficulties = ["easy", "medium", "hard"];
 
