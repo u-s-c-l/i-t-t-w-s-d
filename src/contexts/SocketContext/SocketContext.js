@@ -25,7 +25,7 @@ export const SocketProvider = (props) => {
     });
     setSocket(newSocket);
     return () => newSocket.close();
-  }, [setSocket]);
+  }, []);
 
   if (!socket) {
     return <div>Loading...</div>;
