@@ -7,7 +7,7 @@ const Settings = () => {
   const [general, setGeneral] = useState(true);
   return (
     <div className="pt-8">
-      <div className="settings-div flex flex-col space-y-4 p-4 items-center border border-tblack font-extralight  bg-slate-50  justify-around rounded-lg max-w-sm m-8 mt-0  ">
+      <div className="settings-div flex flex-col space-y-4 p-4 items-center border border-tblack font-extralight bg-slate-50 justify-around rounded-lg max-w-sm m-8 mt-0  ">
         <div className="profile_section">
           <a id="profile_btn" href="#">
             <i
