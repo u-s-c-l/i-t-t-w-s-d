@@ -2,11 +2,11 @@ import React from "react";
 // import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
-import { recordAnswer } from "../../actions";
+import { recordAnswer, loading} from "../../actions";
 import { Container, Row, Col } from "reactstrap";
 import { shuffle, matches } from "./helpers";
+import axios from "axios";
 
-// const questionTime = 15;
 
 const TheQuestions = () => {
   const dispatch = useDispatch();
@@ -15,15 +15,53 @@ const TheQuestions = () => {
   const index = useSelector((state) => state.index);
   const set = useSelector((state) => state.questions[index]);
   const score = useSelector((state) => state.score);
+  const category = useSelector((state) => state.category);
+  const username = useSelector((state) => state.username);
   const question = set.question;
   const cAnswer = set.correct_answer;
   const answers = shuffle(set.answers);
   const difficulty = useSelector((state) => state.difficulty);
 
+  const postScore = async (username, category, score) => {
+    await axios.post(`${process.env.REACT_APP_API_URL}scores/post`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        cat: category,
+        username: username,
+        score: score
+      })
+    });
+  };
+
+  const addScore = (username, catId, score) => {
+    const backwardsCategoryMap = {
+      9: "general knowledge",
+      27: "animals",
+      11: "film",
+      30: "gadgets",
+      12: "music"
+    };
+    const category = backwardsCategoryMap[catId];
+    console.log(category);
+    return async (dispatch) => {
+      dispatch(loading(category));
+      console.log(category);
+      try {
+        await postScore(username, category, score);
+      } catch (err) {
+        console.warn(err.message);
+      }
+    };
+  };
+
   const nextQ = (curScore) => {
     dispatch(recordAnswer(curScore));
-    // setTimer(questionTime);
     if (index === currentQ - 1) {
+      console.log(username, category, score);
+      dispatch(addScore(username, category, score));
       history("/quiz/results");
     }
   };
@@ -43,32 +81,6 @@ const TheQuestions = () => {
     nextQ(curScore);
   };
 
-  // const zeroScore = () => {
-  //   const curScore = 0;
-  //   nextQ(curScore);
-  // };
-
-  // const [timer, setTimer] = useState(questionTime);
-  // const [second, setSecond] = useState(timer);
-
-  // useEffect(() => {
-  //   let myInterval = setInterval(() => {
-  //     if (second > 0) {
-  //       setSecond(second - 1);
-  //     }
-  //   }, 1000);
-  //   return () => clearInterval(myInterval);
-  // });
-
-  // useEffect(() => {
-  //   setSecond(timer);
-  // }, [index]);
-
-  // useEffect(() => {
-  //   if (second === 0) {
-  //     zeroScore();
-  //   }
-  // }, [second]);
 
   return (
     <div data-testid="the-questions">
@@ -87,7 +99,7 @@ const TheQuestions = () => {
                 <button
                   key={answers[0].answer}
                   onClick={() => handleAnswerSelect(answers[0].answer)}
-                  className="bg-gradient-to-r from-tpink to-torange text-white py-3 text-center rounded-full w-60"
+                  className="bg-gradient-to-r from-tpink to-torange text-white py-3 text-center rounded-full w-60 px-8"
                 >
                   {matches(answers[0].answer)}
                 </button>
@@ -96,7 +108,7 @@ const TheQuestions = () => {
                 <button
                   key={answers[1].answer}
                   onClick={() => handleAnswerSelect(answers[1].answer)}
-                  className="bg-gradient-to-r from-tpink to-torange text-white py-3 text-center rounded-full w-60"
+                  className="bg-gradient-to-r from-tpink to-torange text-white py-3 text-center rounded-full w-60 px-8"
                 >
                   {matches(answers[1].answer)}
                 </button>
@@ -107,7 +119,7 @@ const TheQuestions = () => {
                 <button
                   key={answers[2].answer}
                   onClick={() => handleAnswerSelect(answers[2].answer)}
-                  className="bg-gradient-to-r from-tpink to-torange text-white py-3 text-center rounded-full w-60"
+                  className="bg-gradient-to-r from-tpink to-torange text-white py-3 text-center rounded-full w-60 px-8"
                 >
                   {matches(answers[2].answer)}
                 </button>
@@ -116,7 +128,7 @@ const TheQuestions = () => {
                 <button
                   key={answers[3].answer}
                   onClick={() => handleAnswerSelect(answers[3].answer)}
-                  className="bg-gradient-to-r from-tpink to-torange text-white py-3 text-center rounded-full w-60"
+                  className="bg-gradient-to-r from-tpink to-torange text-white py-3 text-center rounded-full w-60 px-8"
                 >
                   {matches(answers[3].answer)}
                 </button>
