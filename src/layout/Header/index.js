@@ -9,7 +9,7 @@ const Header = () => {
     <>
       <nav
         className={
-          "bg-slate-50 fixed bottom-0 w-full flex justify-around rounded-tl-3xl rounded-tr-3xl"
+          "bg-slate-50 fixed bottom-0 w-full flex justify-around rounded-tl-3xl rounded-tr-3xl max-w-sm"
         }
       >
         <NavLink

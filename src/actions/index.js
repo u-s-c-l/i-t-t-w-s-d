@@ -7,7 +7,6 @@ export const create = (room, category, difficulty, username, currentQ) => ({
   payload: { room, category, difficulty, username, currentQ }
 });
 
-// combined getQuestions with startGame function
 
 const currentQ = 10;
 
@@ -23,7 +22,7 @@ export const joinPlayer = (room, username) => ({
 
 export const loadSettings = (diff, qnum) => ({
   type: "LOAD_SETTINGS",
-  payload: { diff, qnum },
+  payload: { diff, qnum }
 });
 
 export const loadGameMode = () => ({
@@ -32,15 +31,13 @@ export const loadGameMode = () => ({
 
 export const recordPlayerResult = (username, score) => ({
   type: "RECORD_PLAYER_RESULT",
-  payload: { username, score },
+  payload: { username, score }
 });
 
 export const recordAnswer = (curScore) => ({
   type: "RECORD_ANSWER",
-  payload: curScore,
+  payload: curScore
 });
-
-
 
 export const createGame = (room, category, difficulty, username) => {
   const categoryMap = {
@@ -57,6 +54,9 @@ export const createGame = (room, category, difficulty, username) => {
     dispatch(create(room, catId, difficulty, username, currentQ));
     try {
       const questions = await getQuestions(catId, difficulty);
+      if (questions.message) {
+        throw new Error(questions.message);
+      }
       dispatch(loadQuestions(questions));
     } catch (err) {
       console.warn(err.message);
@@ -70,9 +70,12 @@ const getQuestions = async (category, difficulty) => {
     const { data } = await axios.get(
       `https://opentdb.com/api.php?amount=10&category=${category}&difficulty=${difficulty}&type=multiple`
     );
+    if (!data.results.length) {
+      throw new Error("We don't have enough questions on that :(");
+    }
     return data.results;
   } catch (err) {
-    console.warn(err.message);
+    return err;
   }
 };
 

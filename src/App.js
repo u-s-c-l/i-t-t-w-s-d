@@ -8,12 +8,13 @@ function App() {
   const { currentUser } = useAuthContext();
 
   return (
-    <div className="App bg-gradient-to-r from-tpink to-torange min-h-screen text-tblack">
+    <div className="App bg-gradient-to-r from-tpink to-torange min-h-screen text-tblack max-w-sm mx-auto">
       <Header />
       <Routes>
         <Route path={"/"} element={<Pages.About />} />
         <Route path={"/settings"} element={<Pages.Settings />} />
         <Route path={"/chatroom"} element={<Pages.ChatRoom />} />
+        <Route path={"/userprofile"} element={<Pages.UserProfile />} />
         {!currentUser ? (
           <>
             <Route path={"/login"} element={<Pages.About />} />
@@ -24,6 +25,7 @@ function App() {
         ) : (
           <>
             <Route exact path={"/quiz"} element={<Pages.QuizMenu />} />
+            <Route path={"/leaderboard"} element={<Pages.LeaderBoard />} />
             {/* This is the home page  */}
             <Route
               path={"/quiz/createnew/*"}

@@ -106,7 +106,8 @@ const Register = () => {
             value={formData.passwordConfirmation}
             onChange={handleInput}
             placeholder="Confirm Password"
-            className="peer border-b-2 border-tblack font-extralight p-1 mt-4 w-full focus:outline-none focus:border-green-500 focus:invalid:border-tpink"
+            className="peer border-b-2 border-tblack font-extralight p-1 mt-4 w-full
+             focus:outline-none focus:border-green-500 focus:invalid:border-tpink"
             required
             pattern={password}
           />
