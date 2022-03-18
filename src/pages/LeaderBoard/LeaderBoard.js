@@ -13,7 +13,9 @@ const LeaderBoard = () => {
   }, []);
   return (
     <>
-      <h2>Leader Board</h2>
+      <h2 className="capitalize text-center text-4xl font-bold text-slate-50 py-10">
+        Leader Board
+      </h2>
       {scores && (
         <table data-testid="score-table">
           <thead>
