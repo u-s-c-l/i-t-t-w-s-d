@@ -7,7 +7,7 @@ const Edit = ({ onSubmit, children }) => {
       <form
         onSubmit={onSubmit}
         aria-label="name-status-form"
-        className="p-4 flex flex-col items-center"
+        className="p-4 flex flex-col items-center border border-tblack font-extralight p-1 mt-4 w-full h-48 bg-slate-50 w-full flex justify-around rounded-tl-3xl rounded-tr-3xl max-w-sm  "
       >
         <h1>Profile Card</h1>
         {children}

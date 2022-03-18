@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const Name = ({ onChange, value }) => {
   return (
-    <div className="field">
+    <div className="field ">
       <label htmlFor="name" aria-label="name-field">
         name:
       </label>
