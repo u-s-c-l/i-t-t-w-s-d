@@ -5,20 +5,6 @@ import UserProfile from '.';
 
 import userEvent from '@testing-library/user-event';
 
-let username = {currentUser: "gi-ba-bu"} 
-let useAuthContext = jest.fn(() =>  username );
-let valuef =  useAuthContext()
-it('Given goBack is being tested', () => {
-  expect(valuef.currentUser).toBe("gi-ba-bu")
-});
-
-global.useAuthContext = useAuthContext;
-let valueGlobal = useAuthContext()
-it('Given goBack is being tested', () => {
-  expect(valueGlobal.currentUser).toBe("gi-ba-bu")
-});
-
-
 let valueP;
 
 it('it calls a handleSubmit', () => {
@@ -39,26 +25,7 @@ it('it calls a handleSubmit', () => {
 
 });
 
-
-// it('it calls  handleName', () => {
-//   // Test first render and componentDidMount
-//   act(() => {
-//     renderWithProviders(<UserProfile />);
-//   });
-//   const field = screen.getByLabelText("name-field");
-//   expect(field).toBeInTheDocument();
-//  console.log(field)
-
-//   // Test second render and componentDidUpdate
-//  act(() => {
-//     valueP = field.dispatchEvent(new MouseEvent('submit', {bubbles: true, e:e}), e);
-//    });
- 
-//    expect(valueP).toBe(true);
-
-// });
-
-it('it calls  handleName', () => {
+it('it calls handleName', () => {
   // Test first render and componentDidMount
   act(() => {
     renderWithProviders(<UserProfile />);
@@ -76,12 +43,13 @@ it('it calls  handleName', () => {
 
 });
 
-let value;
-it('it calls a handleName 2', () => {
+
+it('it calls handleName 2', () => {
   // Test first render and componentDidMount
   act(() => {
     renderWithProviders(<UserProfile />);
   });
+  let value;
   userEvent.type(screen.queryByLabelText("name-field-input"), value="gi-ba-bu");
   const field = screen.getByLabelText("name-field-input");
   expect(field).toBeInTheDocument();
@@ -98,11 +66,12 @@ it('it calls a handleName 2', () => {
 
 });
 
-it('it calls a handleStatus', () => {
+it('it calls handleStatus', () => {
   // Test first render and componentDidMount
   act(() => {
     renderWithProviders(<UserProfile />);
   });
+  let value;
   userEvent.type(screen.queryByLabelText("status-field-input"), value="gi-ba-bu");
   const field = screen.getByLabelText("status-field-input");
   expect(field).toBeInTheDocument();
