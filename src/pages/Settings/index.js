@@ -6,7 +6,7 @@ const Settings = () => {
   const [privacy, setPrivacy] = useState(true);
   const [general, setGeneral] = useState(true);
   return (
-    <div className="settings-div">
+    <div className="settings-div flex flex-col">
       <div className="profile_section">
         <a id="profile_btn" href="#">
           <i
@@ -165,7 +165,7 @@ const Settings = () => {
           </div>
         </ul>
       </div>
-      <button> Delete Account </button>
+      <button className=" bg-red-700 text-slate-50"> Delete Account </button>
     </div>
   );
 };
