@@ -77,49 +77,6 @@ const getQuestions = async (category, difficulty) => {
 
 
 
-const postScore = async (userData) => {
-  try {
-    const options = {
-      headers: { "Content-Type": "application/json" }
-    };
-    const { data } = await axios.post(
-      `${process.env.REACT_APP_API_URL}/scores/post`,
-      userData,
-      options
-    );
-    if (!data.success) {
-      throw new Error("Score could not be saved");
-    }
-    return "successful";
-  } catch (err) {
-    console.warn(err.message);
-  }
-};
-
-const postScore = async (username, category, score) => {
-  await axios.post(
-      `${process.env.REACT_APP_API_URL}/scores/post`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ 
-      username: username,
-      cat: category,
-      score: score
-    })
-  });
-}
-
-export const addScore = (username, category, score) => {
-  return async () => {
-    try {
-      await postScore(username, category, score);
-    } catch (err) {
-      console.warn(err.message);
-    }
-    console.log("it worked");
-  };
-};
-
 
 
 

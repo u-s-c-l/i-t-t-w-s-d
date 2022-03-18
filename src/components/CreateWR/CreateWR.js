@@ -33,6 +33,9 @@ const CreateWR = () => {
 
   return (
     <div data-testid="createWR">
+      <h2 className="text-center text-2xl max-w-prose text-slate-50">
+        Room: {room}
+      </h2>
       <div>
         {newPlayers.length === 0 ? (
           <>
