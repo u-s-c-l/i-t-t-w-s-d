@@ -13,7 +13,7 @@ const Profile = ({ onSubmit, name, status }) => {
         <label className="custom-file-upload fas"></label>
         <div className="name">{name}</div>
         <div className="status">{status}</div>
-        <button type="submit" className="edit">
+        <button type="submit" className="edit hover:font-bold">
           Edit Profile{" "}
         </button>
       </form>
