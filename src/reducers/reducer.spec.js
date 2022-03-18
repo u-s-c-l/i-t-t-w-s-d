@@ -152,7 +152,7 @@ describe("quizReducer", () => {
         type: "LOAD_SETTINGS",
         payload: {
           qnum: 1,
-          difficulty: "test diff"
+          diff: "test diff"
         }
       }
     );
