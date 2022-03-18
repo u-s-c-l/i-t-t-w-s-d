@@ -21,7 +21,9 @@ const JoinWR = () => {
 
   return (
     <div data-testid="joinWR">
-      <h2> The owner will start the game soon</h2>
+      <h2 className="text-center text-2xl font-bold text-slate-50 px-4 my-12">
+        The owner will start the game soon
+      </h2>
     </div>
   );
 };
