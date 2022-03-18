@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+
 // import PropTypes from "prop-types";
 import {
   Edit,
@@ -48,6 +50,15 @@ const UserProfile = () => {
       <div className="flex justify-around mt-6 ">
         <SettingsBtn />
         <Chat />
+      </div>
+      <div>
+        <Link
+          role="link"
+          to="/leaderboard"
+          className="bg-slate-50 text-tblack py-3 text-center rounded-full font-bold px-6 mx-auto fixed bottom-24 left-0 right-0 w-fit"
+        >
+          Leaderboard
+        </Link>
       </div>
     </>
   );
