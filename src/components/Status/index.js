@@ -3,11 +3,11 @@ import PropTypes from "prop-types";
 
 const Status = ({ onChange, value }) => {
   return (
-    <div className="field">
+    <div className="field mx-auto max-w-fit">
       <label
         htmlFor="status"
         aria-label="status-field"
-        className="text-xl mr-20 font-light"
+        className="text-xl mr-2 font-light"
       >
         status:
       </label>
@@ -20,7 +20,7 @@ const Status = ({ onChange, value }) => {
         value={value}
         placeholder="It's a nice day!"
         required
-        className="peer border-b-2 border-tblack font-extralight p-1 mt-2 w-48 focus:outline-none focus:border-green-500 focus:invalid:border-tpink"
+        className="peer border-b-2 border-tblack font-extralight p-1 mt-2 focus:outline-none focus:border-green-500 focus:invalid:border-tpink"
       />
     </div>
   );

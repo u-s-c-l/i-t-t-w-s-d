@@ -34,7 +34,7 @@ const UserProfile = () => {
 
   return (
     <>
-      <p className="text-2xl mr-18 font-light p-4 flex flex-col items-center">
+      <p className="text-2xl mr-18 font-light p-4 flex flex-col items-center ">
         {!!currentUser && currentUser.username}
       </p>
       {active === "edit" ? (
