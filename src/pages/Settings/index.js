@@ -166,7 +166,10 @@ const Settings = () => {
             </div>
           </ul>
         </div>
-        <button className=" bg-red-700 text-slate-50"> Delete Account </button>
+        <button className=" bg-red-700 text-slate-50 rounded-xl px-4 py-2">
+          {" "}
+          Delete Account{" "}
+        </button>
       </div>
     </div>
   );
