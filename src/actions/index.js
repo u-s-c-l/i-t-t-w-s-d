@@ -23,7 +23,7 @@ export const joinPlayer = (room, username) => ({
 
 export const loadSettings = (diff, qnum) => ({
   type: "LOAD_SETTINGS",
-  payload: { diff, qnum },
+  payload: { diff, qnum }
 });
 
 export const loadGameMode = () => ({
@@ -32,15 +32,13 @@ export const loadGameMode = () => ({
 
 export const recordPlayerResult = (username, score) => ({
   type: "RECORD_PLAYER_RESULT",
-  payload: { username, score },
+  payload: { username, score }
 });
 
 export const recordAnswer = (curScore) => ({
   type: "RECORD_ANSWER",
-  payload: curScore,
+  payload: curScore
 });
-
-
 
 export const createGame = (room, category, difficulty, username) => {
   const categoryMap = {
@@ -70,9 +68,11 @@ const getQuestions = async (category, difficulty) => {
     const { data } = await axios.get(
       `https://opentdb.com/api.php?amount=10&category=${category}&difficulty=${difficulty}&type=multiple`
     );
+    if (!data.results.length) {
+      throw new Error("We don't have enough questions on that :(");
+    }
     return data.results;
   } catch (err) {
     console.warn(err.message);
   }
 };
-
