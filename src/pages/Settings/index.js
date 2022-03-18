@@ -166,7 +166,7 @@ const Settings = () => {
             </div>
           </ul>
         </div>
-        <button className=" bg-red-700 text-slate-50 rounded-xl px-4 py-2 bg-gradient-to-r from-tpink to-torange  text-center font-bold hover:bg-gradient-to-r from-tpink to-torange  ">
+        <button className=" bg-red-700 text-slate-50 rounded-xl px-4 py-2 bg-gradient-to-r from-tpink to-torange opacity-70 text-center font-normal hover:font-bold hover:opacity-100 ">
           {" "}
           Delete Account{" "}
         </button>

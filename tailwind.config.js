@@ -6,6 +6,7 @@ module.exports = {
       colors: {
         tpink: "#FD267A",
         torange: "#FF7854",
+
         tblack: "#424242"
       }
     }
