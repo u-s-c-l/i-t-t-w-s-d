@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import { Login, Register } from "../../components";
-import { useAuthContext } from "../../contexts";
+import { useAuthContext } from "../../contexts/AuthContext";
 
 function About() {
   const [openLogin, setOpenLogin] = useState(true);

@@ -3,9 +3,6 @@ import "jest-localstorage-mock";
 
 import { AuthProvider, useAuthContext } from ".";
 
-import axios from "axios";
-jest.mock("axios");
-
 describe("useAuthContext", () => {
   let wrapper;
   beforeEach(() => {
@@ -69,12 +66,7 @@ describe("useAuthContext", () => {
   //     const { result } = renderHook(() => (authContext = useAuthContext()), {
   //       wrapper
   //     });
-  //     act(async () => {
-  //       jest
-  //         .spyOn(axios, "post")
-  //         .mockResolvedValueOnce({ data: { success: false } });
-  //       await result.current.login(testUser);
-  //     });
+  //     act(() => result.current.login(testUser));
   //     expect(authContext.login).toThrow(/not authorised/i);
   //   });
   // });

@@ -1,10 +1,10 @@
 import React from "react";
 import { useState } from "react";
-import { useSocket } from "../../components/SocketContext/SocketContext";
+import { useSocket } from "../../contexts/SocketContext/SocketContext";
 import { useDispatch } from "react-redux";
 import { joinPlayer } from "../../actions";
 import { useNavigate } from "react-router-dom";
-import { useAuthContext } from "../../contexts";
+import { useAuthContext } from "../../contexts/AuthContext";
 
 const JoinGame = () => {
   // need username and room to join a game with socket
@@ -32,7 +32,7 @@ const JoinGame = () => {
   const handleSubmit = () => {
     socket.emit("join-room", roomName, nameInput);
     console.log("joined game");
-    dispatch(joinPlayer(nameInput, roomName));
+    dispatch(joinPlayer(roomName, nameInput));
     history("/quiz/waiting");
   };
 
@@ -49,7 +49,7 @@ const JoinGame = () => {
             onChange={handleNameInput}
             required
             disabled
-            className="capitalize bg-gradient-to-r from-tpink to-torange text-white py-3 rounded-xl font-bold w-60 mx-auto block focus:outline-none placeholder:text-slate-50 text-left px-4"
+            className=" bg-gradient-to-r from-tpink to-torange text-white py-3 rounded-xl font-bold w-60 mx-auto block focus:outline-none placeholder:text-slate-50 text-left px-4"
           ></input>
           <input
             type="text"
@@ -57,7 +57,7 @@ const JoinGame = () => {
             onChange={handleRoomInput}
             placeholder="Room name:"
             required
-            className="capitalize bg-gradient-to-r from-tpink opacity-70 to-torange text-white py-3 rounded-xl font-bold w-60 mx-auto block focus:opacity-100 focus:outline-none placeholder:text-slate-50 text-left px-4"
+            className=" bg-gradient-to-r from-tpink opacity-70 to-torange text-white py-3 rounded-xl font-bold w-60 mx-auto block focus:opacity-100 focus:outline-none placeholder:text-slate-50 text-left px-4"
           ></input>
         </div>
         <button
