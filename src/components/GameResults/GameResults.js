@@ -54,7 +54,9 @@ const GameResults = () => {
         </h2>
       ) : (
         <div>
-          <h1> {gameResult.res} </h1>
+          <h1 className="uppercase text-center text-2xl font-bold text-slate-50 px-4 mb-6">
+            {gameResult.res}{" "}
+          </h1>
           <Container>
             <Row className="flex justify-between w-2/3 text-2xl font-bold text-slate-50 px-4">
               <Col>
