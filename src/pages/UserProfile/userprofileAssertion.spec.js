@@ -39,23 +39,29 @@ it('it calls a handleSubmit', () => {
 
 });
 
-it('it calls handleName', () => {
-  // Test first render and componentDidMount
-  act(() => {
-    renderWithProviders(<UserProfile />);
-  });
+it('it calls handleName with given value', () => {
+
+  // Test first render and component did mount
+  act(() => { 
+    renderWithProviders(<UserProfile />) 
+    });
+
   let value;
   userEvent.type(screen.queryByLabelText("name-field-input"), value="gi-ba-bu");
-  const field = screen.getByLabelText("name-field-input");
+  const field = screen.getByLabelText("name-field-input");  
   expect(field).toBeInTheDocument();
-  console.log(field)
-
-  // Test second render and componentDidUpdate
- act(() => {
-    valueP = field.dispatchEvent(new MouseEvent('submit', {bubbles: true}));
-   });
  
-   expect(valueP).toBe(true);
+  // Dispatch event with given value
+  act(() => {
+      field.dispatchEvent(new MouseEvent('submit', {bubbles: true}));
+    });
+  
+  // Test rendered object
+
+
+
+
+    expect(valueP).toBe(true);
 
 
 
