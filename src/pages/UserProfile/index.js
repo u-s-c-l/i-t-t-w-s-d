@@ -34,7 +34,9 @@ const UserProfile = () => {
 
   return (
     <>
-      <p>{!!currentUser && currentUser.username}</p>
+      <p className="text-2xl mr-18 font-light p-4 flex flex-col items-center">
+        {!!currentUser && currentUser.username}
+      </p>
       {active === "edit" ? (
         <Edit onSubmit={handleSubmit}>
           <Name onChange={handleName} value={name} />
