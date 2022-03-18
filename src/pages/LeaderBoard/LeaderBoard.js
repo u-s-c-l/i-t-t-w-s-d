@@ -13,20 +13,27 @@ const LeaderBoard = () => {
   }, []);
   return (
     <>
-      <h2>Leader Board</h2>
+      <h2 className="capitalize text-center text-4xl font-bold text-slate-50 py-10">
+        Leader Board
+      </h2>
       {scores && (
-        <table>
-          <thead>
-            <tr>
-              <th>Category:</th>
-              <th>Username:</th>
-              <th>Score:</th>
-            </tr>
-          </thead>
-          {scores.map((data, index) => (
-            <Board key={`score_${index}`} data={data} />
-          ))}
-        </table>
+        <div className="p-8">
+          <table
+            data-testid="score-table"
+            className=" rounded-lg overflow-hidden bg-slate-50 border-2 border-tblack w-full text-center text-tblack"
+          >
+            <thead>
+              <tr>
+                <th className="py-3">Category</th>
+                <th className="py-3">Username</th>
+                <th className="py-3">Score</th>
+              </tr>
+            </thead>
+            {scores.map((data, index) => (
+              <Board key={`score_${index}`} data={data} />
+            ))}
+          </table>
+        </div>
       )}
     </>
   );

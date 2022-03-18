@@ -6,15 +6,20 @@ import reportWebVitals from "./reportWebVitals";
 import store from "./store";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
-import { AuthProvider } from "./contexts";
+import { AuthProvider } from "./contexts/AuthContext";
+import { SocketProvider } from "./contexts/SocketContext/SocketContext";
+
+// commented SocketProvider out until server deployed because need the server running at the same time for it to work :(
 
 ReactDOM.render(
   <React.StrictMode>
     <AuthProvider>
       <BrowserRouter>
-        <Provider store={store}>
-          <App />
-        </Provider>
+        <SocketProvider>
+          <Provider store={store}>
+            <App />
+          </Provider>
+        </SocketProvider>
       </BrowserRouter>
     </AuthProvider>
   </React.StrictMode>,

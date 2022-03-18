@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+
 // import PropTypes from "prop-types";
 import {
   Edit,
@@ -8,8 +10,10 @@ import {
   SettingsBtn,
   Chat
 } from "../../components";
+import { useAuthContext } from "../../contexts/AuthContext";
 
 const UserProfile = () => {
+  const { currentUser } = useAuthContext();
   const [name, setName] = useState("");
   const [status, setStatus] = useState("");
   const [active, setActive] = useState("edit");
@@ -32,6 +36,9 @@ const UserProfile = () => {
 
   return (
     <>
+      <p className="text-3xl mr-18 p-4 flex flex-col items-center text-slate-50 font-bold">
+        {!!currentUser && currentUser.username}
+      </p>
       {active === "edit" ? (
         <Edit onSubmit={handleSubmit}>
           <Name onChange={handleName} value={name} />
@@ -40,8 +47,19 @@ const UserProfile = () => {
       ) : (
         <Profile onSubmit={handleSubmit} name={name} status={status} />
       )}
-      <SettingsBtn />
-      <Chat />
+      <div className="flex justify-around mt-6 ">
+        <SettingsBtn />
+        <Chat />
+      </div>
+      <div>
+        <Link
+          role="link"
+          to="/leaderboard"
+          className="bg-slate-50 text-tblack py-3 text-center rounded-full font-bold px-6 mx-auto fixed bottom-24 left-0 right-0 w-fit"
+        >
+          Leaderboard
+        </Link>
+      </div>
     </>
   );
 };

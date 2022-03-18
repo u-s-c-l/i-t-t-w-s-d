@@ -4,10 +4,14 @@ import PropTypes from "prop-types";
 const Edit = ({ onSubmit, children }) => {
   return (
     <div className="card">
-      <form onSubmit={onSubmit}>
-        <h1>Profile Card</h1>
+      <form
+        onSubmit={onSubmit}
+        aria-label="name-status-form"
+        className="p-4 flex flex-col items-center border border-tblack font-extralight mt-4   bg-slate-50  justify-around rounded-lg max-w-sm m-4  "
+      >
+        <h1>Profile</h1>
         {children}
-        <button type="submit" className="save">
+        <button type="submit" className="save mt-8 hover:font-bold">
           Save{" "}
         </button>
       </form>
