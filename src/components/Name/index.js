@@ -3,8 +3,12 @@ import PropTypes from "prop-types";
 
 const Name = ({ onChange, value }) => {
   return (
-    <div className="field">
-      <label htmlFor="name" aria-label="name-field">
+    <div className="field mx-auto max-w-fit">
+      <label
+        htmlFor="name"
+        className="text-xl mr-4 font-light"
+        aria-label="name-field"
+      >
         name:
       </label>
       <input
@@ -16,6 +20,7 @@ const Name = ({ onChange, value }) => {
         value={value}
         placeholder="Alexa"
         required
+        className="peer border-b-2 border-tblack font-extralight p-1 mt-2  focus:outline-none focus:border-green-500 focus:invalid:border-tpink"
       />
     </div>
   );

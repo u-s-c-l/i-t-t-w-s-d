@@ -12,7 +12,6 @@ import { useAuthContext } from "../../contexts/AuthContext";
 
 const UserProfile = () => {
   const { currentUser } = useAuthContext();
-
   const [name, setName] = useState("");
   const [status, setStatus] = useState("");
   const [active, setActive] = useState("edit");
@@ -35,19 +34,21 @@ const UserProfile = () => {
 
   return (
     <>
-      <form>
-        <p>{!!currentUser && currentUser.username}</p>
-        {active === "edit" ? (
-          <Edit onSubmit={handleSubmit}>
-            <Name onChange={handleName} value={name} />
-            <Status onChange={handleStatus} value={status} />
-          </Edit>
-        ) : (
-          <Profile onSubmit={handleSubmit} name={name} status={status} />
-        )}
+      <p className="text-2xl mr-18 font-light p-4 flex flex-col items-center ">
+        {!!currentUser && currentUser.username}
+      </p>
+      {active === "edit" ? (
+        <Edit onSubmit={handleSubmit}>
+          <Name onChange={handleName} value={name} />
+          <Status onChange={handleStatus} value={status} />
+        </Edit>
+      ) : (
+        <Profile onSubmit={handleSubmit} name={name} status={status} />
+      )}
+      <div className="flex justify-around mt-6 ">
         <SettingsBtn />
         <Chat />
-      </form>
+      </div>
     </>
   );
 };
