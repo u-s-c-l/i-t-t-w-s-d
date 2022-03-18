@@ -24,6 +24,7 @@ function App() {
         ) : (
           <>
             <Route exact path={"/quiz"} element={<Pages.QuizMenu />} />
+            <Route path={"/leaderboard"} element={<Pages.LeaderBoard />} />
             {/* This is the home page  */}
             <Route
               path={"/quiz/createnew/*"}
