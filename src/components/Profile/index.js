@@ -7,7 +7,7 @@ const Profile = ({ onSubmit, name, status }) => {
       <form
         onSubmit={onSubmit}
         aria-label="profile-form"
-        className="p-4 flex flex-col items-center p-4 flex flex-col items-center border border-tblack font-extralight p-1 mt-4 w-full h-48 bg-slate-50 w-full flex justify-around rounded-tl-3xl rounded-tr-3xl max-w-sm"
+        className="p-4 flex flex-col items-center border border-tblack font-extralight  mt-4  h-48 bg-slate-50 w-full justify-around rounded-tl-3xl rounded-tr-3xl max-w-sm"
       >
         <h1>Profile Card</h1>
         <label className="custom-file-upload fas"></label>
