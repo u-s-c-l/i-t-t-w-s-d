@@ -45,8 +45,10 @@ const UserProfile = () => {
       ) : (
         <Profile onSubmit={handleSubmit} name={name} status={status} />
       )}
-      <SettingsBtn />
-      <Chat />
+      <div className="flex justify-around mt-6 ">
+        <SettingsBtn />
+        <Chat />
+      </div>
     </>
   );
 };
