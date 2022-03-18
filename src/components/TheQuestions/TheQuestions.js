@@ -81,7 +81,7 @@ const TheQuestions = () => {
           <div>
             <p className="text-2xl py-4"> {matches(question)} </p>
           </div>
-          <Container className=" space-y-4 my-3">
+          <Container className=" space-y-4 my-3 w-fit">
             <Row className="space-y-4">
               <Col>
                 <button

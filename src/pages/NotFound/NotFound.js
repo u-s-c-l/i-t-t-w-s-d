@@ -4,7 +4,7 @@ const NotFound = () => {
   return (
     <div
       id="not-found-div"
-      className="flex justify-center items-center w-screen h-screen text-center"
+      className="flex justify-center items-center h-screen text-center"
     >
       <p
         id="not-found"
