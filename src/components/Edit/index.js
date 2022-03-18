@@ -11,7 +11,7 @@ const Edit = ({ onSubmit, children }) => {
       >
         <h1>Profile Card</h1>
         {children}
-        <button type="submit" className="save mt-8">
+        <button type="submit" className="save mt-8 hover:font-bold">
           Save{" "}
         </button>
       </form>
