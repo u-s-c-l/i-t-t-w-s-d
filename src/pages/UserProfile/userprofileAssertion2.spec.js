@@ -26,7 +26,7 @@ it('it calls handleStatus', () => {
    expect(valueP).toBe(true);
 });
 
-it.skip('it calls handleStatus', () => {
+it('it calls handleStatus', () => {
   // Test first render and componentDidMount
   act(() => {
     renderWithProviders(<UserProfile />);

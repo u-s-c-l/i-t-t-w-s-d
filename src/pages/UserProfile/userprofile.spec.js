@@ -12,7 +12,7 @@ describe('User profile page', () => {
     })
 })
 let valueP;
-it('it calls handleStatus', () => {
+it('it renders a form with username', () => {
     // Test first render and componentDidMount
     act(() => {
       renderWithProviders(<UserProfile />);
@@ -30,3 +30,4 @@ it('it calls handleStatus', () => {
    
      expect(valueP).toBe(true);
   });
+ 
