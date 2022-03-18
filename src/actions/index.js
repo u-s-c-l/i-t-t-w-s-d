@@ -7,7 +7,6 @@ export const create = (room, category, difficulty, username, currentQ) => ({
   payload: { room, category, difficulty, username, currentQ }
 });
 
-// combined getQuestions with startGame function
 
 const currentQ = 10;
 
@@ -79,3 +78,4 @@ const getQuestions = async (category, difficulty) => {
     return err;
   }
 };
+
