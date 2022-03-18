@@ -13,7 +13,7 @@ describe("CreateGame component", () => {
     render(<CreateGame getQuestions={getQuestions} startGame={startGame} />);
   });
 
-  it.skip("returns a form", () => {
+  it("returns a form", () => {
     const form = screen.getByLabelText(/create game form/i);
     expect(form).toBeTruthy();
   });

@@ -4,7 +4,7 @@ import Home from '.';
 
 describe('Create new game page', () => {
     
-    test.skip('it renders a heading ', () => {
+    test('it renders a heading ', () => {
         
         renderWithProviders(<Home />);
         const nav = screen.queryAllByRole('heading')[0];

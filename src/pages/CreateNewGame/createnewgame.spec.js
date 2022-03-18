@@ -9,7 +9,7 @@ import userEvent from '@testing-library/user-event';
 
 describe('Create new game page', () => {
     
-    test.skip('it renders a heading ', () => {
+    test('it renders a heading ', () => {
         act(() => {
             renderWithProviders(<CreateNewGame/>);
           });
