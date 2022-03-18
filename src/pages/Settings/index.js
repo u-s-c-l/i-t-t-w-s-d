@@ -6,7 +6,7 @@ const Settings = () => {
   const [privacy, setPrivacy] = useState(true);
   const [general, setGeneral] = useState(true);
   return (
-    <div className="settings-div flex flex-col p-4 items-center border border-tblack font-extralight mt-4   bg-slate-50  justify-around rounded-tl-3xl rounded-tr-3xl max-w-sm m-4  ">
+    <div className="settings-div flex flex-col  p-4 items-center border border-tblack font-extralight  bg-slate-50  justify-around rounded-tl-3xl rounded-tr-3xl max-w-sm m-8  ">
       <div className="profile_section">
         <a id="profile_btn" href="#">
           <i
