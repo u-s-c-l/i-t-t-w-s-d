@@ -2,7 +2,7 @@ import React from "react";
 // import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
-import { recordAnswer, loading} from "../../actions";
+import { recordAnswer} from "../../actions";
 import { Container, Row, Col } from "reactstrap";
 import { shuffle, matches } from "./helpers";
 import axios from "axios";
@@ -22,17 +22,14 @@ const TheQuestions = () => {
   const answers = shuffle(set.answers);
   const difficulty = useSelector((state) => state.difficulty);
 
-  const postScore = async (username, category, score) => {
-    await axios.post(`${process.env.REACT_APP_API_URL}scores/post`, {
+  const postScore = async (username, cat, score) => {
+    const userData = {username, cat, score };
+    console.log(userData);
+    await axios.post(`${process.env.REACT_APP_API_URL}scores/post`, userData, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        cat: category,
-        username: username,
-        score: score
-      })
+      }
     });
   };
 
@@ -45,10 +42,8 @@ const TheQuestions = () => {
       12: "music"
     };
     const category = backwardsCategoryMap[catId];
-    console.log(category);
-    return async (dispatch) => {
-      dispatch(loading(category));
-      console.log(category);
+    console.log(username, category, score);
+    return async () => {
       try {
         await postScore(username, category, score);
       } catch (err) {
