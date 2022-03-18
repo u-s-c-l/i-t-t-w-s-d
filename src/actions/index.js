@@ -55,6 +55,9 @@ export const createGame = (room, category, difficulty, username) => {
     dispatch(create(room, catId, difficulty, username, currentQ));
     try {
       const questions = await getQuestions(catId, difficulty);
+      if (questions.message) {
+        throw new Error(questions.message);
+      }
       dispatch(loadQuestions(questions));
     } catch (err) {
       console.warn(err.message);
@@ -73,6 +76,6 @@ const getQuestions = async (category, difficulty) => {
     }
     return data.results;
   } catch (err) {
-    console.warn(err.message);
+    return err;
   }
 };
