@@ -9,6 +9,7 @@
   content: "";
   width: 1.25rem;
   height: 1.25rem;
+
   border-radius: 9999%;
   background-color: white;
   background-position: center;
@@ -42,4 +43,5 @@
     rgba(253, 38, 122, 1) 0%,
     rgba(255, 120, 84, 1) 35%
   );
+  border: white solid 2px;
 }
