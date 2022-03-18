@@ -66,12 +66,7 @@ describe("useAuthContext", () => {
   //     const { result } = renderHook(() => (authContext = useAuthContext()), {
   //       wrapper
   //     });
-  //     act(async () => {
-  //       jest
-  //         .spyOn(axios, "post")
-  //         .mockResolvedValueOnce({ data: { success: false } });
-  //       await result.current.login(testUser);
-  //     });
+  //     act(() => result.current.login(testUser));
   //     expect(authContext.login).toThrow(/not authorised/i);
   //   });
   // });

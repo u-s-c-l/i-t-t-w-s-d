@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useSocket } from "../../components/SocketContext/SocketContext";
+import { useSocket } from "../../contexts/SocketContext/SocketContext";
 import { useDispatch } from "react-redux";
 import { loadQuestions, loadGameMode, loadSettings } from "../../actions";
 import { useNavigate } from "react-router-dom";
@@ -16,8 +16,7 @@ const JoinWR = () => {
       dispatch(loadGameMode());
       history("/quiz/game");
     });
-  }),
-    [socket];
+  }, [socket]);
 
   return (
     <div data-testid="joinWR">

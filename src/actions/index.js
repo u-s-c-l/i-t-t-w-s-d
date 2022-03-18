@@ -9,19 +9,21 @@ export const create = (room, category, difficulty, username, currentQ) => ({
 
 // combined getQuestions with startGame function
 
+const currentQ = 10;
+
 export const loadQuestions = (questions) => ({
   type: "LOAD_QUESTIONS",
   payload: questions
 });
 
-export const joinPlayer = (username, room) => ({
+export const joinPlayer = (room, username) => ({
   type: "JOIN_PLAYER",
-  payload: { username, room }
+  payload: { room, username }
 });
 
 export const loadSettings = (diff, qnum) => ({
   type: "LOAD_SETTINGS",
-  payload: { diff, qnum }
+  payload: { diff, qnum },
 });
 
 export const loadGameMode = () => ({
@@ -30,15 +32,15 @@ export const loadGameMode = () => ({
 
 export const recordPlayerResult = (username, score) => ({
   type: "RECORD_PLAYER_RESULT",
-  payload: { username, score }
+  payload: { username, score },
 });
 
 export const recordAnswer = (curScore) => ({
   type: "RECORD_ANSWER",
-  payload: curScore
+  payload: curScore,
 });
 
-const currentQ = 10;
+
 
 export const createGame = (room, category, difficulty, username) => {
   const categoryMap = {
@@ -74,4 +76,3 @@ const getQuestions = async (category, difficulty) => {
   }
 };
 
-export default getQuestions;

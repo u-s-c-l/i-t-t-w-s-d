@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
-import { useSocket } from "../SocketContext/SocketContext";
+import { useSocket } from "../../contexts/SocketContext/SocketContext";
 import { loadGameMode } from "../../actions";
 
 const CreateWR = () => {
