@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import React, { useEffect } from "react";
 import { useSocket } from "../../contexts/SocketContext/SocketContext";
 import { useDispatch } from "react-redux";
