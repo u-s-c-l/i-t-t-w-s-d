@@ -4,7 +4,11 @@ import PropTypes from "prop-types";
 const Profile = ({ onSubmit, name, status }) => {
   return (
     <div className="card p-4 flex flex-col items-center">
-      <form onSubmit={onSubmit} aria-label="profile-form">
+      <form
+        onSubmit={onSubmit}
+        aria-label="profile-form"
+        className="p-4 flex flex-col items-center"
+      >
         <h1>Profile Card</h1>
         <label className="custom-file-upload fas"></label>
         <div className="name">{name}</div>
