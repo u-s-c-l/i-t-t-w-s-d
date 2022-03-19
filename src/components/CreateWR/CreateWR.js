@@ -16,7 +16,7 @@ const CreateWR = () => {
   const [newPlayers, setNewPlayers] = useState([]);
 
   const handleNext = () => {
-    socket.emit("start-game", room, difficulty, currentQ, questions);
+    socket.emit("create-room", room, difficulty, currentQ, questions);
     history("/quiz/game");
   };
 
@@ -25,7 +25,7 @@ const CreateWR = () => {
   }, []);
 
   useEffect(() => {
-    socket.on("user-join", (username) => {
+    socket.on("join-game", (username) => {
       setNewPlayers((newPlayers) => [...newPlayers, username]);
       dispatch(loadGameMode());
     });
