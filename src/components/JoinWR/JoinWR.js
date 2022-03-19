@@ -11,9 +11,9 @@ const JoinWR = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    socket.on("start-game", (diff, currentQ, quiz) => {
+    socket.on("start-game", (difficulty, currentQ, quiz) => {
       dispatch(loadQuestions(quiz));
-      dispatch(loadSettings(diff, currentQ));
+      dispatch(loadSettings(difficulty, currentQ));
       dispatch(loadGameMode());
       history("/quiz/game");
     });
