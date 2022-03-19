@@ -7,8 +7,25 @@ export const create = (room, category, difficulty, username, currentQ) => ({
   payload: { room, category, difficulty, username, currentQ }
 });
 
-
 const currentQ = 10;
+
+export function addMessage(data, isSelf = false) {
+  const messageElement = document.createElement("div");
+  messageElement.classList.add("message");
+  if (isSelf) {
+    messageElement.classList.add("self-message");
+    messageElement.innerText = `${data.message}`;
+  } else {
+    if (data.user === "server") {
+      messageElement.innerText = `${data.message}`;
+    } else {
+      messageElement.classList.add("others-message");
+      messageElement.innerText = `${data.user}: ${data.message}`;
+    }
+  }
+  const chatContainer = document.getElementById("chatContainer");
+  chatContainer.append(messageElement);
+}
 
 export const loadQuestions = (questions) => ({
   type: "LOAD_QUESTIONS",
@@ -20,9 +37,9 @@ export const joinPlayer = (room, username) => ({
   payload: { room, username }
 });
 
-export const loadSettings = (diff, qnum) => ({
+export const loadSettings = (diff, currentQ) => ({
   type: "LOAD_SETTINGS",
-  payload: { diff, qnum }
+  payload: { diff, currentQ }
 });
 
 export const loadGameMode = () => ({
@@ -78,4 +95,3 @@ const getQuestions = async (category, difficulty) => {
     return err;
   }
 };
-

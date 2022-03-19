@@ -13,7 +13,7 @@ const GameResults = () => {
   const [gameResult, setGameResult] = useState({});
 
   useEffect(() => {
-    socket.emit("end-game", room, username, score);
+    socket.emit("game-over", room, username, score);
   }, []);
 
   useEffect(() => {

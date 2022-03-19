@@ -49,11 +49,11 @@ const quizReducer = (state = initState, action) => {
         error: false
       };
     }
-    case "LOAD_SETTINGS":{
+    case "LOAD_SETTINGS": {
       return {
         ...state,
-        currentQ: action.payload.qnum,
-        difficulty: action.payload.diff,
+        currentQ: action.payload.currentQ,
+        difficulty: action.payload.diff
       };
     }
 
@@ -61,7 +61,7 @@ const quizReducer = (state = initState, action) => {
       return {
         ...state,
         room: action.payload.room,
-        username: action.payload.username,
+        username: action.payload.username
       };
     }
     case "RECORD_ANSWER": {

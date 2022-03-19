@@ -151,7 +151,7 @@ describe("quizReducer", () => {
       {
         type: "LOAD_SETTINGS",
         payload: {
-          qnum: 1,
+          currentQ: 1,
           diff: "test diff"
         }
       }
